@@ -5,21 +5,24 @@
 
 ---
 
+DiveForge is an open source enterprise application designed for universal dive shop management.  
+All code, architecture, and features are developed and maintained under the GPL v3 license to ensure community ownership, transparency, and extensibility.
+
 ## Table of Contents
 
-1. [Executive Summary](#executive-summary)
-2. [Open Source Development Foundation](#open-source-development-foundation)
-3. [Modular Architecture Design](#modular-architecture-design)
-4. [Web-Based Installation System](#web-based-installation-system)
-5. [Multi-Agency Certification System](#multi-agency-certification-system)
-6. [DiveShop360.biz API Compatibility Layer](#diveshop360biz-api-compatibility-layer)
-7. [Enterprise Application Architecture](#enterprise-application-architecture)
-8. [Database Architecture and Management](#database-architecture-and-management)
-9. [Security Framework and Compliance](#security-framework-and-compliance)
-10. [Customer Portal Development](#customer-portal-development)
-11. [Theme and Branding Systems](#theme-and-branding-systems)
-12. [Logging and Monitoring Systems](#logging-and-monitoring-systems)
-13. [Implementation Roadmap](#implementation-roadmap)
+1. Executive Summary
+2. Open Source Development Foundation
+3. Modular Architecture Design
+4. Web-Based Installation System
+5. Multi-Agency Certification System
+6. DiveShop360.biz API Compatibility Layer
+7. Enterprise Application Architecture
+8. Database Architecture and Management
+9. Security Framework and Compliance
+10. Customer Portal Development
+11. Theme and Branding Systems
+12. Logging and Monitoring Systems
+13. Implementation Roadmap
 
 ---
 
@@ -27,102 +30,97 @@
 
 DiveForge is the first truly universal dive shop management platform designed to support all major diving certification agencies through a unified, open source solution. Built under GPL v3 licensing, DiveForge provides enterprise-grade capabilities while respecting user freedoms and encouraging community collaboration.
 
-### **Core Mission**
+### Core Mission
 Break down artificial barriers between diving certification agencies while providing dive shops with unprecedented flexibility, comprehensive functionality, and enterprise-grade security.
 
-### **Key Differentiators**
-- **Universal Agency Support**: PADI, SSI, TDI/SDI, NAUI, BSAC, GUE, IANTD, RAID, and 20+ regional agencies
-- **GPL v3 Freedom**: Community ownership preventing vendor lock-in
-- **Enterprise Security**: PCI DSS and GDPR compliance with comprehensive audit trails
-- **Migration Ready**: Seamless transition from DiveShop360.biz and other existing systems
-- **Plugin Architecture**: Community-driven extensibility
+### Key Differentiators
+- Universal Agency Support: PADI, SSI, TDI/SDI, NAUI, BSAC, GUE, IANTD, RAID, and 20+ regional agencies
+- GPL v3 Freedom: Community ownership preventing vendor lock-in
+- Enterprise Security: PCI DSS and GDPR compliance with comprehensive audit trails
+- Migration Ready: Seamless transition from DiveShop360.biz and other existing systems
+- Plugin Architecture: Community-driven extensibility
 
 ---
 
 ## Open Source Development Foundation
 
-### **GPL v3 Licensing Strategy**
+DiveForge is governed by a community-driven model, with a Project Steering Committee, Community Council, and Working Groups. All contributors have a voice in the direction and development of the platform.
 
-The GNU General Public License v3 provides strong copyleft protection ensuring all derivative works remain open source, fostering genuine community collaboration and preventing proprietary forks.
+### License Benefits
+- User Freedom: Four essential freedoms guaranteed
+- Patent Protection: Robust patent grants protecting against litigation
+- Anti-Tivoization: Hardware restrictions prevention
+- Community Ownership: Democratic governance and development
 
-#### **License Benefits**
-- **User Freedom**: Four essential freedoms guaranteed
-- **Patent Protection**: Robust patent grants protecting against litigation
-- **Anti-Tivoization**: Hardware restrictions prevention
-- **Community Ownership**: Democratic governance and development
+---
 
-#### **GPL v3 License Headers**
-```javascript
-/*
- * DiveForge - Enterprise Dive Shop Management Application
- * Copyright (C) 2025 DiveForge Community
- * 
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <https://www.gnu.org/licenses/>.
- */
-```
+## Modular Architecture Design
 
-### **Community Governance Model**
+DiveForge uses a modular, plugin-based architecture to ensure extensibility, maintainability, and scalability for enterprise deployments. All modules and plugins are GPL v3 licensed.
 
-#### **Governance Structure**
-- **Project Steering Committee**: Technical leadership and strategic direction
-- **Community Council**: Representative governance with democratic decision-making
-- **Working Groups**: Specialized focus areas (Security, Agencies, UX, Documentation)
-- **Contributor Assembly**: All active contributors with voting rights
+---
 
-#### **Decision-Making Process**
-```mermaid
-graph TD
-    A[Community Proposal] --> B[Working Group Review]
-    B --> C[Technical Assessment]
-    C --> D[Community Discussion]
-    D --> E[Steering Committee Vote]
-    E --> F[Implementation Planning]
-    F --> G[Community Development]
-```
+## Web-Based Installation System
 
-#### **Contribution Workflow**
-```bash
-# Standard fork-and-pull workflow
-git clone https://github.com/diveforge/diveforge.git
-cd diveforge
-git remote add upstream https://github.com/diveforge/diveforge.git
+DiveForge provides a user-friendly, web-based installation wizard for easy setup and configuration, supporting multiple database systems and enterprise-grade security options.
 
-# Create feature branch
-git checkout -b feature/multi-agency-integration
-git push -u origin feature/multi-agency-integration
+---
 
-# Development cycle
-git add .
-git commit -m "feat: add SSI certification integration
+## Multi-Agency Certification System
 
-- Implement SSI API adapter
-- Add digital certification support
-- Update universal certification mapper
-- Include comprehensive test coverage
+DiveForge supports all major diving certification agencies through a unified, standards-based integration framework, enabling seamless management of certifications, instructors, and customers.
 
-Closes #123"
+---
 
-# Submit pull request with comprehensive description
-gh pr create --title "Multi-Agency Integration: SSI Support" \
-             --body "Comprehensive SSI integration with digital-first approach"
-```
+## DiveShop360.biz API Compatibility Layer
 
-### **Semantic Versioning Implementation**
+DiveForge includes a compatibility layer for smooth migration from DiveShop360.biz and other legacy systems, ensuring data integrity and business continuity.
 
-#### **Version Format**: `MAJOR.MINOR.PATCH`
-- **MAJOR**: Breaking changes requiring migration
-- **MINOR**: New features maintaining backward compatibility
+---
+
+## Enterprise Application Architecture
+
+DiveForge is designed as a modular monolith for most deployments, with support for microservices and hybrid architectures as needed. The platform emphasizes data consistency, security, and operational simplicity.
+
+---
+
+## Database Architecture and Management
+
+DiveForge supports multiple database backends (PostgreSQL, MySQL/MariaDB, SQLite, SQL Server) and provides robust schema management, migrations, and backup/restore capabilities. Enterprise deployments benefit from high-availability options and automated maintenance tools.
+
+---
+
+## Security Framework and Compliance
+
+DiveForge implements enterprise-grade security, including role-based access control, multi-factor authentication, encryption at rest and in transit, and comprehensive audit logging. The platform is designed to meet PCI DSS and GDPR requirements, with regular security reviews and community oversight.
+
+---
+
+## Customer Portal Development
+
+DiveForge offers a customizable customer portal, enabling self-service access to certifications, bookings, payments, and communication. The portal is mobile-friendly, supports multiple languages, and can be branded to match the dive shop's identity.
+
+---
+
+## Theme and Branding Systems
+
+DiveForge includes a flexible theming and branding system, allowing dive shops to customize the look and feel of both the admin dashboard and customer portal. Themes can be extended or created by the community, ensuring a unique and professional appearance.
+
+---
+
+## Logging and Monitoring Systems
+
+DiveForge provides integrated logging, monitoring, and alerting features for operational transparency and rapid troubleshooting. Logs can be exported to enterprise SIEM solutions, and built-in dashboards provide real-time insights into system health, user activity, and security events. Automated alerts can be configured for critical incidents.
+
+---
+
+## Implementation Roadmap
+
+The DiveForge roadmap is managed openly with community input. Major milestones include expanded agency integrations, advanced reporting and analytics, e-commerce features, enhanced mobile support, and continuous security improvements. Contributions are welcome from all qualified developers and dive industry professionals.
+
+---
+
+*For more information, visit the official DiveForge repository and documentation.*
 - **PATCH**: Bug fixes and minor improvements
 
 #### **Release Management**
@@ -1910,6 +1908,8 @@ const completionStep = {
                         <li>📋 Configure firewall rules for your environment</li>
                         <li>📋 Set up regular automated backups</li>
                         <li>📋 Enable monitoring and alerting</li>
+                        <li>📋 Regularly update DiveForge to the latest version for security patches</li>
+                        <li>📋 Review user permissions and audit logs periodically</li>
                     </ul>
                 </div>
             </div>
@@ -2288,6 +2288,43 @@ class UniversalCertification {
             normalized: this.normalizedLevel
         }));
     }
+    
+    async mapPrerequisites(certificationData) {
+        const agency = certificationData.agency;
+        const level = certificationData.level;
+        const mapped = [];
+        
+        // Example mapping logic
+        if (agency === 'PADI') {
+            if (level === 'OPEN_WATER') {
+                mapped.push('BUBBLEMAKER', 'SEAL_TEAM');
+            } else if (level === 'ADVANCED_OPEN_WATER') {
+                mapped.push('OPEN_WATER');
+            }
+        } else if (agency === 'SSI') {
+            if (level === 'OPEN_WATER_DIVER') {
+                mapped.push('TRY_SCUBA');
+            } else if (level === 'ADVANCED_ADVENTURER') {
+                mapped.push('OPEN_WATER_DIVER');
+            }
+        }
+        
+        return mapped;
+    }
+    
+    extractMetadata(certificationData) {
+        return {
+            sourceSystem: certificationData.sourceSystem || 'unknown',
+            migrationDate: certificationData.migrationDate || new Date().toISOString(),
+            originalId: certificationData.originalId || null,
+            integrityCheck: this.performDataIntegrityCheck(certificationData)
+        };
+    }
+    
+    performDataIntegrityCheck(data) {
+        // Simple integrity check example
+        return data.id && data.customerId && data.agency && data.level;
+    }
 }
 ```
 
@@ -2465,7 +2502,7 @@ class TDIIntegration {
         this.supportedCourses = [
             'NITROX_DIVER', 'ADVANCED_NITROX', 'DECOMPRESSION_PROCEDURES',
             'TRIMIX', 'HELITROX', 'CAVE_DIVER', 'WRECK_DIVER',
-            'REBREATHER_DIVER', 'TECHNICAL_INSTRUCTOR'
+            'REBREATHER_DIVER', 'TECHNICAL_INSTRUCTOR', 'CAVE_INSTRUCTOR'
         ];
         this.gasBlendingCourses = [
             'ADVANCED_NITROX', 'TRIMIX', 'HELITROX'
@@ -3002,4 +3039,42 @@ class DiveShop extends AggregateRoot {
     
     static create(name: string, agencies: AgencyPartnership[]): DiveShop {
         const id = DiveShopId.generate();
-        const shop = new DiveShop(id, name, agencies,
+        const shop = new DiveShop(id, name, agencies, [], []);
+        
+        // Fire domain event
+        shop.addDomainEvent(new DiveShopCreatedEvent(shop));
+        
+        return shop;
+    }
+    
+    addEquipment(equipment: Equipment) {
+        this.equipment.push(equipment);
+        this.addDomainEvent(new EquipmentAddedEvent(this.id, equipment));
+    }
+    
+    addInstructor(instructor: Instructor) {
+        this.instructors.push(instructor);
+        this.addDomainEvent(new InstructorAddedEvent(this.id, instructor));
+    }
+    
+    // Business logic methods
+    assignInstructorToCourse(instructorId: string, courseId: string) {
+        const instructor = this.instructors.find(i => i.id === instructorId);
+        if (!instructor) {
+            throw new Error('Instructor not found');
+        }
+        
+        instructor.assignToCourse(courseId);
+    }
+    
+    // Query methods
+    getAvailableEquipment() {
+        return this.equipment.filter(e => e.isAvailable());
+    }
+    
+    getInstructorSchedule(instructorId: string) {
+        const instructor = this.instructors.find(i => i.id === instructorId);
+        return instructor ? instructor.getSchedule() : null;
+    }
+}
+```
