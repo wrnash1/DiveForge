@@ -7,26 +7,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Admin routes
-Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
-    Route::get('/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
-    Route::resource('users', App\Http\Controllers\Admin\UserController::class);
-    Route::resource('shops', App\Http\Controllers\Admin\DiveShopController::class);
-});
-
-// Redirect to appropriate dashboard after login
-Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', function () {
-        if (auth()->user()->isAdmin()) {
-            return redirect()->route('admin.dashboard');
-        }
-        return view('dashboard'); // Regular user dashboard
-    })->name('dashboard');
-});
-
-// Authentication routes
-require __DIR__.'/auth.php';
-
 // Installation routes - only active if not installed
 Route::middleware(['web'])->prefix('install')->name('installer.')->group(function () {
     Route::get('/', [InstallationController::class, 'showStep1'])->name('step1.show');
@@ -44,4 +24,22 @@ Route::middleware(['web'])->prefix('install')->name('installer.')->group(functio
     // AJAX endpoints
     Route::post('/test-database', [InstallationController::class, 'testDatabase'])->name('test.database');
     Route::get('/check-requirements', [InstallationController::class, 'checkRequirements'])->name('check.requirements');
+});
+
+// Basic auth routes for after installation
+Route::middleware('guest')->group(function () {
+    Route::get('login', function () {
+        return view('auth.login');
+    })->name('login');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+    
+    Route::post('logout', function () {
+        auth()->logout();
+        return redirect('/');
+    })->name('logout');
 });
