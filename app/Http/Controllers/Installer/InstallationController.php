@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\Installer;
 
+use Illuminate\Support\Arr;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
@@ -458,14 +459,14 @@ class InstallationController extends Controller
                 'message' => 'Database connection failed: ' . $this->getFriendlyDatabaseError($e),
                 'details' => [
                     'error_code' => $e->getCode(),
-                    'config' => array_except($config, ['db_password'])
+                    'config' => Arr::except($config, ['db_password'])
                 ]
             ];
         } catch (Exception $e) {
             return [
                 'success' => false,
                 'message' => 'Connection error: ' . $e->getMessage(),
-                'details' => ['config' => array_except($config, ['db_password'])]
+                'details' => ['config' => Arr::except($config, ['db_password'])]
             ];
         }
     }

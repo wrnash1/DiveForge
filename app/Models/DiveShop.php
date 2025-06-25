@@ -6,11 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class DiveShop extends Model
 {
-    //
-}
-// app/Models/DiveShop.php
-class DiveShop extends Model
-{
     protected $fillable = [
         'name', 'email', 'phone', 'address', 'website', 
         'timezone', 'currency', 'owner_id', 'is_active'

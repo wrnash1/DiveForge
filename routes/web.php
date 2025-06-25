@@ -1,5 +1,14 @@
-// routes/web.php
-Route::prefix('install')->name('installer.')->group(function () {
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Installer\InstallationController;
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+// Installation routes - only active if not installed
+Route::middleware(['web'])->prefix('install')->name('installer.')->group(function () {
     Route::get('/', [InstallationController::class, 'showStep1'])->name('step1.show');
     Route::post('/step1', [InstallationController::class, 'processStep1'])->name('step1.process');
     Route::get('/step2', [InstallationController::class, 'showStep2'])->name('step2.show');
@@ -15,4 +24,22 @@ Route::prefix('install')->name('installer.')->group(function () {
     // AJAX endpoints
     Route::post('/test-database', [InstallationController::class, 'testDatabase'])->name('test.database');
     Route::get('/check-requirements', [InstallationController::class, 'checkRequirements'])->name('check.requirements');
+});
+
+// Basic auth routes for after installation
+Route::middleware('guest')->group(function () {
+    Route::get('login', function () {
+        return view('auth.login');
+    })->name('login');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+    
+    Route::post('logout', function () {
+        auth()->logout();
+        return redirect('/');
+    })->name('logout');
 });
