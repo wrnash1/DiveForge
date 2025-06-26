@@ -45,3 +45,32 @@ Route::middleware(['web'])->prefix('install')->name('installer.')->group(functio
     Route::post('/test-database', [InstallationController::class, 'testDatabase'])->name('test.database');
     Route::get('/check-requirements', [InstallationController::class, 'checkRequirements'])->name('check.requirements');
 });
+
+// Include additional route files
+if (file_exists(__DIR__ . '/admin.php')) {
+    require __DIR__ . '/admin.php';
+}
+
+if (file_exists(__DIR__ . '/customer.php')) {
+    require __DIR__ . '/customer.php';
+}
+
+// API Routes
+Route::prefix('api/v1')->name('api.v1.')->group(function () {
+    Route::apiResource('courses', App\Http\Controllers\API\V1\CourseController::class);
+    Route::apiResource('equipment', App\Http\Controllers\API\V1\EquipmentController::class);
+    Route::apiResource('dive-sites', App\Http\Controllers\API\V1\DiveSiteController::class);
+    
+    Route::middleware('auth:sanctum')->group(function () {
+        Route::apiResource('customers', App\Http\Controllers\API\V1\CustomerController::class);
+        Route::post('bookings', [App\Http\Controllers\API\V1\BookingController::class, 'store']);
+        Route::get('bookings', [App\Http\Controllers\API\V1\BookingController::class, 'index']);
+    });
+});
+
+// Public API endpoints
+Route::prefix('api/public')->name('api.public.')->group(function () {
+    Route::get('courses', [App\Http\Controllers\API\V1\CourseController::class, 'index']);
+    Route::get('dive-sites', [App\Http\Controllers\API\V1\DiveSiteController::class, 'index']);
+    Route::get('equipment/available', [App\Http\Controllers\API\V1\EquipmentController::class, 'available']);
+});
