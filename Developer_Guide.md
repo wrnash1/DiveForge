@@ -1,28 +1,762 @@
-# DiveForge: Enterprise Dive Shop Management Application
-## Complete Technical Developer Guide
+# DiveForge: Enterprise Dive Shop Management Platform
+## Complete Developer Guide - Architecture Overview
 
 **Version 30** | **GPL v3 Licensed** | **Multi-Agency Universal Platform**
 
+## Missing Critical Features from DiveShop360.biz Analysis
+
+### **Equipment Repair & Service Management**
+
+#### **Comprehensive Repair Tracking**
+- **Work Order System**: Complete repair work order management with status tracking
+- **Parts Inventory**: Track repair parts inventory with automatic reordering
+- **Service History**: Complete service history for each piece of equipment
+- **Warranty Tracking**: Monitor warranty status and claim processing
+- **Labor Time Tracking**: Track technician time for accurate billing
+- **Customer Notifications**: Automated notifications for repair status updates
+- **Quality Control**: Post-repair testing and quality assurance protocols
+- **Recurring Service**: Schedule recurring maintenance and inspections
+
+#### **Equipment Servicing Revenue**
+- **Service Pricing**: Flexible pricing for different types of repairs
+- **Labor Rates**: Configurable labor rates by technician skill level
+- **Parts Markup**: Automatic markup on replacement parts
+- **Service Packages**: Bundled service packages and maintenance contracts
+- **Warranty Work**: Separate tracking for warranty vs. paid repairs
+- **Insurance Claims**: Integration with insurance for damage claims
+- **Service Reminders**: Automated service reminder notifications to customers
+
+### **Air Card & Gift Card Management**
+
+#### **Air Card System**
+- **Air Fill Tracking**: Track air fills and remaining balance on cards
+- **Nitrox Upgrades**: Premium pricing for nitrox fills vs. regular air
+- **Membership Tiers**: Different pricing tiers for frequent customers
+- **Bulk Discounts**: Volume discounts for air card purchases
+- **Expiration Management**: Track card expiration dates and renewals
+- **Multi-Location**: Use air cards across multiple shop locations
+- **Reporting**: Detailed reporting on air card usage and revenue
+
+#### **Gift Card System**
+- **Digital Gift Cards**: Email delivery of digital gift cards
+- **Physical Cards**: Integration with physical gift card printing
+- **Custom Denominations**: Flexible gift card amounts
+- **Promotional Cards**: Bonus value promotions (buy $100, get $120)
+- **Partial Usage**: Track partial gift card usage and remaining balances
+- **Refund Management**: Handle gift card refunds and exchanges
+- **Integration**: Use gift cards for courses, equipment, trips, and services
+
+### **Advanced Trip & Charter Management**
+
+#### **Destination Travel Management**
+- **Multi-Day Trips**: Complex multi-day dive trip planning and booking
+- **Accommodation Booking**: Hotel and resort booking integration
+- **Flight Coordination**: Flight booking and coordination with trips
+- **Travel Insurance**: Travel insurance options and sales
+- **Group Bookings**: Large group discount and coordination tools
+- **Travel Documents**: Passport, visa, and certification tracking
+- **Emergency Contacts**: International emergency contact information
+- **Currency Management**: Multi-currency pricing for international trips
+
+#### **Charter Boat Operations**
+- **Boat Scheduling**: Advanced boat scheduling with capacity management
+- **Crew Management**: Assign crew members to specific trips
+- **Route Planning**: GPS route planning and dive site selection
+- **Weather Integration**: Real-time weather monitoring and trip decisions
+- **Passenger Manifests**: Digital passenger check-in and manifests
+- **Coast Guard Reports**: Automated Coast Guard reporting compliance
+- **Emergency Procedures**: Digital emergency action plans
+- **Trip Insurance**: Trip cancellation and insurance management
+
+### **Advanced Course Management**
+
+#### **Flexible Course Scheduling**
+- **Multi-Session Courses**: Courses spanning multiple days/weeks
+- **Makeup Sessions**: Reschedule individual students for missed sessions
+- **Skills Tracking**: Individual student skill progression tracking
+- **Instructor Rotation**: Multiple instructors for different course components
+- **Theory vs. Practical**: Separate scheduling for classroom and pool/ocean
+- **Group vs. Private**: Flexible group and private instruction options
+- **Seasonal Courses**: Seasonal course scheduling and pricing
+- **International Standards**: Support for international course standards
+
+#### **Course Materials Management**
+- **Digital Materials**: Integration with agency digital learning platforms
+- **Physical Materials**: Track books, DVDs, and printed materials
+- **Material Kits**: Bundle materials with course registration
+- **Material Rentals**: Rent expensive materials like diving equipment
+- **Multi-Language**: Course materials in multiple languages
+- **Version Control**: Track material versions and updates
+- **Inventory Integration**: Automatic material inventory deduction
+- **Supplementary Materials**: Optional additional training materials
+
+### **Commission & Incentive Management**
+
+#### **Complex Commission Structures**
+- **Instructor Commissions**: Variable commission rates by course type
+- **Sales Commissions**: Equipment and trip sales commissions
+- **Tiered Commissions**: Progressive commission rates based on performance
+- **Group Commissions**: Shared commissions for team instruction
+- **Seasonal Adjustments**: Different commission rates by season
+- **Performance Bonuses**: Achievement-based bonus structures
+- **Override Commissions**: Management override commission structures
+- **Multi-Level**: Multi-level commission structures for referrals
+
+#### **Incentive Programs**
+- **Safety Incentives**: Bonuses for maintaining safety records
+- **Customer Satisfaction**: Rewards for high customer satisfaction scores
+- **Certification Completion**: Bonuses for successful certification rates
+- **Sales Targets**: Monthly and quarterly sales target incentives
+- **Retention Bonuses**: Rewards for long-term employment
+- **Training Incentives**: Bonuses for completing additional training
+- **Referral Programs**: Employee referral bonuses
+- **Team Performance**: Group performance incentives
+
+### **Advanced Inventory Features**
+
+#### **Vendor Catalog Integration**
+- **Pre-loaded Catalogs**: 80+ pre-loaded vendor catalogs with images
+- **Automated Updates**: Automatic price and inventory updates from vendors
+- **Drop Shipping**: Direct vendor shipping to customers
+- **Special Orders**: Handle special orders and back-orders
+- **Seasonal Catalogs**: Seasonal product catalogs and promotions
+- **Multi-Vendor**: Compare pricing across multiple vendors
+- **Automated Purchasing**: Automatic purchase order generation
+- **Catalog Synchronization**: Sync catalogs with e-commerce website
+
+#### **Advanced Product Management**
+- **Product Variants**: Size, color, and style variants
+- **Bundled Products**: Product bundles and kits
+- **Rental vs. Sale**: Same product available for both rental and sale
+- **Consignment Items**: Consignment inventory tracking
+- **Used Equipment**: Used equipment sales and trade-ins
+- **Serialized Inventory**: Serial number tracking for high-value items
+- **Lot Tracking**: Batch/lot tracking for items with expiration dates
+- **Cross-Selling**: Automatic cross-selling suggestions
+
+### **Customer Loyalty & Retention**
+
+#### **Advanced Loyalty Programs**
+- **Points System**: Earn points for purchases, courses, and referrals
+- **Tier Management**: Bronze, Silver, Gold, Platinum membership tiers
+- **Exclusive Benefits**: Tier-specific discounts and early access
+- **Birthday Programs**: Automated birthday specials and offers
+- **Anniversary Recognition**: Dive anniversary celebrations and rewards
+- **Referral Rewards**: Reward customers for successful referrals
+- **Social Media Integration**: Rewards for social media engagement
+- **Gamification**: Achievement badges and diving milestones
+
+#### **Customer Communication**
+- **Automated Email Campaigns**: Sophisticated email marketing automation
+- **SMS Marketing**: Text message marketing and notifications
+- **App Push Notifications**: Mobile app push notifications
+- **Review Management**: Automated review requests and management
+- **Newsletter Management**: Regular newsletter creation and distribution
+- **Event Invitations**: Automated event invitations and RSVPs
+- **Personalized Offers**: AI-powered personalized offers
+- **Win-Back Campaigns**: Re-engage inactive customers
+
+### **Financial Management Enhancements**
+
+#### **Advanced Accounting Features**
+- **Sales Tax Management**: Complex sales tax calculations and reporting
+- **Multi-Currency**: Handle multiple currencies for international business
+- **Payment Plans**: Flexible payment plans for expensive courses
+- **Layaway Programs**: Layaway programs for equipment purchases
+- **Credit Management**: Customer credit limits and payment terms
+- **Batch Processing**: Batch process credit card transactions
+- **Refund Management**: Complex refund and exchange processing
+- **Financial Reporting**: Advanced financial reporting and analytics
+
+#### **Integration Capabilities**
+- **QuickBooks Integration**: Seamless QuickBooks data synchronization
+- **Sage Integration**: Integration with Sage accounting software
+- **Xero Integration**: Cloud-based accounting integration
+- **Banking Integration**: Bank reconciliation and transaction import
+- **Payroll Integration**: Integration with payroll processing services
+- **Tax Software**: Integration with tax preparation software
+- **Insurance Systems**: Insurance claim processing integration
+- **Credit Card Processing**: Multiple payment processor options
+
+### **Advanced Reporting & Analytics**
+
+#### **Business Intelligence**
+- **Predictive Analytics**: AI-powered business forecasting
+- **Customer Analytics**: Customer behavior and lifetime value analysis
+- **Instructor Performance**: Detailed instructor performance metrics
+- **Seasonal Analysis**: Seasonal trend analysis and planning
+- **Profitability Analysis**: Product and service profitability analysis
+- **Market Analysis**: Market trends and competitive analysis
+- **Operational Efficiency**: Operational efficiency metrics and optimization
+- **ROI Tracking**: Return on investment tracking for marketing campaigns
+
+#### **Custom Reporting**
+- **Report Builder**: Drag-and-drop custom report builder
+- **Scheduled Reports**: Automated report generation and delivery
+- **Interactive Dashboards**: Real-time interactive business dashboards
+- **Mobile Reports**: Mobile-optimized reports and dashboards
+- **Export Options**: Multiple export formats (PDF, Excel, CSV)
+- **Data Visualization**: Charts, graphs, and visual analytics
+- **Benchmarking**: Industry benchmarking and comparison tools
+- **Compliance Reporting**: Regulatory compliance reporting tools
+
+### **Local Dive Site Integration & Management**
+
+#### **Comprehensive Dive Site Database**
+- **Site Profiles**: Detailed profiles for each local dive site with descriptions
+- **GPS Coordinates**: Precise location data with mapping integration
+- **Site Photography**: High-quality photos and underwater imagery
+- **Depth Information**: Maximum depth, average depth, and depth ranges
+- **Site Conditions**: Current conditions, visibility, temperature, and weather
+- **Difficulty Ratings**: Beginner, intermediate, advanced, and technical ratings
+- **Marine Life**: Common marine life and seasonal wildlife information
+- **Site Features**: Wrecks, reefs, walls, caves, and special attractions
+- **Access Information**: Boat access, shore access, parking, and facilities
+- **Safety Information**: Hazards, emergency procedures, and contact information
+
+#### **Interactive Dive Site Maps**
+- **Google Maps Integration**: Interactive maps showing all local dive sites
+- **Satellite Imagery**: High-resolution satellite and underwater mapping
+- **GPS Navigation**: Turn-by-turn navigation to dive sites
+- **Site Clustering**: Group nearby sites for easy browsing
+- **Distance Calculation**: Calculate distance from shop to dive sites
+- **Mobile Optimization**: Mobile-friendly maps for field use
+- **Offline Maps**: Downloadable maps for areas with poor cell coverage
+- **Custom Markers**: Different markers for different types of dive sites
+
+#### **Real-Time Conditions Integration**
+- **Weather APIs**: Live weather data for each dive site
+- **Tide Information**: Real-time tide charts and predictions
+- **Water Temperature**: Current and historical water temperature data
+- **Visibility Reports**: Community-reported visibility conditions
+- **Current Information**: Tidal currents and water movement data
+- **Wave Height**: Real-time wave and surf conditions
+- **Wind Conditions**: Wind speed and direction affecting site access
+- **Seasonal Updates**: Seasonal condition changes and recommendations
+
+#### **Customer Site Discovery**
+- **Site Finder**: Help customers find sites based on their certification level
+- **Skill-Based Recommendations**: Suggest sites appropriate for customer skills
+- **Interest Matching**: Match sites to customer interests (photography, marine life)
+- **Seasonal Recommendations**: Suggest best sites for current season
+- **Equipment Recommendations**: Recommend equipment needed for specific sites
+- **Certification Requirements**: Show required certifications for technical sites
+- **Group Size**: Optimal group sizes for different sites
+- **Best Times**: Optimal diving times and conditions for each site
+
+#### **Trip Planning Integration**
+- **Site-Based Trips**: Create dive trips centered around specific sites
+- **Multi-Site Trips**: Plan trips visiting multiple dive sites
+- **Certification Trips**: Plan trips suitable for certification courses
+- **Photography Trips**: Specialized trips for underwater photography
+- **Charter Integration**: Link sites to available charter boat services
+- **Equipment Planning**: Automatic equipment recommendations for planned sites
+- **Weather Contingency**: Alternative sites based on weather conditions
+- **Group Coordination**: Coordinate groups based on site requirements
+
+#### **Community Features**
+- **Dive Logs**: Allow customers to log dives at local sites
+- **Site Reviews**: Customer reviews and ratings for dive sites
+- **Photo Sharing**: Customer underwater photos from local sites
+- **Condition Reports**: Community-contributed condition reports
+- **Buddy Matching**: Connect divers planning to visit same sites
+- **Site Forums**: Discussion forums for each dive site
+- **Event Coordination**: Community-organized dive events at sites
+- **Local Knowledge**: Tips and advice from local experienced divers
+
+#### **Business Integration**
+- **Course Site Selection**: Link training courses to appropriate dive sites
+- **Equipment Rental**: Recommend rental equipment based on planned sites
+- **Site-Specific Gear**: Offer specialized gear for specific site types
+- **Guided Tours**: Offer guided tours to popular local sites
+- **Certification Sites**: Designate sites for different certification levels
+- **Safety Protocols**: Site-specific safety procedures and emergency plans
+- **Insurance Coverage**: Ensure insurance covers activities at each site
+- **Permit Requirements**: Track any required permits or fees for sites
+
+#### **Marketing & Promotion**
+- **Site Spotlights**: Feature different sites in marketing materials
+- **Social Media**: Share site conditions and photos on social media
+- **Newsletter Content**: Include site information in customer newsletters
+- **SEO Benefits**: Improve local search rankings with site content
+- **Tourist Attraction**: Attract visiting divers with local site information
+- **Seasonal Promotions**: Promote sites based on seasonal conditions
+- **Photography Contests**: Site-based underwater photography contests
+- **Dive Challenges**: Create diving challenges using local sites
+
+#### **Site Management Tools**
+- **Site Administration**: Admin tools for managing site information
+- **Bulk Updates**: Update multiple sites with seasonal information
+- **Content Management**: Manage photos, descriptions, and site data
+- **User Permissions**: Control who can update site information
+- **Version Control**: Track changes to site information over time
+- **Data Import**: Import site data from external databases
+- **API Integration**: Connect with external dive site databases
+- **Mobile Management**: Mobile tools for updating site information in field
+
+#### **Advanced Features**
+- **AR Integration**: Augmented reality features for site exploration
+- **VR Previews**: Virtual reality previews of dive sites
+- **3D Mapping**: Three-dimensional underwater site mapping
+- **Drone Integration**: Aerial photography and site surveys
+- **Scientific Data**: Integration with marine research data
+- **Conservation Info**: Marine conservation and protection information
+- **Historical Data**: Historical significance and underwater archaeology
+- **Training Integration**: Link sites to specific training exercises
+
+#### **Data Sources & Partnerships**
+- **NOAA Integration**: Weather and oceanographic data
+- **Marine Sanctuaries**: Integration with marine protected areas
+- **Local Authorities**: Partnerships with local marine authorities
+- **Dive Clubs**: Collaboration with local dive clubs and organizations
+- **Research Institutions**: Partnerships with marine research organizations
+- **Tourism Boards**: Integration with local tourism information
+- **Conservation Groups**: Partnerships with marine conservation organizations
+- **Charter Operators**: Collaboration with local charter boat operators
+
+#### **Mobile Application Features**
+- **Offline Access**: Download site information for offline use
+- **GPS Navigation**: Built-in GPS navigation to dive sites
+- **Condition Updates**: Real-time condition updates and alerts
+- **Photo Capture**: Easy photo capture and sharing from dive sites
+- **Dive Logging**: Digital dive log with automatic site information
+- **Emergency Features**: Emergency contact and location sharing
+- **Social Features**: Share dive plans and experiences with community
+- **Push Notifications**: Alerts for optimal diving conditions
+
+### **Commercial Account & B2B Management**
+
+#### **Business-to-Business Account System**
+- **Corporate Account Setup**: Comprehensive B2B account creation and management
+- **Business Verification**: Verify business legitimacy and credit worthiness
+- **Account Hierarchy**: Parent companies with multiple subsidiary accounts
+- **Multi-Location Support**: Single account across multiple business locations
+- **Account Representatives**: Assign dedicated sales reps to commercial accounts
+- **Credit Limits**: Establish and monitor credit limits for business accounts
+- **Payment Terms**: Flexible payment terms (Net 30, Net 60, etc.)
+- **Automatic Billing**: Automated monthly billing and statement generation
+
+#### **Tax Documentation Management**
+- **EIN Storage**: Secure storage of Employer Identification Numbers
+- **Tax Exemption Certificates**: Upload and manage tax exemption documents
+- **Resale Certificates**: Store resale certificates for wholesale accounts
+- **W-9 Forms**: Collect and store W-9 forms for tax reporting
+- **1099 Reporting**: Automatic 1099 generation for qualifying transactions
+- **Sales Tax Compliance**: Manage complex B2B sales tax scenarios
+- **Document Expiration**: Track document expiration dates with renewal alerts
+- **Audit Trail**: Complete audit trail for all tax-related documents
+
+#### **Employee Purchase Authorization**
+- **Authorized Buyer Lists**: Maintain lists of authorized purchasers per account
+- **Purchase Limits**: Set individual and aggregate purchase limits
+- **Approval Workflows**: Multi-level approval for large purchases
+- **Employee Verification**: Verify employee identity and authorization
+- **Department Budgets**: Track purchases by department or cost center
+- **Project Codes**: Assign purchases to specific projects or jobs
+- **Expense Categories**: Categorize purchases for business accounting
+- **Purchase Notifications**: Real-time notifications to account managers
+
+#### **Pricing and Discount Management**
+- **Tiered Pricing**: Volume-based pricing tiers for commercial accounts
+- **Contract Pricing**: Custom pricing based on negotiated contracts
+- **Employee Discounts**: Special pricing for employees of partner businesses
+- **Instructor Discounts**: Professional discounts for certified instructors
+- **Bulk Pricing**: Volume discounts for large quantity purchases
+- **Seasonal Contracts**: Seasonal pricing agreements and contracts
+- **Price Protection**: Protect customers from price increases during contract periods
+- **Competitive Pricing**: Track and match competitor pricing
+
+#### **Commercial Account Types**
+- **Dive Centers**: Other dive shops for equipment and supplies
+- **Dive Instructors**: Independent instructors and professionals
+- **Dive Clubs**: Diving clubs and organizations
+- **Resellers**: Equipment resellers and distributors
+- **Corporate Clients**: Companies with employee diving programs
+- **Educational Institutions**: Schools and universities with diving programs
+- **Government Agencies**: Coast Guard, Navy, research institutions
+- **Insurance Companies**: Insurance adjusters and investigators
+
+#### **Purchase Order Management**
+- **PO Processing**: Accept and process purchase orders from commercial accounts
+- **PO Matching**: Match invoices to purchase orders for accuracy
+- **Electronic PO**: Electronic purchase order submission and approval
+- **Blanket Orders**: Long-term purchase agreements with scheduled deliveries
+- **Drop Ship Orders**: Direct shipping to customer locations
+- **Back Order Management**: Handle partial shipments and back orders
+- **Order Tracking**: Real-time order status and tracking information
+- **Delivery Scheduling**: Schedule deliveries based on customer requirements
+
+#### **Credit Management**
+- **Credit Applications**: Online credit application and approval process
+- **Credit Checks**: Integration with credit reporting agencies
+- **Credit Monitoring**: Ongoing credit monitoring and alerts
+- **Collection Management**: Automated collection processes for overdue accounts
+- **Payment History**: Track payment patterns and history
+- **Risk Assessment**: Automated risk assessment and scoring
+- **Credit Limits**: Dynamic credit limit adjustments based on payment history
+- **Guarantee Requirements**: Personal or corporate guarantees for high-risk accounts
+
+#### **Invoicing and Billing**
+- **Custom Invoicing**: Branded invoices with business-specific formatting
+- **Consolidated Billing**: Combine multiple locations into single invoices
+- **Electronic Invoicing**: EDI and electronic invoice delivery
+- **Progress Billing**: Partial billing for large projects
+- **Recurring Billing**: Automated recurring charges for services
+- **Multi-Currency**: International B2B transactions and billing
+- **Custom Terms**: Flexible payment terms and conditions
+- **Late Fee Management**: Automated late fee calculations and notifications
+
+#### **Reporting and Analytics**
+- **Account Performance**: Detailed performance metrics for commercial accounts
+- **Purchase Analysis**: Analyze purchasing patterns and trends
+- **Profitability Reports**: Account profitability analysis and optimization
+- **Sales Rep Performance**: Track sales representative effectiveness
+- **Contract Compliance**: Monitor compliance with contract terms
+- **Tax Reporting**: Generate reports for tax compliance and auditing
+- **Credit Reports**: Credit utilization and payment performance reports
+- **Forecasting**: Predict future purchasing based on historical data
+
+#### **Contract Management**
+- **Contract Templates**: Standardized contract templates for different account types
+- **Digital Signatures**: Electronic contract signing and approval
+- **Contract Renewal**: Automated contract renewal notifications and processes
+- **Amendment Tracking**: Track contract amendments and modifications
+- **Compliance Monitoring**: Monitor compliance with contract terms
+- **Performance Metrics**: Track performance against contract commitments
+- **Penalty Management**: Manage penalties for contract violations
+- **Legal Review**: Workflow for legal review of contracts
+
+#### **Communication Tools**
+- **Account Portals**: Self-service portals for commercial account management
+- **Order Status**: Real-time order status and tracking
+- **Statement Access**: Online access to account statements and invoices
+- **Communication Logs**: Track all communications with commercial accounts
+- **Automated Notifications**: Automated notifications for account activities
+- **Escalation Procedures**: Automated escalation for account issues
+- **Account Reviews**: Schedule and track regular account reviews
+- **Feedback Collection**: Collect feedback from commercial accounts
+
+#### **Integration Capabilities**
+- **ERP Integration**: Integration with customer ERP systems
+- **EDI Support**: Electronic Data Interchange for large customers
+- **API Access**: Custom API access for system integration
+- **Procurement Systems**: Integration with customer procurement systems
+- **Accounting Software**: Integration with customer accounting systems
+- **Inventory Systems**: Real-time inventory visibility for customers
+- **Shipping Systems**: Integration with shipping and logistics providers
+- **Banking Systems**: Integration with banking for payment processing
+
+#### **Compliance and Security**
+- **Data Security**: Secure storage of sensitive business information
+- **Access Controls**: Role-based access to commercial account data
+- **GDPR Compliance**: European privacy regulation compliance
+- **SOX Compliance**: Sarbanes-Oxley compliance for public companies
+- **Industry Regulations**: Compliance with industry-specific regulations
+- **Audit Trails**: Comprehensive audit trails for all account activities
+- **Document Retention**: Automated document retention policies
+- **Backup and Recovery**: Secure backup and disaster recovery procedures
+
+#### **Mobile Capabilities**
+- **Mobile Apps**: Mobile access for authorized employees
+- **Order Placement**: Mobile order placement for field personnel
+- **Approval Workflows**: Mobile approval workflows for managers
+- **Expense Tracking**: Mobile expense tracking and reporting
+- **Photo Documentation**: Photo documentation for orders and deliveries
+- **GPS Tracking**: Location tracking for mobile orders
+- **Offline Capability**: Offline functionality for remote locations
+- **Push Notifications**: Real-time notifications for account activities
+
+#### **Advanced Features**
+- **AI-Powered Insights**: Artificial intelligence for account optimization
+- **Predictive Analytics**: Predict future purchasing and account needs
+- **Automated Recommendations**: Automated product recommendations
+- **Dynamic Pricing**: AI-driven dynamic pricing optimization
+- **Fraud Detection**: Advanced fraud detection and prevention
+- **Workflow Automation**: Automated workflows for account management
+- **Custom Dashboards**: Customizable dashboards for different user roles
+- **Performance Benchmarking**: Benchmark performance against industry standards
+
 ---
 
-DiveForge is an open source enterprise application designed for universal dive shop management.  
-All code, architecture, and features are developed and maintained under the GPL v3 license to ensure community ownership, transparency, and extensibility.
+## Critical Dive Shop Operations
 
-## Table of Contents
+### **Boat Operations & Maintenance Management**
 
-1. Executive Summary
-2. Open Source Development Foundation
-3. Modular Architecture Design
-4. Web-Based Installation System
-5. Multi-Agency Certification System
-6. DiveShop360.biz API Compatibility Layer
-7. Enterprise Application Architecture
-8. Database Architecture and Management
-9. Security Framework and Compliance
-10. Customer Portal Development
-11. Theme and Branding Systems
-12. Logging and Monitoring Systems
-13. Implementation Roadmap
+#### **Vessel Management System**
+- **Fleet Management**: Track multiple boats with individual maintenance schedules
+- **Engine Hour Tracking**: Automatic engine hour logging with maintenance intervals
+- **Fuel Management**: Track fuel consumption, costs, and efficiency metrics
+- **Safety Equipment**: Monitor life jackets, fire extinguishers, flares, and emergency equipment
+- **Hull Inspections**: Schedule and track hull cleaning, antifouling, and surveys
+- **Electronics Maintenance**: Track GPS, radio, sonar, and navigation equipment service
+- **Insurance and Registration**: Monitor insurance renewals, registrations, and certifications
+- **Coast Guard Compliance**: Track inspections and regulatory compliance requirements
+
+#### **Preventive Maintenance Scheduling**
+- **Service Intervals**: Customizable maintenance intervals based on hours, calendar, or usage
+- **Parts Inventory**: Track marine parts inventory with automatic reordering
+- **Maintenance History**: Complete service history with photos, receipts, and technician notes
+- **Seasonal Maintenance**: Haul-out schedules, winterization, and seasonal preparations
+- **Emergency Repairs**: Quick documentation of emergency repairs and temporary fixes
+- **Vendor Management**: Track marine service providers and preferred mechanics
+- **Cost Tracking**: Monitor maintenance costs, parts, labor, and operational expenses
+- **Downtime Minimization**: Optimize maintenance schedules to maximize boat availability
+
+#### **Operational Safety**
+- **Pre-Trip Inspections**: Digital checklists for captain and crew safety inspections
+- **Passenger Manifests**: Digital passenger check-in with emergency contact information
+- **Weather Integration**: Real-time weather monitoring with trip cancellation protocols
+- **Emergency Procedures**: Digital access to emergency procedures and contact information
+- **Incident Reporting**: Quick incident documentation with photos and witness statements
+- **Coast Guard Reporting**: Automated reporting for required incidents and accidents
+- **Crew Certification**: Track captain and crew certifications and renewal requirements
+- **Safety Drills**: Schedule and document safety drills and training
+
+### **Security Camera Integration**
+
+#### **Comprehensive Surveillance System**
+- **Multi-Location Monitoring**: Central monitoring of cameras across all dive shop locations
+- **Real-Time Viewing**: Live camera feeds accessible via web and mobile applications
+- **Motion Detection**: AI-powered motion detection with customizable sensitivity zones
+- **Facial Recognition**: Optional facial recognition for customer and staff identification
+- **Incident Investigation**: Quick access to recorded footage for incident investigation
+- **Remote Access**: Secure remote access for managers and security personnel
+- **Storage Management**: Configurable recording schedules and retention policies
+- **Privacy Compliance**: GDPR-compliant video storage with automatic deletion
+
+#### **Operational Integration**
+- **Equipment Monitoring**: Camera coverage of equipment areas and rental checkout
+- **Staff Performance**: Objective review of customer service and safety procedures
+- **Training Documentation**: Record training sessions for quality assurance
+- **Insurance Claims**: Video evidence for insurance claims and liability protection
+- **Theft Prevention**: Monitor high-value equipment and inventory areas
+- **After-Hours Monitoring**: Security monitoring when facility is closed
+- **Integration Alerts**: Connect camera system with other security systems
+- **Mobile Notifications**: Real-time alerts sent to staff mobile devices
+
+#### **Analytics and Reporting**
+- **Customer Traffic Patterns**: Analyze customer flow and peak usage times
+- **Operational Efficiency**: Monitor staff productivity and customer service quality
+- **Safety Compliance**: Verify safety procedures are being followed
+- **Equipment Usage**: Monitor equipment usage and maintenance needs
+- **Incident Trends**: Identify patterns in incidents or safety issues
+- **ROI Analysis**: Measure return on investment for security system
+- **Custom Reports**: Generate reports for management and insurance purposes
+- **Heat Maps**: Visual analysis of high-traffic and high-activity areas
+
+### **Student Validation & Requirements Management**
+
+#### **Course Prerequisites Validation**
+- **Multi-Agency Standards**: Validate requirements for PADI, SSI, TDI, NAUI, BSAC, GUE standards
+- **Automatic Verification**: System automatically checks prerequisite certifications
+- **Age Requirements**: Verify minimum age requirements for each course level
+- **Medical Clearance**: Ensure current medical clearance for applicable courses
+- **Experience Requirements**: Validate minimum dive experience and logged dives
+- **Skills Assessment**: Track completion of prerequisite skills and knowledge
+- **Instructor Authorization**: Verify instructor qualifications for specific courses
+- **Equipment Requirements**: Confirm student has required equipment for course
+
+#### **Dynamic Standards Engine**
+- **Agency-Specific Rules**: Configurable rules engine for different agency standards
+- **Course Customization**: Customize requirements for specialty and technical courses
+- **Equivalency Recognition**: Automatic recognition of equivalent certifications
+- **Override Capabilities**: Instructor override with documentation and approval workflow
+- **Standards Updates**: Automatic updates when agencies change course requirements
+- **Multi-Language Support**: Standards validation in multiple languages
+- **Documentation**: Complete audit trail of all validation decisions
+- **Quality Assurance**: Regular audits to ensure standards compliance
+
+#### **Skills and Knowledge Tracking**
+- **Progress Monitoring**: Track student progress through course requirements
+- **Skill Assessments**: Digital skills checklists with instructor sign-off
+- **Knowledge Reviews**: Integration with online learning platforms
+- **Remedial Training**: Identify students needing additional training
+- **Competency Validation**: Ensure all competencies are met before certification
+- **Performance Analytics**: Track student success rates and course effectiveness
+- **Instructor Feedback**: Collect and analyze instructor feedback on student performance
+- **Certification Readiness**: Automated assessment of certification readiness
+
+### **Digital Forms & Documentation Management**
+
+#### **Comprehensive Forms System**
+- **Digital Forms Library**: Complete library of diving industry forms and waivers
+- **E-Signature Integration**: Legally binding electronic signatures
+- **Multi-Language Forms**: Forms available in multiple languages
+- **Custom Form Builder**: Create custom forms for specific business needs
+- **Conditional Logic**: Dynamic forms that adapt based on student responses
+- **Mobile Optimization**: Forms optimized for tablets and mobile devices
+- **Offline Capability**: Complete forms offline and sync when connected
+- **Version Control**: Track form versions and updates automatically
+
+#### **Legal Compliance & Validation**
+- **Required Forms Checklist**: Ensure all required forms are completed before training
+- **Age-Appropriate Forms**: Different forms for minors vs. adults
+- **Witness Requirements**: Electronic witness signatures where required
+- **Notarization Integration**: Integration with digital notarization services
+- **Legal Review Workflow**: Route forms for legal review when required
+- **Compliance Tracking**: Monitor compliance with local and international laws
+- **Audit Trail**: Complete audit trail of all form completion and signatures
+- **Document Retention**: Automatic document retention per legal requirements
+
+#### **Student Information Management**
+- **Medical Information**: Secure storage of medical questionnaires and clearances
+- **Emergency Contacts**: Comprehensive emergency contact information
+- **Insurance Information**: Track student insurance and coverage details
+- **Communication Preferences**: Student preferences for communication methods
+- **Special Needs**: Track any special accommodations or requirements
+- **Previous Experience**: Complete diving history and experience records
+- **Certification Goals**: Track student certification goals and pathways
+- **Privacy Settings**: Granular privacy controls for student information
+
+### **Photography & Social Media Integration**
+
+#### **Student Photography System**
+- **Certification Photos**: Professional photo capture for certification cards
+- **Photo Quality Standards**: Ensure photos meet agency requirements for certification
+- **Batch Processing**: Process multiple student photos efficiently
+- **Photo Editing Tools**: Basic editing tools for cropping, lighting, and background
+- **Background Removal**: AI-powered background removal for consistent certification photos
+- **Multiple Formats**: Generate photos in different formats for various agencies
+- **Photo Storage**: Secure storage of student photos with privacy protection
+- **Backup and Recovery**: Automatic backup of all student photos
+
+#### **Privacy and Consent Management**
+- **Granular Consent**: Detailed consent options for different types of media usage
+- **Social Media Consent**: Specific consent for social media posting and marketing
+- **Photo Release Forms**: Digital photo release forms with clear usage rights
+- **Minor Consent**: Parental consent management for students under 18
+- **Consent Withdrawal**: Easy process for students to withdraw consent
+- **Consent Tracking**: Complete audit trail of all consent decisions
+- **Privacy Settings**: Individual privacy settings for each student
+- **GDPR Compliance**: Full compliance with European privacy regulations
+
+#### **Social Media Automation**
+- **Achievement Posts**: Automatic congratulatory posts for course completions
+- **Custom Messaging**: Personalized messages for different achievement levels
+- **Multi-Platform Posting**: Support for Facebook, Instagram, Twitter, LinkedIn
+- **Scheduling**: Schedule posts for optimal engagement times
+- **Photo Integration**: Include student photos (with consent) in achievement posts
+- **Hashtag Management**: Automatic hashtag generation for better reach
+- **Engagement Tracking**: Monitor likes, comments, and engagement on posts
+- **ROI Measurement**: Track marketing ROI from social media activities
+
+#### **Content Management**
+- **Template Library**: Pre-designed templates for different types of achievements
+- **Brand Consistency**: Ensure all posts align with dive shop branding
+- **Approval Workflow**: Optional approval process before posts go live
+- **Content Calendar**: Plan and schedule social media content in advance
+- **Performance Analytics**: Analyze which types of posts perform best
+- **Student Spotlights**: Feature successful students and their diving journeys
+- **Instructor Recognition**: Highlight instructor achievements and milestones
+- **Community Building**: Foster online community engagement and interaction
+
+### **Advanced Student Management Features**
+
+#### **Student Lifecycle Tracking**
+- **Initial Inquiry**: Track student from first contact through certification
+- **Course Progression**: Monitor progression through multiple certification levels
+- **Skills Development**: Track skill development and areas for improvement
+- **Instructor Relationships**: Track which instructors work best with specific students
+- **Learning Preferences**: Identify and accommodate different learning styles
+- **Success Metrics**: Measure student success rates and satisfaction scores
+- **Alumni Network**: Maintain relationships with certified divers
+- **Continuing Education**: Promote advanced courses and specialty training
+
+#### **Quality Assurance**
+- **Standards Compliance**: Ensure all training meets agency standards
+- **Instructor Performance**: Monitor instructor effectiveness and student outcomes
+- **Course Evaluation**: Collect and analyze student feedback on courses
+- **Continuous Improvement**: Use data to continuously improve training programs
+- **Safety Monitoring**: Track safety incidents and implement improvements
+- **Certification Success**: Monitor certification success rates by course and instructor
+- **Student Satisfaction**: Regular satisfaction surveys and feedback collection
+- **Industry Benchmarking**: Compare performance against industry standards
+
+---
+
+## Critical Dive Shop Operations
+
+### **Compressor Operations Management**
+
+#### **Compressor Hour Tracking**
+- **Automatic Hour Logging**: Digital hour meters with automatic data collection
+- **Run-Time Analytics**: Track daily, weekly, monthly usage patterns
+- **Efficiency Monitoring**: Monitor fill times and pressure consistency
+- **Load Balancing**: Distribute usage across multiple compressors
+- **Cost Analysis**: Calculate cost per fill and operating expenses
+- **Usage Reporting**: Generate usage reports for management and regulatory purposes
+
+#### **Oil Change Management**
+- **Oil Life Tracking**: Monitor oil condition based on hours and usage
+- **Change Intervals**: Customizable oil change intervals by compressor model
+- **Oil Quality Testing**: Track oil analysis results and contamination levels
+- **Inventory Management**: Track oil stock levels and automatic reordering
+- **Service Scheduling**: Automated scheduling of oil changes with technician assignment
+- **Cost Tracking**: Monitor oil costs and disposal fees
+- **Environmental Compliance**: Track used oil disposal and recycling
+- **Maintenance History**: Complete history of all oil changes with photos and notes
+
+#### **Air Filter Management**
+- **Filter Condition Monitoring**: Track filter condition and replacement intervals
+- **Pressure Drop Tracking**: Monitor pressure drop across filters
+- **Multi-Stage Filtering**: Manage complex multi-stage filtration systems
+- **Filter Type Management**: Track different filter types and specifications
+- **Replacement Scheduling**: Automated filter replacement reminders
+- **Inventory Control**: Track filter stock and automatic reordering
+- **Performance Impact**: Monitor how filter condition affects air quality
+- **Cost Analysis**: Track filter costs and replacement frequency
+
+#### **Air Quality Monitoring**
+- **Moisture Content**: Continuous monitoring of air moisture levels
+- **Contamination Detection**: Monitor for oil carry-over and other contaminants
+- **CO Monitoring**: Carbon monoxide detection and alerting
+- **Breathing Air Standards**: Ensure compliance with breathing air quality standards
+- **Test Scheduling**: Regular air quality testing and certification
+- **Documentation**: Maintain records for regulatory compliance
+- **Alert Systems**: Immediate alerts for air quality issues
+- **Customer Safety**: Ensure safe breathing air for all customers
+
+### **Nitrox Operations Management**
+
+#### **Analyzer Calibration System**
+- **Calibration Scheduling**: Track calibration intervals for all analyzers
+- **Calibration History**: Complete history of calibrations with results
+- **Accuracy Testing**: Regular accuracy verification against reference gases
+- **Drift Monitoring**: Track sensor drift between calibrations
+- **Multi-Point Calibration**: Support for multi-point calibration procedures
+- **Technician Assignment**: Assign qualified technicians for calibrations
+- **Certification Tracking**: Track analyzer certifications and approvals
+- **Documentation**: Generate calibration certificates and reports
+
+#### **Gas Analysis Logging**
+- **Test Result Recording**: Log all nitrox blend test results with timestamps
+- **Batch Tracking**: Track gas blends by batch number and date
+- **Customer Verification**: Allow customers to witness and verify their gas analysis
+- **Quality Control**: Automatic alerts for out-of-specification gas mixtures
+- **Trend Analysis**: Track analyzer performance and gas quality trends
+- **Regulatory Compliance**: Maintain records for regulatory inspections
+- **Chain of Custody**: Complete traceability from blending to customer
+- **Integration**: Connect with gas blending systems and customer records
+
+#### **Analyzer Maintenance**
+- **Sensor Life Tracking**: Monitor oxygen sensor lifespan and replacement schedules
+- **Performance Monitoring**: Track analyzer accuracy and response time
+- **Maintenance Scheduling**: Automated maintenance reminders and scheduling
+- **Spare Parts Management**: Track sensor inventory and replacement parts
+- **Service History**: Complete maintenance history with parts and labor
+- **Technician Certification**: Ensure only qualified technicians perform maintenance
+- **Cost Tracking**: Monitor maintenance costs and sensor replacement frequency
+- **Downtime Minimization**: Optimize maintenance schedules to minimize downtime
+
+#### **Gas Blending Integration**
+- **Blend Recipe Management**: Store and manage nitrox blend recipes
+- **Automatic Analysis**: Integration between blending systems and analyzers
+- **Quality Assurance**: Mandatory analysis before gas delivery to customers
+- **Blend Verification**: Compare target vs. actual gas mixtures
+- **Customer Records**: Link gas analysis to customer dive logs and certifications
+- **Training Integration**: Connect to nitrox certification courses
+- **Safety Protocols**: Enforce safety procedures for gas handling
+- **Regulatory Reporting**: Generate reports for regulatory compliance
 
 ---
 
@@ -34,3047 +768,658 @@ DiveForge is the first truly universal dive shop management platform designed to
 Break down artificial barriers between diving certification agencies while providing dive shops with unprecedented flexibility, comprehensive functionality, and enterprise-grade security.
 
 ### Key Differentiators
-- Universal Agency Support: PADI, SSI, TDI/SDI, NAUI, BSAC, GUE, IANTD, RAID, and 20+ regional agencies
-- GPL v3 Freedom: Community ownership preventing vendor lock-in
-- Enterprise Security: PCI DSS and GDPR compliance with comprehensive audit trails
-- Migration Ready: Seamless transition from DiveShop360.biz and other existing systems
-- Plugin Architecture: Community-driven extensibility
+- **Universal Agency Support**: PADI, SSI, TDI/SDI, NAUI, BSAC, GUE, IANTD, RAID, and 20+ regional agencies
+- **GPL v3 Freedom**: Community ownership preventing vendor lock-in
+- **Enterprise Security**: PCI DSS and GDPR compliance with comprehensive audit trails
+- **Migration Ready**: Seamless transition from DiveShop360.biz and other existing systems
+- **Plugin Architecture**: Community-driven extensibility
 
 ---
 
-## Open Source Development Foundation
+## System Architecture
 
-DiveForge is governed by a community-driven model, with a Project Steering Committee, Community Council, and Working Groups. All contributors have a voice in the direction and development of the platform.
+### **Multi-Tenant Enterprise Architecture**
 
-### License Benefits
-- User Freedom: Four essential freedoms guaranteed
-- Patent Protection: Robust patent grants protecting against litigation
-- Anti-Tivoization: Hardware restrictions prevention
-- Community Ownership: Democratic governance and development
+#### **Tenant Management**
+- **Tenant Isolation**: Complete data and resource isolation per dive shop
+- **Subscription Tiers**: Basic, Professional, Enterprise, Franchise levels
+- **Scalability**: Automatic scaling based on usage and subscription tier
+- **Billing Integration**: Usage-based billing with multiple payment methods
+- **Feature Flags**: Conditional feature access based on subscription level
 
----
+#### **Database Architecture**
+- **Multi-Database Support**: PostgreSQL (recommended), MySQL/MariaDB, SQLite, SQL Server
+- **Schema per Tenant**: Isolated database schemas for enterprise clients
+- **Shared Resources**: Common resources (agency data, regulations) shared across tenants
+- **Data Encryption**: Encryption at rest and in transit
+- **Backup Strategy**: Automated backups with point-in-time recovery
 
-## Modular Architecture Design
-
-DiveForge uses a modular, plugin-based architecture to ensure extensibility, maintainability, and scalability for enterprise deployments. All modules and plugins are GPL v3 licensed.
-
----
-
-## Web-Based Installation System
-
-DiveForge provides a user-friendly, web-based installation wizard for easy setup and configuration, supporting multiple database systems and enterprise-grade security options.
-
----
-
-## Multi-Agency Certification System
-
-DiveForge supports all major diving certification agencies through a unified, standards-based integration framework, enabling seamless management of certifications, instructors, and customers.
+#### **Application Architecture**
+- **Modular Monolith**: Default architecture for most deployments
+- **Microservices Option**: Available for large-scale enterprise deployments
+- **API-First Design**: RESTful APIs with GraphQL for complex queries
+- **Event-Driven Architecture**: Asynchronous processing for background tasks
+- **Caching Strategy**: Multi-level caching for performance optimization
 
 ---
 
-## DiveShop360.biz API Compatibility Layer
+## Core Business Modules
 
-DiveForge includes a compatibility layer for smooth migration from DiveShop360.biz and other legacy systems, ensuring data integrity and business continuity.
+### **1. Universal Agency Integration**
+
+#### **Supported Agencies**
+- **PADI**: Professional Association of Diving Instructors (6.6M+ certified divers)
+- **SSI**: Scuba Schools International (3M+ certified, digital-first approach)
+- **TDI/SDI**: Technical Diving International (technical diving focus)
+- **NAUI**: National Association of Underwater Instructors (flexible standards)
+- **BSAC**: British Sub-Aqua Club (club-based diving)
+- **GUE**: Global Underwater Explorers (team-based technical diving)
+- **IANTD**: International Association of Nitrox and Technical Divers
+- **RAID**: Rebreather Association of International Divers
+- **20+ Regional Agencies**: Local and specialized certification bodies
+
+#### **Agency Integration Features**
+- **Certification Processing**: Automated submission and tracking
+- **Standards Compliance**: Agency-specific requirement validation
+- **Cross-Agency Equivalencies**: Automatic certification level mapping
+- **Digital Certification**: Support for digital cards and verification
+- **Instructor Validation**: Real-time instructor credential verification
+- **Course Material Integration**: Agency-specific training materials
+
+### **2. Customer Management System**
+
+#### **Customer Profiles**
+- **Personal Information**: Contact details, demographics, preferences
+- **Medical Records**: Medical clearance, restrictions, emergency contacts
+- **Certification History**: Multi-agency certification tracking
+- **Equipment Preferences**: Size charts, rental history, purchase history
+- **Dive Log Integration**: Digital dive log with automatic data import
+- **Communication Preferences**: Email, SMS, app notifications
+- **Loyalty Program**: Points, rewards, referral tracking
+
+#### **Customer Portal**
+- **Self-Service Access**: Certification viewing, booking, payments
+- **Digital Wallet**: Certification cards with QR codes
+- **Progress Tracking**: Course completion, skill development
+- **Equipment Management**: Rental reservations, service reminders
+- **Trip Booking**: Dive trip reservations and payments
+- **Community Features**: Forums, photo sharing, dive buddy matching
+
+### **3. Course & Certification Management**
+
+#### **Course Catalog**
+- **Multi-Agency Courses**: Support for all major certification agencies
+- **Course Scheduling**: Instructor availability, student capacity management
+- **Prerequisites**: Automatic validation of course prerequisites
+- **Pricing Management**: Flexible pricing with discounts and packages
+- **Online Learning**: Integration with agency e-learning platforms
+- **Skill Tracking**: Student progress monitoring and assessment
+
+#### **Certification Processing**
+- **Automated Workflows**: From enrollment to certification issuance
+- **Quality Assurance**: Multi-step verification process
+- **Agency Submission**: Automatic submission to certification agencies
+- **Digital Certificates**: Instant digital certification delivery
+- **Verification System**: QR code and blockchain verification
+- **Renewal Management**: Automatic renewal reminders and processing
+
+### **4. Equipment & Inventory Management**
+
+#### **Inventory Control**
+- **Multi-Location Support**: Track inventory across multiple locations
+- **Real-Time Updates**: Automatic inventory updates across all channels
+- **Predictive Analytics**: Demand forecasting and automatic reordering
+- **Supplier Integration**: Direct integration with equipment suppliers
+- **Barcode Scanning**: Mobile scanning for quick inventory updates
+#### **Automated Product Image Management**
+- **Web Scraping Integration**: Automatically search and retrieve product images from manufacturer websites
+- **Multiple Search Sources**: Google Images, manufacturer catalogs, diving gear databases
+- **Image Quality Filtering**: AI-powered selection of high-quality, relevant images
+- **Brand Recognition**: Automatically identify and match brand logos and product models
+- **Image Optimization**: Automatic resizing, compression, and format optimization
+- **Legal Compliance**: Respect robots.txt and copyright restrictions
+- **Manual Override**: Staff can manually select or upload preferred images
+- **Bulk Processing**: Process large inventories automatically during setup
+- **Regular Updates**: Periodic refresh of product images to maintain current catalogs
+- **Fallback System**: Default placeholder images when automated search fails
+
+#### **Visual Inventory Features**
+- **Rich Product Galleries**: Multiple images per product with zoom functionality
+- **360-Degree Views**: Support for 360-degree product photography
+- **Size Comparison**: Visual size charts and comparison tools
+- **Color Variations**: Display different color options for products
+- **In-Use Photos**: Show equipment being used in diving scenarios
+- **Customer Photos**: Allow customers to upload photos of rented/purchased equipment
+- **AR Integration**: Augmented reality try-on features for masks and equipment
+- **Video Support**: Product demonstration videos and tutorials
+- **Automated Image Search**: Internet-based product image retrieval for customer display
+- **Visual Catalog**: Rich product galleries with multiple images per item
+- **Image Recognition**: AI-powered product identification from photos
+
+#### **Rental Management**
+- **Availability Tracking**: Real-time equipment availability
+- **Size Optimization**: AI-powered size recommendations
+- **Maintenance Scheduling**: Automated service reminders
+- **Damage Assessment**: Photo-based damage reporting
+- **Cleaning Protocols**: Sanitization tracking and compliance
+- **Insurance Integration**: Automatic damage claim processing
+
+#### **Compressor Management System**
+- **Hour Tracking**: Automatic compressor run-time monitoring
+- **Oil Change Scheduling**: Track oil change intervals and send alerts
+- **Air Filter Management**: Monitor filter condition and replacement schedules
+- **Maintenance Logs**: Complete maintenance history with parts and labor costs
+- **Performance Monitoring**: Track fill times, pressure consistency, moisture levels
+- **Service Alerts**: Automated notifications for scheduled maintenance
+- **Regulatory Compliance**: Track inspections and certifications
+- **Multi-Compressor Support**: Manage multiple compressors with individual schedules
+- **Cost Tracking**: Monitor operating costs per hour and per fill
+- **Failure Prediction**: Predictive maintenance based on usage patterns
+
+#### **Nitrox Analyzer Management**
+- **Calibration Tracking**: Monitor analyzer calibration schedules and accuracy
+- **Test Result Logging**: Record all nitrox blend test results with timestamps
+- **Analyzer Maintenance**: Track sensor replacement and service intervals
+- **Compliance Documentation**: Maintain records for regulatory inspections
+- **Quality Control**: Alert system for out-of-spec gas mixtures
+- **Multi-Analyzer Support**: Manage multiple analyzers across locations
+- **Integration with Blending**: Connect analyzer results to gas blending operations
+- **Customer Verification**: Allow customers to verify their gas mixes
+- **Traceability**: Complete chain of custody for gas analysis
+- **Reporting**: Generate compliance reports for regulatory bodies
+
+#### **Advanced Equipment Monitoring**
+- **IoT Integration**: Connect smart sensors to equipment for real-time monitoring
+- **Preventive Maintenance**: AI-driven maintenance scheduling based on usage patterns
+- **Equipment Lifecycle**: Track equipment from purchase to disposal
+- **Warranty Management**: Monitor warranty status and claim processing
+- **Performance Analytics**: Analyze equipment performance and reliability
+- **Energy Monitoring**: Track power consumption and operating costs
+- **Remote Monitoring**: Monitor critical equipment remotely via mobile apps
+- **Alert Systems**: Multiple alert channels (email, SMS, app notifications)
+- **Integration Dashboard**: Central dashboard for all equipment status
+
+### **5. Booking & Scheduling System**
+
+#### **Course Scheduling**
+- **Instructor Management**: Availability, certifications, specializations
+- **Student-Instructor Ratios**: Agency-specific ratio enforcement
+- **Resource Allocation**: Pool time, boat trips, equipment assignments
+- **Weather Integration**: Automatic rescheduling based on conditions
+- **Capacity Management**: Automatic overbooking prevention
+- **Calendar Integration**: Sync with popular calendar applications
+
+#### **Trip Management**
+- **Dive Site Database**: Comprehensive dive site information
+- **Condition Monitoring**: Real-time weather and water conditions
+- **Participant Management**: Certification requirements, experience levels
+- **Equipment Logistics**: Rental equipment for trips
+- **Safety Protocols**: Emergency procedures and contact information
+- **Photo/Video Services**: Professional underwater photography
 
 ---
 
-## Enterprise Application Architecture
+## Financial Management
 
-DiveForge is designed as a modular monolith for most deployments, with support for microservices and hybrid architectures as needed. The platform emphasizes data consistency, security, and operational simplicity.
+### **Comprehensive Accounting System**
+
+#### **Chart of Accounts**
+- **Dive Shop Specific**: Tailored for diving industry operations
+- **Multi-Currency Support**: Handle international customers and suppliers
+- **Agency-Specific Tracking**: Revenue tracking by certification agency
+- **Equipment Categories**: Separate tracking for rental vs. retail equipment
+- **Course Revenue**: Detailed tracking by course type and agency
+- **Seasonal Adjustments**: Handle seasonal business variations
+
+#### **Revenue Management**
+- **Course Fees**: Automated billing for certification courses
+- **Equipment Rental**: Hourly, daily, weekly rental calculations
+- **Equipment Sales**: Retail inventory management and sales
+- **Trip Revenue**: Dive trip bookings and additional services
+- **Certification Fees**: Agency processing fees and administration
+- **Ancillary Services**: Equipment servicing, private instruction
+
+#### **Expense Tracking**
+- **Instructor Wages**: Hourly wages, bonuses, commissions
+- **Equipment Maintenance**: Service costs, parts, labor
+- **Agency Fees**: Certification processing and annual fees
+- **Boat Operations**: Fuel, maintenance, insurance, dock fees
+- **Facility Costs**: Rent, utilities, insurance, equipment leases
+- **Marketing Expenses**: Advertising, website, social media
+
+### **Advanced Payroll System**
+
+#### **Dive Industry Payroll Features**
+- **Certification Bonuses**: Bonuses for successful certifications
+- **Safety Incentives**: Rewards for maintaining safety records
+- **Customer Satisfaction**: Performance-based bonuses
+- **Equipment Care**: Incentives for proper equipment handling
+- **Commission Tracking**: Sales commissions on courses and equipment
+- **Seasonal Adjustments**: Handle seasonal employment patterns
+
+#### **Compliance Management**
+- **Multi-Jurisdiction**: Support for different tax jurisdictions
+- **Labor Law Compliance**: Industry-specific labor regulations
+- **Insurance Integration**: Worker's compensation and liability
+- **Instructor Certification**: Track instructor credential validity
+- **Background Check**: Manage required background checks
+- **Drug Testing**: Compliance with safety regulations
 
 ---
 
-## Database Architecture and Management
+## Human Resources Management
 
-DiveForge supports multiple database backends (PostgreSQL, MySQL/MariaDB, SQLite, SQL Server) and provides robust schema management, migrations, and backup/restore capabilities. Enterprise deployments benefit from high-availability options and automated maintenance tools.
+### **Staff Management**
+
+#### **Employee Profiles**
+- **Certification Tracking**: Instructor certifications and renewals
+- **Skill Assessments**: Regular competency evaluations
+- **Training Records**: Continuing education and skill development
+- **Performance Metrics**: Customer satisfaction, safety records
+- **Availability Management**: Scheduling preferences and availability
+- **Emergency Procedures**: Certification in emergency response
+
+#### **Performance Management**
+- **Dive-Specific KPIs**: Certifications issued, customer satisfaction
+- **Safety Metrics**: Incident rates, near-miss reporting
+- **Sales Performance**: Course sales, equipment sales, upselling
+- **Customer Service**: Response times, complaint resolution
+- **Team Collaboration**: Peer evaluations and team projects
+- **Professional Development**: Continuing education progress
+
+### **Training & Development**
+
+#### **Instructor Development**
+- **Certification Pathways**: Clear progression paths for staff
+- **Mentorship Programs**: Experienced instructor guidance
+- **Skill Development**: Specialized training opportunities
+- **Cross-Training**: Multi-agency certification support
+- **Leadership Development**: Management and business skills
+- **Safety Training**: Regular safety protocol updates
+
+#### **Compliance Training**
+- **Regulatory Updates**: Current diving regulations and standards
+- **Equipment Training**: Proper use and maintenance procedures
+- **Emergency Procedures**: First aid, CPR, rescue techniques
+- **Customer Service**: Professional service standards
+- **Environmental Awareness**: Marine conservation and protection
+- **Business Ethics**: Professional conduct and ethics
 
 ---
 
-## Security Framework and Compliance
+## Customer Relationship Management
 
-DiveForge implements enterprise-grade security, including role-based access control, multi-factor authentication, encryption at rest and in transit, and comprehensive audit logging. The platform is designed to meet PCI DSS and GDPR requirements, with regular security reviews and community oversight.
+### **Advanced CRM Features**
+
+#### **Customer Segmentation**
+- **Experience Level**: Beginner, intermediate, advanced, professional
+- **Spending Behavior**: Budget, premium, luxury customer segments
+- **Engagement Level**: Active, occasional, dormant customers
+- **Geographic Location**: Local, tourist, international customers
+- **Agency Preference**: Customers aligned with specific agencies
+- **Interest Categories**: Technical, recreational, photography, conservation
+
+#### **Marketing Automation**
+- **Email Campaigns**: Automated email sequences for different segments
+- **SMS Marketing**: Time-sensitive offers and reminders
+- **Social Media Integration**: Automated posting and engagement
+- **Referral Programs**: Customer referral tracking and rewards
+- **Loyalty Programs**: Points-based rewards and tier benefits
+- **Review Management**: Automated review requests and responses
+
+### **Customer Journey Management**
+
+#### **Lifecycle Stages**
+- **Prospect**: Initial interest, inquiries, trial experiences
+- **New Customer**: First course, equipment rental, basic services
+- **Developing Diver**: Multiple certifications, equipment purchases
+- **Advanced Diver**: Specialty courses, technical diving, trips
+- **Brand Ambassador**: Referrals, reviews, community engagement
+- **Instructor Candidate**: Professional development pathway
+
+#### **Touchpoint Optimization**
+- **Website Interaction**: Browsing behavior, conversion tracking
+- **In-Store Experience**: Service quality, wait times, satisfaction
+- **Course Delivery**: Instruction quality, materials, facilities
+- **Equipment Service**: Rental experience, maintenance, sales
+- **Trip Participation**: Dive trips, group activities, social events
+- **Digital Engagement**: App usage, social media, email interaction
 
 ---
 
-## Customer Portal Development
+## Supply Chain & Vendor Management
 
-DiveForge offers a customizable customer portal, enabling self-service access to certifications, bookings, payments, and communication. The portal is mobile-friendly, supports multiple languages, and can be branded to match the dive shop's identity.
+### **Procurement System**
+
+#### **Vendor Management**
+- **Supplier Evaluation**: Performance metrics, quality ratings
+- **Contract Management**: Terms, pricing, renewal tracking
+- **Purchase Order Processing**: Automated PO generation and tracking
+- **Inventory Planning**: Demand forecasting and stock optimization
+- **Quality Assurance**: Incoming inspection and quality control
+- **Payment Processing**: Automated payment terms and processing
+
+#### **Supplier Integration**
+- **EDI Integration**: Electronic data interchange with suppliers
+- **Catalog Management**: Automated product catalog updates
+- **Pricing Updates**: Real-time pricing and availability
+- **Drop Shipping**: Direct customer shipment coordination
+- **Returns Management**: Defective product return processing
+- **Rebate Tracking**: Manufacturer rebate and incentive tracking
+
+### **Inventory Optimization**
+
+#### **Demand Forecasting**
+- **Seasonal Patterns**: Account for seasonal diving activity
+- **Course Schedules**: Align inventory with course calendars
+- **Weather Impacts**: Adjust for weather-related demand changes
+- **Economic Factors**: Consider economic impacts on spending
+- **Competitive Analysis**: Monitor competitor pricing and promotions
+- **Customer Behavior**: Track customer purchasing patterns
+
+#### **Stock Management**
+- **Safety Stock**: Maintain appropriate safety stock levels
+- **Reorder Points**: Automated reorder point calculations
+- **Economic Order Quantities**: Optimize order quantities for cost
+- **ABC Analysis**: Prioritize inventory based on value and velocity
+- **Obsolescence Management**: Identify and manage slow-moving stock
+- **Multi-Location**: Coordinate stock across multiple locations
 
 ---
 
-## Theme and Branding Systems
+## Technology Infrastructure
 
-DiveForge includes a flexible theming and branding system, allowing dive shops to customize the look and feel of both the admin dashboard and customer portal. Themes can be extended or created by the community, ensuring a unique and professional appearance.
+### **Frontend Architecture**
+
+#### **Customer-Facing Website**
+- **WordPress-like Theme System**: Customizable themes for dive shops
+- **Plugin Architecture**: Extensible functionality through plugins
+- **Mobile-First Design**: Responsive design for all devices
+- **Progressive Web App**: Native app-like experience
+- **Multi-Language Support**: Localization for global markets
+- **SEO Optimization**: Search engine optimization for visibility
+
+#### **Staff Interface (POS)**
+- **Point of Sale System**: Complete transaction processing
+- **Inventory Management**: Real-time inventory tracking
+- **Customer Lookup**: Quick customer information access
+- **Equipment Checkout**: Streamlined rental process
+- **Reporting Dashboard**: Real-time business metrics
+- **Mobile Support**: Tablet and mobile device support
+
+### **Backend Architecture**
+
+#### **API Design**
+- **RESTful APIs**: Standard REST endpoints for all operations
+- **GraphQL Support**: Flexible query language for complex data
+- **Real-Time Updates**: WebSocket connections for live updates
+- **Rate Limiting**: API abuse prevention and fair usage
+- **Documentation**: Comprehensive API documentation
+- **SDK Development**: Client libraries for common languages
+
+#### **Integration Platform**
+- **Agency APIs**: Direct integration with certification agencies
+- **Payment Gateways**: Multiple payment processor support
+- **Accounting Systems**: QuickBooks, Xero, Sage integration
+- **Marketing Platforms**: MailChimp, Constant Contact, Hubspot
+- **E-commerce**: WooCommerce, Shopify, Magento integration
+- **Social Media**: Facebook, Instagram, Twitter APIs
 
 ---
 
-## Logging and Monitoring Systems
+## Security & Compliance
 
-DiveForge provides integrated logging, monitoring, and alerting features for operational transparency and rapid troubleshooting. Logs can be exported to enterprise SIEM solutions, and built-in dashboards provide real-time insights into system health, user activity, and security events. Automated alerts can be configured for critical incidents.
+### **Enterprise Security Framework**
+
+#### **Zero-Trust Architecture**
+- **Identity Verification**: Multi-factor authentication required
+- **Device Trust**: Device verification and management
+- **Access Control**: Role-based access control (RBAC)
+- **Network Security**: VPN access and network segmentation
+- **Data Encryption**: End-to-end encryption for sensitive data
+- **Audit Logging**: Comprehensive security audit trails
+
+#### **Compliance Management**
+- **PCI DSS**: Payment card industry compliance
+- **GDPR**: European privacy regulation compliance
+- **CCPA**: California Consumer Privacy Act compliance
+- **SOC 2**: Service organization control compliance
+- **HIPAA**: Health information privacy (for medical records)
+- **Industry Standards**: Diving industry safety standards
+
+### **Data Protection**
+
+#### **Privacy Management**
+- **Data Minimization**: Collect only necessary personal data
+- **Consent Management**: Granular consent for data processing
+- **Data Retention**: Automated data retention policy enforcement
+- **Right to be Forgotten**: Customer data deletion capabilities
+- **Data Portability**: Export customer data in standard formats
+- **Breach Notification**: Automated breach detection and notification
+
+#### **Business Continuity**
+- **Disaster Recovery**: Comprehensive disaster recovery planning
+- **Backup Strategy**: Multi-tier backup with geographic distribution
+- **High Availability**: 99.9% uptime guarantee with redundancy
+- **Incident Response**: Automated incident response procedures
+- **Business Continuity**: Continuity planning for critical operations
+- **Testing Program**: Regular testing of recovery procedures
+
+---
+
+## Mobile & Field Operations
+
+### **Mobile Application**
+
+#### **Staff Mobile App**
+- **Offline Capability**: Critical functions work without internet
+- **Equipment Scanning**: Barcode scanning for inventory management
+- **Customer Check-in**: Mobile customer service capabilities
+- **Dive Logging**: Digital dive log with GPS and conditions
+- **Emergency Procedures**: Quick access to emergency protocols
+- **Communication**: Team communication and coordination
+
+#### **Customer Mobile App**
+- **Digital Wallet**: Certification cards and credentials
+- **Booking System**: Course and trip booking on mobile
+- **Dive Log**: Personal dive log with photo and video
+- **Equipment Rental**: Mobile equipment reservation
+- **Social Features**: Connect with other divers and instructors
+- **Offline Maps**: Dive site maps and information offline
+
+### **Field Operations**
+
+#### **Dive Boat Operations**
+- **Passenger Manifest**: Digital passenger check-in
+- **Equipment Tracking**: Track equipment on boat trips
+- **Weather Monitoring**: Real-time weather and sea conditions
+- **Emergency Protocols**: Digital emergency procedures
+- **Communication**: Satellite communication for remote areas
+- **Navigation**: GPS integration with dive site database
+
+#### **Remote Location Support**
+- **Satellite Internet**: Backup internet for remote locations
+- **Mobile POS**: Credit card processing in remote areas
+- **Inventory Sync**: Synchronize inventory when connected
+- **Customer Service**: Remote customer service capabilities
+- **Reporting**: Generate reports for remote operations
+- **Maintenance**: Remote equipment maintenance tracking
+
+---
+
+## Business Intelligence & Analytics
+
+### **Executive Dashboard**
+
+#### **Key Performance Indicators**
+- **Revenue Metrics**: Daily, weekly, monthly revenue tracking
+- **Customer Acquisition**: New customer acquisition costs and sources
+- **Operational Efficiency**: Equipment utilization, staff productivity
+- **Customer Satisfaction**: Reviews, ratings, repeat business
+- **Safety Metrics**: Incident rates, near-miss reporting
+- **Competitive Position**: Market share, pricing analysis
+
+#### **Predictive Analytics**
+- **Demand Forecasting**: Predict future demand for courses and equipment
+- **Customer Churn**: Identify customers at risk of churning
+- **Equipment Failure**: Predict equipment maintenance needs
+- **Staffing Optimization**: Optimize staff scheduling and capacity
+- **Revenue Forecasting**: Predict future revenue and cash flow
+- **Market Trends**: Identify emerging market trends and opportunities
+
+### **Reporting System**
+
+#### **Financial Reports**
+- **Profit & Loss**: Detailed P&L statements with drill-down
+- **Cash Flow**: Cash flow statements and projections
+- **Balance Sheet**: Real-time balance sheet reporting
+- **Budget Variance**: Actual vs. budget variance analysis
+- **Tax Reports**: Automated tax report generation
+- **Audit Trails**: Comprehensive audit trail reporting
+
+#### **Operational Reports**
+- **Certification Reports**: Certifications issued by agency and instructor
+- **Equipment Reports**: Utilization, maintenance, and replacement
+- **Staff Reports**: Productivity, performance, and scheduling
+- **Customer Reports**: Acquisition, retention, and satisfaction
+- **Safety Reports**: Incident reporting and trend analysis
+- **Compliance Reports**: Regulatory compliance status
+
+---
+
+## Installation & Deployment
+
+### **Web-Based Installation System**
+
+#### **Installation Wizard**
+- **System Requirements**: Automated system requirement checking
+- **Database Setup**: Multi-database support with automatic configuration
+- **Administrator Account**: Secure administrator account creation
+- **Shop Configuration**: Dive shop setup with agency selection
+- **Migration Tools**: Import from existing systems (DiveShop360.biz)
+- **Security Setup**: SSL certificate installation and security hardening
+
+#### **Deployment Options**
+- **Cloud Hosting**: AWS, Azure, Google Cloud deployment
+- **On-Premise**: Local server installation and configuration
+- **Hybrid**: Combination of cloud and on-premise deployment
+- **Docker Containers**: Containerized deployment for easy scaling
+- **Kubernetes**: Container orchestration for enterprise deployments
+- **Multi-Region**: Global deployment with regional data centers
+
+### **Migration Support**
+
+#### **Data Migration**
+- **DiveShop360.biz**: Complete migration from DiveShop360.biz
+- **CSV Import**: Bulk import from spreadsheets and exports
+- **API Migration**: Automated migration through APIs
+- **Custom Migration**: Professional migration services
+- **Data Validation**: Comprehensive data validation and cleanup
+- **Rollback Support**: Safe migration with rollback capabilities
+
+#### **Training & Support**
+- **User Training**: Comprehensive training for staff and administrators
+- **Documentation**: Detailed user and administrator documentation
+- **Video Tutorials**: Step-by-step video training materials
+- **Community Support**: Active community forum and support
+- **Professional Services**: Paid professional support and consulting
+- **Certification Program**: DiveForge administrator certification
+
+---
+
+## Development & Customization
+
+### **Plugin Development**
+
+#### **Plugin Architecture**
+- **WordPress-style Plugins**: Familiar plugin development model
+- **Hook System**: Comprehensive hook and filter system
+- **API Access**: Full API access for plugin developers
+- **Theme Integration**: Seamless integration with theme system
+- **Security Framework**: Secure plugin development guidelines
+- **Marketplace**: Plugin marketplace for distribution
+
+#### **Available Plugin Categories**
+- **Agency Integrations**: Enhanced agency-specific functionality
+- **Payment Processors**: Additional payment gateway support
+- **Marketing Tools**: Advanced marketing and automation tools
+- **Equipment Providers**: Direct supplier integrations
+- **Reporting & Analytics**: Advanced reporting capabilities
+- **Communication**: SMS, email, and social media integrations
+
+### **Theme Development**
+
+#### **Theme System**
+- **Responsive Design**: Mobile-first responsive themes
+- **Customization**: Extensive customization options
+- **Brand Integration**: Agency branding and co-branding support
+- **Multi-Language**: Localization support for global markets
+- **Performance**: Optimized for speed and performance
+- **Accessibility**: WCAG compliance for accessibility
+
+#### **Theme Marketplace**
+- **Professional Themes**: High-quality professional themes
+- **Industry Specific**: Themes designed for different diving niches
+- **Customization Services**: Professional theme customization
+- **Community Themes**: Community-developed themes
+- **Regular Updates**: Continuous theme updates and improvements
+- **Support**: Theme support and documentation
 
 ---
 
 ## Implementation Roadmap
 
-The DiveForge roadmap is managed openly with community input. Major milestones include expanded agency integrations, advanced reporting and analytics, e-commerce features, enhanced mobile support, and continuous security improvements. Contributions are welcome from all qualified developers and dive industry professionals.
+### **Phase 1: Foundation (Months 1-6)**
+- Core platform development with basic functionality
+- Database architecture and multi-tenant support
+- User authentication and basic security
+- Essential dive shop operations (customers, courses, equipment)
+- Basic reporting and analytics
+- Initial agency integrations (PADI, SSI)
+
+### **Phase 2: Enhancement (Months 7-12)**
+- Advanced features and additional agency support
+- Mobile application development
+- Advanced reporting and business intelligence
+- Plugin and theme architecture
+- E-commerce integration
+- Advanced security features
+
+### **Phase 3: Enterprise (Months 13-18)**
+- Enterprise features and multi-company support
+- Advanced integrations and API development
+- Global deployment and localization
+- Compliance and regulatory features
+- Advanced analytics and AI features
+- Professional services and support
+
+### **Phase 4: Scale (Months 19-24)**
+- Performance optimization and scaling
+- Advanced automation and AI features
+- Marketplace development and community building
+- International expansion and partnerships
+- Continuous improvement and feature updates
+- Long-term sustainability planning
 
 ---
 
-*For more information, visit the official DiveForge repository and documentation.*
-- **PATCH**: Bug fixes and minor improvements
+## Community & Support
 
-#### **Release Management**
-```yaml
-# .github/workflows/release.yml
-name: Release Management
-on:
-  push:
-    tags: ['v*']
+### **Open Source Community**
+- **GPL v3 License**: Ensures community ownership and contribution
+- **GitHub Repository**: Central code repository with issue tracking
+- **Developer Community**: Active developer community and contributions
+- **Documentation**: Comprehensive developer and user documentation
+- **Forums**: Community support forums and knowledge base
+- **Conferences**: Annual DiveForge community conferences
 
-jobs:
-  release:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Generate Changelog
-        run: conventional-changelog -p angular -i CHANGELOG.md -s
-      - name: Create Release
-        uses: actions/create-release@v1
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: DiveForge ${{ github.ref }}
-          body_path: CHANGELOG.md
-```
+### **Professional Support**
+- **Implementation Services**: Professional implementation and migration
+- **Training Programs**: Comprehensive training for users and administrators
+- **Consulting Services**: Business process consulting and optimization
+- **Customization**: Custom development and feature implementation
+- **Maintenance**: Ongoing maintenance and support services
+- **SLA Options**: Service level agreements for enterprise clients
 
 ---
 
-## Modular Architecture Design
-
-### **Plugin-Based System Architecture**
-
-#### **Core Plugin Interface**
-```typescript
-interface DiveForgePlugin {
-    name: string;
-    version: string;
-    dependencies: string[];
-    
-    initialize(context: PluginContext): Promise<void>;
-    shutdown(): Promise<void>;
-    getCapabilities(): PluginCapability[];
-    getMetadata(): PluginMetadata;
-}
-
-interface PluginContext {
-    database: DatabaseConnection;
-    eventBus: EventBus;
-    logger: Logger;
-    configuration: ConfigurationManager;
-    security: SecurityContext;
-}
-
-interface PluginCapability {
-    type: 'agency-integration' | 'equipment-provider' | 'payment-processor' | 'reporting' | 'ui-component';
-    scope: string[];
-    permissions: Permission[];
-}
-```
-
-#### **Plugin Registry Implementation**
-```typescript
-class PluginRegistry {
-    private plugins: Map<string, DiveForgePlugin> = new Map();
-    private dependencies: Map<string, string[]> = new Map();
-    private capabilities: Map<string, PluginCapability[]> = new Map();
-    
-    async loadPlugin(pluginPath: string): Promise<void> {
-        const plugin = await this.validateAndLoad(pluginPath);
-        await this.resolveDependencies(plugin);
-        await plugin.initialize(this.createContext(plugin));
-        
-        this.plugins.set(plugin.name, plugin);
-        this.capabilities.set(plugin.name, plugin.getCapabilities());
-        
-        this.eventBus.emit('plugin:loaded', { plugin: plugin.name });
-    }
-    
-    async validateAndLoad(pluginPath: string): Promise<DiveForgePlugin> {
-        const plugin = await import(pluginPath);
-        
-        // GPL v3 license validation
-        if (!plugin.license || plugin.license !== 'GPL-3.0') {
-            throw new Error(`Plugin must be GPL v3 licensed: ${pluginPath}`);
-        }
-        
-        // Security validation
-        await this.securityValidator.validatePlugin(plugin);
-        
-        return plugin;
-    }
-    
-    async resolveDependencies(plugin: DiveForgePlugin): Promise<void> {
-        for (const dependency of plugin.dependencies) {
-            if (!this.plugins.has(dependency)) {
-                throw new Error(`Missing dependency: ${dependency} for plugin: ${plugin.name}`);
-            }
-        }
-    }
-}
-```
-
-### **Recommended Module Structure**
-
-#### **Core Modules**
-```
-DiveForge/
-├── 🔧 core/
-│   ├── engine/                 # Universal certification processing
-│   ├── database/               # Multi-database abstraction layer
-│   ├── security/               # Authentication & authorization
-│   ├── api/                    # RESTful API framework
-│   └── events/                 # Event-driven architecture
-├── 🏢 agencies/
-│   ├── padi/                   # PADI integration adapter
-│   ├── ssi/                    # SSI digital-first integration
-│   ├── tdi/                    # TDI technical diving support
-│   ├── naui/                   # NAUI flexible standards
-│   ├── bsac/                   # BSAC club diving integration
-│   ├── gue/                    # GUE team diving protocols
-│   ├── iantd/                  # IANTD technical certifications
-│   ├── raid/                   # RAID rebreather specialization
-│   └── universal/              # Cross-agency compatibility
-├── 💾 data/
-│   ├── models/                 # Universal data models
-│   ├── migrations/             # Database schema management
-│   ├── repositories/           # Data access patterns
-│   └── validators/             # Data integrity enforcement
-├── 🌐 interfaces/
-│   ├── web/                    # Progressive web application
-│   ├── api/                    # API endpoints and documentation
-│   ├── mobile/                 # Mobile-specific optimizations
-│   └── portal/                 # Customer self-service portal
-├── 🔌 plugins/
-│   ├── equipment/              # Equipment management extensions
-│   ├── reporting/              # Advanced analytics and reports
-│   ├── integrations/           # Third-party service integrations
-│   └── themes/                 # UI themes and branding
-├── 🛡️ security/
-│   ├── authentication/         # OAuth 2.0/OpenID Connect
-│   ├── authorization/          # Role-based access control
-│   ├── encryption/             # Data protection mechanisms
-│   └── audit/                  # Comprehensive audit logging
-└── 📊 monitoring/
-    ├── logging/                # Structured logging system
-    ├── metrics/                # Performance monitoring
-    ├── alerts/                 # Automated alerting system
-    └── health/                 # System health checks
-```
-
-#### **Module Dependencies**
-```typescript
-// Module dependency mapping
-const moduleDependencies = {
-    'agencies/padi': ['core/engine', 'core/database', 'core/security'],
-    'agencies/ssi': ['core/engine', 'core/database', 'core/security'],
-    'agencies/tdi': ['core/engine', 'core/database', 'core/security'],
-    'interfaces/web': ['core/api', 'core/security', 'agencies/*'],
-    'interfaces/portal': ['core/api', 'core/security', 'data/models'],
-    'plugins/equipment': ['core/engine', 'data/models'],
-    'plugins/reporting': ['core/database', 'data/repositories']
-};
-```
-
----
-
-## Web-Based Installation System
-
-### **Installation Wizard Architecture**
-
-#### **Core Installation Framework**
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DiveForge Installation Wizard</title>
-    <link rel="stylesheet" href="/assets/css/installer.css">
-    <link rel="icon" href="/assets/img/diveforge-favicon.ico">
-</head>
-<body>
-    <div class="installer-container">
-        <header class="installer-header">
-            <div class="logo-section">
-                <img src="/assets/img/diveforge-logo.svg" alt="DiveForge" class="logo">
-                <h1>DiveForge Installation</h1>
-                <span class="version">v1.0.0</span>
-            </div>
-            <div class="installation-progress">
-                <div class="progress-bar">
-                    <div class="progress-fill" id="progress-fill"></div>
-                </div>
-                <span class="progress-text" id="progress-text">Step 1 of 6</span>
-            </div>
-        </header>
-        
-        <nav class="step-navigation">
-            <div class="step active" data-step="1">
-                <div class="step-number">1</div>
-                <div class="step-title">Welcome</div>
-            </div>
-            <div class="step" data-step="2">
-                <div class="step-number">2</div>
-                <div class="step-title">Database</div>
-            </div>
-            <div class="step" data-step="3">
-                <div class="step-number">3</div>
-                <div class="step-title">Admin Account</div>
-            </div>
-            <div class="step" data-step="4">
-                <div class="step-number">4</div>
-                <div class="step-title">Shop Setup</div>
-            </div>
-            <div class="step" data-step="5">
-                <div class="step-number">5</div>
-                <div class="step-title">Migration</div>
-            </div>
-            <div class="step" data-step="6">
-                <div class="step-number">6</div>
-                <div class="step-title">Complete</div>
-            </div>
-        </nav>
-        
-        <main class="installer-content">
-            <div id="step-content">
-                <!-- Dynamic step content loaded here -->
-            </div>
-            
-            <div class="installer-actions">
-                <button type="button" id="btn-previous" class="btn btn-secondary" disabled>
-                    ← Previous
-                </button>
-                <button type="button" id="btn-next" class="btn btn-primary">
-                    Next →
-                </button>
-            </div>
-        </main>
-        
-        <footer class="installer-footer">
-            <div class="footer-content">
-                <p>&copy; 2025 DiveForge Community | Licensed under GPL v3</p>
-                <div class="footer-links">
-                    <a href="https://diveforge.org/docs" target="_blank">Documentation</a>
-                    <a href="https://github.com/diveforge/diveforge" target="_blank">Source Code</a>
-                    <a href="https://diveforge.org/support" target="_blank">Support</a>
-                </div>
-            </div>
-        </footer>
-    </div>
-    
-    <script src="/assets/js/installer.js"></script>
-</body>
-</html>
-```
-
-#### **Installation Wizard JavaScript Framework**
-```javascript
-class DiveForgeInstaller {
-    constructor() {
-        this.currentStep = 1;
-        this.maxSteps = 6;
-        this.config = {
-            database: {},
-            admin: {},
-            shop: {},
-            agencies: [],
-            migration: {},
-            security: {}
-        };
-        this.validationRules = new Map();
-        this.stepHandlers = new Map();
-        
-        this.initializeEventListeners();
-        this.setupValidationRules();
-        this.setupStepHandlers();
-    }
-    
-    initializeEventListeners() {
-        document.getElementById('btn-next').addEventListener('click', () => this.nextStep());
-        document.getElementById('btn-previous').addEventListener('click', () => this.previousStep());
-        
-        // Keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                e.preventDefault();
-                this.nextStep();
-            }
-        });
-    }
-    
-    async nextStep() {
-        if (await this.validateCurrentStep()) {
-            if (this.currentStep < this.maxSteps) {
-                this.currentStep++;
-                await this.renderStep();
-                this.updateProgress();
-            } else {
-                await this.completeInstallation();
-            }
-        }
-    }
-    
-    async previousStep() {
-        if (this.currentStep > 1) {
-            this.currentStep--;
-            await this.renderStep();
-            this.updateProgress();
-        }
-    }
-    
-    async validateCurrentStep() {
-        const validator = this.validationRules.get(this.currentStep);
-        if (!validator) return true;
-        
-        try {
-            const result = await validator(this.config);
-            if (!result.valid) {
-                this.displayErrors(result.errors);
-                return false;
-            }
-            this.clearErrors();
-            return true;
-        } catch (error) {
-            this.displayErrors([`Validation error: ${error.message}`]);
-            return false;
-        }
-    }
-    
-    async renderStep() {
-        const stepContent = await this.loadStepContent(this.currentStep);
-        document.getElementById('step-content').innerHTML = stepContent;
-        
-        // Initialize step-specific functionality
-        const handler = this.stepHandlers.get(this.currentStep);
-        if (handler) {
-            await handler.initialize();
-        }
-        
-        this.updateNavigation();
-    }
-    
-    updateProgress() {
-        const progressPercent = ((this.currentStep - 1) / (this.maxSteps - 1)) * 100;
-        document.getElementById('progress-fill').style.width = `${progressPercent}%`;
-        document.getElementById('progress-text').textContent = `Step ${this.currentStep} of ${this.maxSteps}`;
-        
-        // Update step navigation
-        document.querySelectorAll('.step').forEach((step, index) => {
-            step.classList.toggle('active', index + 1 === this.currentStep);
-            step.classList.toggle('completed', index + 1 < this.currentStep);
-        });
-    }
-    
-    displayErrors(errors) {
-        const errorContainer = document.getElementById('error-container') || this.createErrorContainer();
-        errorContainer.innerHTML = `
-            <div class="alert alert-error">
-                <h4>Please correct the following errors:</h4>
-                <ul>
-                    ${errors.map(error => `<li>${error}</li>`).join('')}
-                </ul>
-            </div>
-        `;
-        errorContainer.scrollIntoView({ behavior: 'smooth' });
-    }
-    
-    clearErrors() {
-        const errorContainer = document.getElementById('error-container');
-        if (errorContainer) {
-            errorContainer.innerHTML = '';
-        }
-    }
-}
-```
-
-### **Step 1: Welcome and System Requirements**
-
-#### **Welcome Step Implementation**
-```javascript
-const welcomeStep = {
-    template: `
-    <div class="step-content welcome-step">
-        <div class="welcome-header">
-            <h2>Welcome to DiveForge</h2>
-            <p class="welcome-subtitle">The Universal Open Source Dive Shop Management Platform</p>
-        </div>
-        
-        <div class="feature-highlights">
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🌊</div>
-                    <h3>Universal Agency Support</h3>
-                    <p>Support for PADI, SSI, TDI, NAUI, BSAC, GUE, IANTD, RAID, and 20+ agencies</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔓</div>
-                    <h3>Open Source Freedom</h3>
-                    <p>GPL v3 licensed ensuring community ownership and collaboration</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🏢</div>
-                    <h3>Enterprise Ready</h3>
-                    <p>PCI DSS compliant with comprehensive security and audit capabilities</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔄</div>
-                    <h3>Easy Migration</h3>
-                    <p>Seamless transition from DiveShop360.biz and other existing systems</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="system-requirements">
-            <h3>System Requirements Check</h3>
-            <div class="requirements-grid" id="requirements-grid">
-                <!-- Populated dynamically -->
-            </div>
-        </div>
-        
-        <div class="installation-options">
-            <h3>Installation Type</h3>
-            <div class="option-cards">
-                <label class="option-card">
-                    <input type="radio" name="installation-type" value="new" checked>
-                    <div class="option-content">
-                        <h4>New Installation</h4>
-                        <p>Fresh DiveForge installation with initial configuration</p>
-                    </div>
-                </label>
-                <label class="option-card">
-                    <input type="radio" name="installation-type" value="migrate">
-                    <div class="option-content">
-                        <h4>Migration from Existing System</h4>
-                        <p>Import data from DiveShop360.biz or other dive shop software</p>
-                    </div>
-                </label>
-            </div>
-        </div>
-        
-        <div class="license-agreement">
-            <h3>License Agreement</h3>
-            <div class="license-text">
-                <p>DiveForge is licensed under the GNU General Public License v3.0 (GPL v3). 
-                This ensures your freedom to use, study, modify, and distribute this software.</p>
-                <label class="license-checkbox">
-                    <input type="checkbox" id="license-accepted" required>
-                    I accept the GPL v3 license terms and understand my rights and obligations
-                </label>
-            </div>
-        </div>
-    </div>`,
-    
-    async initialize() {
-        await this.checkSystemRequirements();
-        this.setupInstallationTypeHandlers();
-    },
-    
-    async checkSystemRequirements() {
-        const requirements = [
-            { name: 'PHP Version', check: 'php_version', minimum: '8.1' },
-            { name: 'Node.js', check: 'node_version', minimum: '18.0' },
-            { name: 'Database Support', check: 'database_support', required: true },
-            { name: 'Web Server', check: 'web_server', required: true },
-            { name: 'SSL Certificate', check: 'ssl_support', recommended: true },
-            { name: 'Memory Limit', check: 'memory_limit', minimum: '256M' },
-            { name: 'Disk Space', check: 'disk_space', minimum: '1GB' }
-        ];
-        
-        const grid = document.getElementById('requirements-grid');
-        
-        for (const req of requirements) {
-            const result = await this.checkRequirement(req);
-            const statusClass = result.status === 'pass' ? 'success' : 
-                               result.status === 'warning' ? 'warning' : 'error';
-            
-            const reqElement = document.createElement('div');
-            reqElement.className = `requirement-item ${statusClass}`;
-            reqElement.innerHTML = `
-                <div class="req-name">${req.name}</div>
-                <div class="req-status">
-                    <span class="status-icon">${this.getStatusIcon(result.status)}</span>
-                    <span class="status-text">${result.message}</span>
-                </div>
-            `;
-            grid.appendChild(reqElement);
-        }
-    },
-    
-    async checkRequirement(requirement) {
-        try {
-            const response = await fetch('/installer/check-requirement', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(requirement)
-            });
-            return await response.json();
-        } catch (error) {
-            return {
-                status: 'error',
-                message: `Check failed: ${error.message}`
-            };
-        }
-    }
-};
-```
-
-### **Step 2: Database Configuration**
-
-#### **Multi-Database Support Interface**
-```javascript
-const databaseStep = {
-    template: `
-    <div class="step-content database-step">
-        <div class="step-header">
-            <h2>Database Configuration</h2>
-            <p>Choose and configure your preferred database system</p>
-        </div>
-        
-        <div class="database-selection">
-            <h3>Select Database Type</h3>
-            <div class="database-grid">
-                <label class="database-option" data-type="postgresql">
-                    <input type="radio" name="database-type" value="postgresql">
-                    <div class="db-card">
-                        <img src="/assets/img/postgresql-logo.svg" alt="PostgreSQL" class="db-logo">
-                        <h4>PostgreSQL</h4>
-                        <p class="db-description">Recommended for production environments</p>
-                        <div class="db-features">
-                            <span class="feature-tag">ACID Compliant</span>
-                            <span class="feature-tag">JSON Support</span>
-                            <span class="feature-tag">Scalable</span>
-                        </div>
-                    </div>
-                </label>
-                
-                <label class="database-option" data-type="mysql">
-                    <input type="radio" name="database-type" value="mysql">
-                    <div class="db-card">
-                        <img src="/assets/img/mysql-logo.svg" alt="MySQL" class="db-logo">
-                        <h4>MySQL/MariaDB</h4>
-                        <p class="db-description">Popular choice with excellent performance</p>
-                        <div class="db-features">
-                            <span class="feature-tag">High Performance</span>
-                            <span class="feature-tag">Wide Compatibility</span>
-                            <span class="feature-tag">Mature</span>
-                        </div>
-                    </div>
-                </label>
-                
-                <label class="database-option" data-type="sqlite">
-                    <input type="radio" name="database-type" value="sqlite">
-                    <div class="db-card">
-                        <img src="/assets/img/sqlite-logo.svg" alt="SQLite" class="db-logo">
-                        <h4>SQLite</h4>
-                        <p class="db-description">Perfect for small shops and testing</p>
-                        <div class="db-features">
-                            <span class="feature-tag">No Setup Required</span>
-                            <span class="feature-tag">Lightweight</span>
-                            <span class="feature-tag">Self-Contained</span>
-                        </div>
-                    </div>
-                </label>
-                
-                <label class="database-option" data-type="sqlserver">
-                    <input type="radio" name="database-type" value="sqlserver">
-                    <div class="db-card">
-                        <img src="/assets/img/sqlserver-logo.svg" alt="SQL Server" class="db-logo">
-                        <h4>SQL Server</h4>
-                        <p class="db-description">Enterprise Microsoft environments</p>
-                        <div class="db-features">
-                            <span class="feature-tag">Enterprise Features</span>
-                            <span class="feature-tag">Azure Integration</span>
-                            <span class="feature-tag">Business Intelligence</span>
-                        </div>
-                    </div>
-                </label>
-            </div>
-        </div>
-        
-        <div id="database-config-form" class="database-config" style="display: none;">
-            <h3>Database Connection Details</h3>
-            <form id="db-connection-form">
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="db-host">Database Host:</label>
-                        <input type="text" id="db-host" name="host" value="localhost" required>
-                        <small class="field-help">IP address or hostname of your database server</small>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="db-port">Port:</label>
-                        <input type="number" id="db-port" name="port" required>
-                        <small class="field-help">Database server port number</small>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="db-name">Database Name:</label>
-                        <input type="text" id="db-name" name="database" value="diveforge" required>
-                        <small class="field-help">Name for the DiveForge database</small>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="db-username">Username:</label>
-                        <input type="text" id="db-username" name="username" required>
-                        <small class="field-help">Database user with create/modify permissions</small>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="db-password">Password:</label>
-                        <input type="password" id="db-password" name="password" required>
-                        <small class="field-help">Password for the database user</small>
-                    </div>
-                    
-                    <div class="form-group full-width">
-                        <label for="db-charset">Character Set:</label>
-                        <select id="db-charset" name="charset">
-                            <option value="utf8mb4">utf8mb4 (Recommended)</option>
-                            <option value="utf8">utf8</option>
-                        </select>
-                        <small class="field-help">Character encoding for international support</small>
-                    </div>
-                </div>
-                
-                <div class="connection-actions">
-                    <button type="button" id="test-connection" class="btn btn-secondary">
-                        <span class="btn-icon">🔗</span>
-                        Test Connection
-                    </button>
-                    <button type="button" id="create-database" class="btn btn-secondary" disabled>
-                        <span class="btn-icon">🗄️</span>
-                        Create Database
-                    </button>
-                </div>
-                
-                <div id="connection-status" class="connection-status"></div>
-            </form>
-        </div>
-        
-        <div class="advanced-options">
-            <details>
-                <summary>Advanced Database Options</summary>
-                <div class="advanced-form">
-                    <div class="form-group">
-                        <label for="db-pool-size">Connection Pool Size:</label>
-                        <input type="number" id="db-pool-size" name="poolSize" value="10" min="1" max="100">
-                    </div>
-                    <div class="form-group">
-                        <label for="db-timeout">Connection Timeout (seconds):</label>
-                        <input type="number" id="db-timeout" name="timeout" value="30" min="5" max="300">
-                    </div>
-                    <div class="form-group">
-                        <label>
-                            <input type="checkbox" name="sslEnabled" checked>
-                            Enable SSL/TLS encryption
-                        </label>
-                    </div>
-                </div>
-            </details>
-        </div>
-    </div>`,
-    
-    async initialize() {
-        this.setupDatabaseTypeHandlers();
-        this.setupConnectionTesting();
-    },
-    
-    setupDatabaseTypeHandlers() {
-        const typeInputs = document.querySelectorAll('input[name="database-type"]');
-        const configForm = document.getElementById('database-config-form');
-        
-        typeInputs.forEach(input => {
-            input.addEventListener('change', (e) => {
-                const dbType = e.target.value;
-                this.updatePortForDatabase(dbType);
-                configForm.style.display = 'block';
-                this.updateFormForDatabase(dbType);
-            });
-        });
-    },
-    
-    updatePortForDatabase(dbType) {
-        const portDefaults = {
-            postgresql: 5432,
-            mysql: 3306,
-            sqlite: null,
-            sqlserver: 1433
-        };
-        
-        const portInput = document.getElementById('db-port');
-        if (dbType === 'sqlite') {
-            portInput.closest('.form-group').style.display = 'none';
-        } else {
-            portInput.closest('.form-group').style.display = 'block';
-            portInput.value = portDefaults[dbType];
-        }
-    },
-    
-    async testConnection() {
-        const formData = new FormData(document.getElementById('db-connection-form'));
-        const config = Object.fromEntries(formData.entries());
-        
-        try {
-            const response = await fetch('/installer/test-database', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(config)
-            });
-            
-            const result = await response.json();
-            this.displayConnectionStatus(result);
-            
-            if (result.success) {
-                document.getElementById('create-database').disabled = false;
-            }
-            
-            return result;
-        } catch (error) {
-            this.displayConnectionStatus({
-                success: false,
-                message: `Connection test failed: ${error.message}`
-            });
-            return { success: false };
-        }
-    }
-};
-```
-
-### **Step 3: Administrator Account Creation**
-
-#### **Admin Setup with Multi-Agency Support**
-```javascript
-const adminStep = {
-    template: `
-    <div class="step-content admin-step">
-        <div class="step-header">
-            <h2>Create Administrator Account</h2>
-            <p>Set up the primary administrator for your DiveForge installation</p>
-        </div>
-        
-        <form id="admin-form" class="admin-form">
-            <div class="personal-info-section">
-                <h3>Personal Information</h3>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="admin-first-name">First Name:</label>
-                        <input type="text" id="admin-first-name" name="firstName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="admin-last-name">Last Name:</label>
-                        <input type="text" id="admin-last-name" name="lastName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="admin-email">Email Address:</label>
-                        <input type="email" id="admin-email" name="email" required>
-                        <small class="field-help">This will be your login username</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="admin-phone">Phone Number:</label>
-                        <input type="tel" id="admin-phone" name="phone">
-                    </div>
-                </div>
-            </div>
-            
-            <div class="security-section">
-                <h3>Security Settings</h3>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="admin-password">Password:</label>
-                        <input type="password" id="admin-password" name="password" required minlength="12">
-                        <div class="password-strength" id="password-strength"></div>
-                        <small class="field-help">Minimum 12 characters with mixed case, numbers, and symbols</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="admin-password-confirm">Confirm Password:</label>
-                        <input type="password" id="admin-password-confirm" name="passwordConfirm" required>
-                    </div>
-                </div>
-                
-                <div class="mfa-setup">
-                    <h4>Multi-Factor Authentication</h4>
-                    <div class="mfa-options">
-                        <label class="mfa-option">
-                            <input type="radio" name="mfaType" value="totp" checked>
-                            <div class="option-content">
-                                <strong>Authenticator App (Recommended)</strong>
-                                <p>Use Google Authenticator, Authy, or similar TOTP app</p>
-                            </div>
-                        </label>
-                        <label class="mfa-option">
-                            <input type="radio" name="mfaType" value="sms">
-                            <div class="option-content">
-                                <strong>SMS Code</strong>
-                                <p>Receive codes via text message</p>
-                            </div>
-                        </label>
-                        <label class="mfa-option">
-                            <input type="radio" name="mfaType" value="email">
-                            <div class="option-content">
-                                <strong>Email Code</strong>
-                                <p>Receive codes via email (less secure)</p>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="instructor-credentials-section">
-                <h3>Instructor Credentials (Optional)</h3>
-                <p class="section-description">Add your instructor certifications from various agencies</p>
-                
-                <div class="agency-credentials">
-                    <div class="agency-group">
-                        <h4>PADI Credentials</h4>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="padi-number">PADI Number:</label>
-                                <input type="text" id="padi-number" name="padiNumber" placeholder="12345">
-                            </div>
-                            <div class="form-group">
-                                <label for="padi-level">Instructor Level:</label>
-                                <select id="padi-level" name="padiLevel">
-                                    <option value="">Select Level</option>
-                                    <option value="ASSISTANT_INSTRUCTOR">Assistant Instructor</option>
-                                    <option value="OPEN_WATER_INSTRUCTOR">Open Water Instructor</option>
-                                    <option value="SPECIALTY_INSTRUCTOR">Specialty Instructor</option>
-                                    <option value="MASTER_INSTRUCTOR">Master Instructor</option>
-                                    <option value="COURSE_DIRECTOR">Course Director</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="agency-group">
-                        <h4>SSI Credentials</h4>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="ssi-number">SSI Number:</label>
-                                <input type="text" id="ssi-number" name="ssiNumber" placeholder="TC12345">
-                            </div>
-                            <div class="form-group">
-                                <label for="ssi-level">Instructor Level:</label>
-                                <select id="ssi-level" name="ssiLevel">
-                                    <option value="">Select Level</option>
-                                    <option value="ASSISTANT_INSTRUCTOR">Assistant Instructor</option>
-                                    <option value="OPEN_WATER_INSTRUCTOR">Open Water Instructor</option>
-                                    <option value="SPECIALTY_INSTRUCTOR">Specialty Instructor</option>
-                                    <option value="INSTRUCTOR_TRAINER">Instructor Trainer</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="agency-group">
-                        <h4>TDI/SDI Credentials</h4>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="tdi-number">TDI/SDI Number:</label>
-                                <input type="text" id="tdi-number" name="tdiNumber" placeholder="I12345">
-                            </div>
-                            <div class="form-group">
-                                <label for="tdi-level">Instructor Level:</label>
-                                <select id="tdi-level" name="tdiLevel">
-                                    <option value="">Select Level</option>
-                                    <option value="SDI_INSTRUCTOR">SDI Instructor</option>
-                                    <option value="TDI_INSTRUCTOR">TDI Instructor</option>
-                                    <option value="TRIMIX_INSTRUCTOR">Trimix Instructor</option>
-                                    <option value="INSTRUCTOR_TRAINER">Instructor Trainer</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="agency-group">
-                        <h4>NAUI Credentials</h4>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="naui-number">NAUI Number:</label>
-                                <input type="text" id="naui-number" name="nauiNumber" placeholder="F12345">
-                            </div>
-                            <div class="form-group">
-                                <label for="naui-level">Instructor Level:</label>
-                                <select id="naui-level" name="nauiLevel">
-                                    <option value="">Select Level</option>
-                                    <option value="ASSISTANT_INSTRUCTOR">Assistant Instructor</option>
-                                    <option value="INSTRUCTOR">Instructor</option>
-                                    <option value="INSTRUCTOR_TRAINER">Instructor Trainer</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <button type="button" class="btn btn-secondary add-agency-btn">
-                        + Add Another Agency
-                    </button>
-                </div>
-            </div>
-            
-            <div class="emergency-contact-section">
-                <h3>Emergency Contact</h3>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="emergency-name">Contact Name:</label>
-                        <input type="text" id="emergency-name" name="emergencyContactName">
-                    </div>
-                    <div class="form-group">
-                        <label for="emergency-phone">Contact Phone:</label>
-                        <input type="tel" id="emergency-phone" name="emergencyContactPhone">
-                    </div>
-                    <div class="form-group">
-                        <label for="emergency-relationship">Relationship:</label>
-                        <input type="text" id="emergency-relationship" name="emergencyContactRelationship" placeholder="Spouse, Partner, Family">
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>`,
-    
-    async initialize() {
-        this.setupPasswordValidation();
-        this.setupMFAHandlers();
-        this.setupAgencyCredentialHandlers();
-    },
-    
-    setupPasswordValidation() {
-        const passwordInput = document.getElementById('admin-password');
-        const strengthIndicator = document.getElementById('password-strength');
-        
-        passwordInput.addEventListener('input', (e) => {
-            const strength = this.calculatePasswordStrength(e.target.value);
-            this.updatePasswordStrengthDisplay(strength, strengthIndicator);
-        });
-    },
-    
-    calculatePasswordStrength(password) {
-        let score = 0;
-        const criteria = [
-            { test: /.{12,}/, points: 2, label: 'At least 12 characters' },
-            { test: /[a-z]/, points: 1, label: 'Lowercase letters' },
-            { test: /[A-Z]/, points: 1, label: 'Uppercase letters' },
-            { test: /[0-9]/, points: 1, label: 'Numbers' },
-            { test: /[^A-Za-z0-9]/, points: 2, label: 'Special characters' },
-            { test: /^(?!.*(.)\1{2,})/, points: 1, label: 'No repeated characters' }
-        ];
-        
-        const results = criteria.map(criterion => ({
-            ...criterion,
-            passed: criterion.test.test(password)
-        }));
-        
-        score = results.reduce((sum, result) => sum + (result.passed ? result.points : 0), 0);
-        
-        return {
-            score,
-            maxScore: criteria.reduce((sum, c) => sum + c.points, 0),
-            results,
-            level: score < 3 ? 'weak' : score < 6 ? 'medium' : 'strong'
-        };
-    }
-};
-```
-
-### **Step 4: Enhanced Shop Setup with Multi-Agency Support**
-
-#### **Shop Configuration Interface**
-```javascript
-const shopSetupStep = {
-    template: `
-    <div class="step-content shop-setup-step">
-        <div class="step-header">
-            <h2>Configure Your Dive Shop</h2>
-            <p>Set up your dive shop details and select certification agencies</p>
-        </div>
-        
-        <form id="shop-form" class="shop-form">
-            <div class="basic-info-section">
-                <h3>Basic Information</h3>
-                <div class="form-grid">
-                    <div class="form-group full-width">
-                        <label for="shop-name">Shop Name:</label>
-                        <input type="text" id="shop-name" name="name" required placeholder="Aquatic Adventures Dive Center">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="shop-email">Business Email:</label>
-                        <input type="email" id="shop-email" name="email" required placeholder="info@diveshop.com">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="shop-phone">Business Phone:</label>
-                        <input type="tel" id="shop-phone" name="phone" placeholder="+1 (555) 123-4567">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="shop-website">Website:</label>
-                        <input type="url" id="shop-website" name="website" placeholder="https://www.diveshop.com">
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="shop-address">Business Address:</label>
-                    <textarea id="shop-address" name="address" rows="3" placeholder="123 Ocean Drive, Coastal City, CA 90210"></textarea>
-                </div>
-            </div>
-            
-            <div class="branding-section">
-                <h3>Branding</h3>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="shop-logo">Shop Logo:</label>
-                        <input type="file" id="shop-logo" name="logo" accept="image/*">
-                        <div class="logo-preview" id="logo-preview">
-                            <div class="logo-placeholder">
-                                <span>📸</span>
-                                <p>Upload your shop logo</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="shop-colors">Brand Colors:</label>
-                        <div class="color-inputs">
-                            <div class="color-input-group">
-                                <label for="primary-color">Primary:</label>
-                                <input type="color" id="primary-color" name="primaryColor" value="#0066cc">
-                            </div>
-                            <div class="color-input-group">
-                                <label for="secondary-color">Secondary:</label>
-                                <input type="color" id="secondary-color" name="secondaryColor" value="#ffffff">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="agency-selection-section">
-                <h3>Certification Agencies</h3>
-                <p class="section-description">Select the diving agencies your shop works with</p>
-                
-                <div class="agency-grid">
-                    <label class="agency-card" data-agency="PADI">
-                        <input type="checkbox" name="agencies" value="PADI">
-                        <div class="agency-content">
-                            <img src="/assets/img/agencies/padi-logo.png" alt="PADI" class="agency-logo">
-                            <h4>PADI</h4>
-                            <p>Professional Association of Diving Instructors</p>
-                            <div class="agency-stats">
-                                <span>🌍 Worldwide</span>
-                                <span>👥 6.6M+ certified</span>
-                            </div>
-                        </div>
-                    </label>
-                    
-                    <label class="agency-card" data-agency="SSI">
-                        <input type="checkbox" name="agencies" value="SSI">
-                        <div class="agency-content">
-                            <img src="/assets/img/agencies/ssi-logo.png" alt="SSI" class="agency-logo">
-                            <h4>SSI</h4>
-                            <p>Scuba Schools International</p>
-                            <div class="agency-stats">
-                                <span>💻 Digital First</span>
-                                <span>👥 3M+ certified</span>
-                            </div>
-                        </div>
-                    </label>
-                    
-                    <label class="agency-card" data-agency="TDI">
-                        <input type="checkbox" name="agencies" value="TDI">
-                        <div class="agency-content">
-                            <img src="/assets/img/agencies/tdi-logo.png" alt="TDI" class="agency-logo">
-                            <h4>TDI</h4>
-                            <p>Technical Diving International</p>
-                            <div class="agency-stats">
-                                <span>⚙️ Technical</span>
-                                <span>🏆 Industry Leader</span>
-                            </div>
-                        </div>
-                    </label>
-                    
-                    <label class="agency-card" data-agency="NAUI">
-                        <input type="checkbox" name="agencies" value="NAUI">
-                        <div class="agency-content">
-                            <img src="/assets/img/agencies/naui-logo.png" alt="NAUI" class="agency-logo">
-                            <h4>NAUI</h4>
-                            <p>National Association of Underwater Instructors</p>
-                            <div class="agency-stats">
-                                <span>🎯 Flexible</span>
-                                <span>📚 Education Focus</span>
-                            </div>
-                        </div>
-                    </label>
-                    
-                    <label class="agency-card" data-agency="BSAC">
-                        <input type="checkbox" name="agencies" value="BSAC">
-                        <div class="agency-content">
-                            <img src="/assets/img/agencies/bsac-logo.png" alt="BSAC" class="agency-logo">
-                            <h4>BSAC</h4>
-                            <p>British Sub-Aqua Club</p>
-                            <div class="agency-stats">
-                                <span>🇬🇧 UK Based</span>
-                                <span>🤝 Club Diving</span>
-                            </div>
-                        </div>
-                    </label>
-                    
-                    <label class="agency-card" data-agency="GUE">
-                        <input type="checkbox" name="agencies" value="GUE">
-                        <div class="agency-content">
-                            <img src="/assets/img/agencies/gue-logo.png" alt="GUE" class="agency-logo">
-                            <h4>GUE</h4>
-                            <p>Global Underwater Explorers</p>
-                            <div class="agency-stats">
-                                <span>👥 Team Diving</span>
-                                <span>🔬 Research Focus</span>
-                            </div>
-                        </div>
-                    </label>
-                    
-                    <label class="agency-card" data-agency="IANTD">
-                        <input type="checkbox" name="agencies" value="IANTD">
-                        <div class="agency-content">
-                            <img src="/assets/img/agencies/iantd-logo.png" alt="IANTD" class="agency-logo">
-                            <h4>IANTD</h4>
-                            <p>International Association of Nitrox and Technical Divers</p>
-                            <div class="agency-stats">
-                                <span>🧪 Nitrox Pioneer</span>
-                                <span>⚙️ Technical Focus</span>
-                            </div>
-                        </div>
-                    </label>
-                    
-                    <label class="agency-card" data-agency="RAID">
-                        <input type="checkbox" name="agencies" value="RAID">
-                        <div class="agency-content">
-                            <img src="/assets/img/agencies/raid-logo.png" alt="RAID" class="agency-logo">
-                            <h4>RAID</h4>
-                            <p>Rebreather Association of International Divers</p>
-                            <div class="agency-stats">
-                                <span>🔄 Rebreathers</span>
-                                <span>💻 Technology</span>
-                            </div>
-                        </div>
-                    </label>
-                </div>
-                
-                <button type="button" class="btn btn-secondary show-more-agencies">
-                    Show More Agencies (12+ additional)
-                </button>
-            </div>
-            
-            <div id="agency-specific-config" class="agency-config-section" style="display: none;">
-                <h3>Agency Integration Settings</h3>
-                <div id="agency-config-forms">
-                    <!-- Agency-specific configuration forms will be loaded here -->
-                </div>
-            </div>
-            
-            <div class="business-settings-section">
-                <h3>Business Settings</h3>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="shop-currency">Default Currency:</label>
-                        <select id="shop-currency" name="currency" required>
-                            <option value="USD">USD - US Dollar</option>
-                            <option value="EUR">EUR - Euro</option>
-                            <option value="GBP">GBP - British Pound</option>
-                            <option value="CAD">CAD - Canadian Dollar</option>
-                            <option value="AUD">AUD - Australian Dollar</option>
-                            <option value="MXN">MXN - Mexican Peso</option>
-                            <option value="SGD">SGD - Singapore Dollar</option>
-                            <option value="JPY">JPY - Japanese Yen</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="shop-timezone">Timezone:</label>
-                        <select id="shop-timezone" name="timezone" required>
-                            <optgroup label="North America">
-                                <option value="America/New_York">Eastern Time</option>
-                                <option value="America/Chicago">Central Time</option>
-                                <option value="America/Denver">Mountain Time</option>
-                                <option value="America/Los_Angeles">Pacific Time</option>
-                                <option value="America/Anchorage">Alaska Time</option>
-                                <option value="Pacific/Honolulu">Hawaii Time</option>
-                            </optgroup>
-                            <optgroup label="Europe">
-                                <option value="Europe/London">London</option>
-                                <option value="Europe/Paris">Paris</option>
-                                <option value="Europe/Berlin">Berlin</option>
-                                <option value="Europe/Rome">Rome</option>
-                                <option value="Europe/Madrid">Madrid</option>
-                            </optgroup>
-                            <optgroup label="Asia Pacific">
-                                <option value="Asia/Tokyo">Tokyo</option>
-                                <option value="Asia/Singapore">Singapore</option>
-                                <option value="Asia/Bangkok">Bangkok</option>
-                                <option value="Australia/Sydney">Sydney</option>
-                                <option value="Pacific/Auckland">Auckland</option>
-                            </optgroup>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="shop-language">Default Language:</label>
-                        <select id="shop-language" name="language" required>
-                            <option value="en">English</option>
-                            <option value="es">Español</option>
-                            <option value="fr">Français</option>
-                            <option value="de">Deutsch</option>
-                            <option value="it">Italiano</option>
-                            <option value="pt">Português</option>
-                            <option value="ja">日本語</option>
-                            <option value="zh">中文</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="operational-settings-section">
-                <h3>Operational Settings</h3>
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="max-group-size">Maximum Group Size:</label>
-                        <input type="number" id="max-group-size" name="maxGroupSize" value="8" min="1" max="20">
-                        <small class="field-help">Default maximum students per instructor</small>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="booking-advance">Booking Advance (days):</label>
-                        <input type="number" id="booking-advance" name="bookingAdvance" value="1" min="0" max="30">
-                        <small class="field-help">Minimum days in advance for bookings</small>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="cancellation-policy">Cancellation Policy (hours):</label>
-                        <input type="number" id="cancellation-policy" name="cancellationPolicy" value="24" min="0" max="168">
-                        <small class="field-help">Hours before course for free cancellation</small>
-                    </div>
-                </div>
-                
-                <div class="operational-features">
-                    <h4>Optional Features</h4>
-                    <div class="feature-checkboxes">
-                        <label class="feature-checkbox">
-                            <input type="checkbox" name="features" value="equipment-rental" checked>
-                            <span class="checkmark"></span>
-                            Equipment Rental Management
-                        </label>
-                        <label class="feature-checkbox">
-                            <input type="checkbox" name="features" value="dive-trips" checked>
-                            <span class="checkmark"></span>
-                            Dive Trip Organization
-                        </label>
-                        <label class="feature-checkbox">
-                            <input type="checkbox" name="features" value="online-learning" checked>
-                            <span class="checkmark"></span>
-                            Online Learning Integration
-                        </label>
-                        <label class="feature-checkbox">
-                            <input type="checkbox" name="features" value="customer-portal" checked>
-                            <span class="checkmark"></span>
-                            Customer Self-Service Portal
-                        </label>
-                        <label class="feature-checkbox">
-                            <input type="checkbox" name="features" value="pos-system">
-                            <span class="checkmark"></span>
-                            Point of Sale System
-                        </label>
-                        <label class="feature-checkbox">
-                            <input type="checkbox" name="features" value="inventory-management" checked>
-                            <span class="checkmark"></span>
-                            Inventory Management
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>`,
-    
-    async initialize() {
-        this.setupAgencySelection();
-        this.setupLogoUpload();
-        this.setupColorPreviews();
-        this.setupFeatureToggles();
-    },
-    
-    setupAgencySelection() {
-        const agencyCheckboxes = document.querySelectorAll('input[name="agencies"]');
-        const configSection = document.getElementById('agency-specific-config');
-        
-        agencyCheckboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                this.updateAgencyConfiguration();
-            });
-        });
-    },
-    
-    async updateAgencyConfiguration() {
-        const selectedAgencies = Array.from(document.querySelectorAll('input[name="agencies"]:checked'))
-            .map(cb => cb.value);
-        
-        const configSection = document.getElementById('agency-specific-config');
-        const configFormsContainer = document.getElementById('agency-config-forms');
-        
-        if (selectedAgencies.length > 0) {
-            configSection.style.display = 'block';
-            configFormsContainer.innerHTML = '';
-            
-            for (const agency of selectedAgencies) {
-                const agencyConfig = await this.loadAgencyConfigForm(agency);
-                configFormsContainer.appendChild(agencyConfig);
-            }
-        } else {
-            configSection.style.display = 'none';
-        }
-    },
-    
-    async loadAgencyConfigForm(agency) {
-        const agencyConfigs = {
-            PADI: this.createPADIConfigForm(),
-            SSI: this.createSSIConfigForm(),
-            TDI: this.createTDIConfigForm(),
-            NAUI: this.createNAUIConfigForm(),
-            BSAC: this.createBSACConfigForm(),
-            GUE: this.createGUEConfigForm(),
-            IANTD: this.createIANTDConfigForm(),
-            RAID: this.createRAIDConfigForm()
-        };
-        
-        return agencyConfigs[agency] || this.createGenericConfigForm(agency);
-    },
-    
-    createPADIConfigForm() {
-        const form = document.createElement('div');
-        form.className = 'agency-config-form';
-        form.innerHTML = `
-            <div class="agency-config-header">
-                <img src="/assets/img/agencies/padi-logo.png" alt="PADI" class="config-agency-logo">
-                <h4>PADI Configuration</h4>
-            </div>
-            <div class="config-form-grid">
-                <div class="form-group">
-                    <label for="padi-center-number">PADI Center Number:</label>
-                    <input type="text" id="padi-center-number" name="padiCenterNumber" placeholder="S-12345">
-                    <small class="field-help">Your PADI dive center number</small>
-                </div>
-                <div class="form-group">
-                    <label for="padi-api-key">PADI API Key:</label>
-                    <input type="password" id="padi-api-key" name="padiApiKey">
-                    <small class="field-help">API key for PADI certification processing</small>
-                </div>
-                <div class="form-group">
-                    <label for="padi-environment">Environment:</label>
-                    <select id="padi-environment" name="padiEnvironment">
-                        <option value="sandbox">Sandbox (Testing)</option>
-                        <option value="production">Production</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" name="padiAutoSync" checked>
-                        Enable automatic certification sync
-                    </label>
-                </div>
-            </div>
-        `;
-        return form;
-    }
-};
-```
-
-### **Step 5: Migration from Existing Systems**
-
-#### **DiveShop360.biz and Universal Migration Interface**
-```javascript
-const migrationStep = {
-    template: `
-    <div class="step-content migration-step">
-        <div class="step-header">
-            <h2>Data Migration</h2>
-            <p>Import your existing dive shop data from previous systems</p>
-        </div>
-        
-        <div class="migration-options">
-            <h3>Migration Source</h3>
-            <div class="source-grid">
-                <label class="source-option" data-source="diveshop360">
-                    <input type="radio" name="migration-source" value="diveshop360">
-                    <div class="source-card">
-                        <img src="/assets/img/systems/diveshop360-logo.png" alt="DiveShop360" class="source-logo">
-                        <h4>DiveShop360.biz</h4>
-                        <p>Direct API integration with automatic data mapping</p>
-                        <div class="source-features">
-                            <span class="feature-tag">✓ Full Integration</span>
-                            <span class="feature-tag">✓ Real-time Sync</span>
-                            <span class="feature-tag">✓ Zero Downtime</span>
-                        </div>
-                    </div>
-                </label>
-                
-                <label class="source-option" data-source="manual">
-                    <input type="radio" name="migration-source" value="manual">
-                    <div class="source-card">
-                        <div class="source-icon">📋</div>
-                        <h4>Manual Data Entry</h4>
-                        <p>Start fresh with manual customer and inventory setup</p>
-                        <div class="source-features">
-                            <span class="feature-tag">✓ Clean Start</span>
-                            <span class="feature-tag">✓ Custom Setup</span>
-                        </div>
-                    </div>
-                </label>
-                
-                <label class="source-option" data-source="csv">
-                    <input type="radio" name="migration-source" value="csv">
-                    <div class="source-card">
-                        <div class="source-icon">📊</div>
-                        <h4>CSV/Excel Import</h4>
-                        <p>Import data from spreadsheets or exported files</p>
-                        <div class="source-features">
-                            <span class="feature-tag">✓ Flexible Format</span>
-                            <span class="feature-tag">✓ Batch Import</span>
-                        </div>
-                    </div>
-                </label>
-                
-                <label class="source-option" data-source="other">
-                    <input type="radio" name="migration-source" value="other">
-                    <div class="source-card">
-                        <div class="source-icon">🔧</div>
-                        <h4>Other System</h4>
-                        <p>Custom migration from other dive shop software</p>
-                        <div class="source-features">
-                            <span class="feature-tag">✓ Custom Mapping</span>
-                            <span class="feature-tag">✓ Professional Support</span>
-                        </div>
-                    </div>
-                </label>
-            </div>
-        </div>
-        
-        <div id="migration-config" class="migration-config" style="display: none;">
-            <!-- Migration-specific configuration will be loaded here -->
-        </div>
-        
-        <div id="migration-progress" class="migration-progress" style="display: none;">
-            <h3>Migration Progress</h3>
-            <div class="progress-sections">
-                <div class="progress-section">
-                    <div class="progress-header">
-                        <span class="progress-title">Customers</span>
-                        <span class="progress-count" id="customers-progress">0 / 0</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="customers-progress-bar"></div>
-                    </div>
-                </div>
-                
-                <div class="progress-section">
-                    <div class="progress-header">
-                        <span class="progress-title">Certifications</span>
-                        <span class="progress-count" id="certifications-progress">0 / 0</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="certifications-progress-bar"></div>
-                    </div>
-                </div>
-                
-                <div class="progress-section">
-                    <div class="progress-header">
-                        <span class="progress-title">Inventory</span>
-                        <span class="progress-count" id="inventory-progress">0 / 0</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="inventory-progress-bar"></div>
-                    </div>
-                </div>
-                
-                <div class="progress-section">
-                    <div class="progress-header">
-                        <span class="progress-title">Bookings</span>
-                        <span class="progress-count" id="bookings-progress">0 / 0</span>
-                    </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="bookings-progress-bar"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="migration-log">
-                <h4>Migration Log</h4>
-                <div id="migration-log-content" class="log-content">
-                    <!-- Real-time migration logs will appear here -->
-                </div>
-            </div>
-        </div>
-    </div>`,
-    
-    async initialize() {
-        this.setupMigrationSourceHandlers();
-    },
-    
-    setupMigrationSourceHandlers() {
-        const sourceInputs = document.querySelectorAll('input[name="migration-source"]');
-        sourceInputs.forEach(input => {
-            input.addEventListener('change', (e) => {
-                this.loadMigrationConfig(e.target.value);
-            });
-        });
-    },
-    
-    async loadMigrationConfig(source) {
-        const configContainer = document.getElementById('migration-config');
-        configContainer.style.display = 'block';
-        
-        const configs = {
-            diveshop360: this.createDiveShop360Config(),
-            manual: this.createManualConfig(),
-            csv: this.createCSVConfig(),
-            other: this.createOtherSystemConfig()
-        };
-        
-        configContainer.innerHTML = '';
-        configContainer.appendChild(configs[source]);
-    },
-    
-    createDiveShop360Config() {
-        const config = document.createElement('div');
-        config.className = 'diveshop360-config';
-        config.innerHTML = `
-            <h3>DiveShop360.biz Integration</h3>
-            <div class="integration-form">
-                <div class="form-grid">
-                    <div class="form-group">
-                        <label for="ds360-url">DiveShop360 URL:</label>
-                        <input type="url" id="ds360-url" name="ds360Url" placeholder="https://yourdiveshop.diveshop360.biz" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="ds360-username">Username:</label>
-                        <input type="text" id="ds360-username" name="ds360Username" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="ds360-password">Password:</label>
-                        <input type="password" id="ds360-password" name="ds360Password" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="ds360-api-key">API Key (if available):</label>
-                        <input type="password" id="ds360-api-key" name="ds360ApiKey">
-                        <small class="field-help">Optional: Improves migration speed and reliability</small>
-                    </div>
-                </div>
-                
-                <div class="migration-options">
-                    <h4>Migration Options</h4>
-                    <div class="option-checkboxes">
-                        <label class="option-checkbox">
-                            <input type="checkbox" name="migrateCustomers" checked>
-                            <span class="checkmark"></span>
-                            Customer profiles and contact information
-                        </label>
-                        <label class="option-checkbox">
-                            <input type="checkbox" name="migrateCertifications" checked>
-                            <span class="checkmark"></span>
-                            Certification records (all agencies)
-                        </label>
-                        <label class="option-checkbox">
-                            <input type="checkbox" name="migrateInventory" checked>
-                            <span class="checkmark"></span>
-                            Equipment inventory and pricing
-                        </label>
-                        <label class="option-checkbox">
-                            <input type="checkbox" name="migrateBookings" checked>
-                            <span class="checkmark"></span>
-                            Course bookings and schedules
-                        </label>
-                        <label class="option-checkbox">
-                            <input type="checkbox" name="migrateTransactions">
-                            <span class="checkmark"></span>
-                            Transaction history (read-only)
-                        </label>
-                        <label class="option-checkbox">
-                            <input type="checkbox" name="migrateInstructors" checked>
-                            <span class="checkmark"></span>
-                            Instructor profiles and certifications
-                        </label>
-                    </div>
-                </div>
-                
-                <div class="sync-options">
-                    <h4>Synchronization Settings</h4>
-                    <div class="sync-settings">
-                        <label class="sync-option">
-                            <input type="radio" name="syncMode" value="one-time" checked>
-                            <div class="option-content">
-                                <strong>One-time Migration</strong>
-                                <p>Complete data import with no ongoing sync</p>
-                            </div>
-                        </label>
-                        <label class="sync-option">
-                            <input type="radio" name="syncMode" value="bidirectional">
-                            <div class="option-content">
-                                <strong>Bidirectional Sync</strong>
-                                <p>Maintain sync during transition period</p>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-                
-                <div class="test-connection-section">
-                    <button type="button" id="test-ds360-connection" class="btn btn-secondary">
-                        🔗 Test Connection
-                    </button>
-                    <div id="ds360-connection-status" class="connection-status"></div>
-                </div>
-            </div>
-        `;
-        
-        // Add event listeners for DiveShop360 specific functionality
-        config.querySelector('#test-ds360-connection').addEventListener('click', () => {
-            this.testDiveShop360Connection();
-        });
-        
-        return config;
-    }
-};
-```
-
-### **Step 6: Installation Completion**
-
-#### **Final Installation Step and System Verification**
-```javascript
-const completionStep = {
-    template: `
-    <div class="step-content completion-step">
-        <div class="completion-header">
-            <div class="success-animation">
-                <div class="success-icon">✓</div>
-                <div class="success-ripple"></div>
-            </div>
-            <h2>DiveForge Installation Complete!</h2>
-            <p class="completion-subtitle">Your universal dive shop management system is ready to use</p>
-        </div>
-        
-        <div class="installation-summary">
-            <h3>Installation Summary</h3>
-            <div class="summary-grid">
-                <div class="summary-card">
-                    <div class="summary-icon">🗄️</div>
-                    <div class="summary-content">
-                        <h4>Database</h4>
-                        <p id="summary-database">PostgreSQL configured</p>
-                    </div>
-                </div>
-                
-                <div class="summary-card">
-                    <div class="summary-icon">👤</div>
-                    <div class="summary-content">
-                        <h4>Administrator</h4>
-                        <p id="summary-admin">Account created successfully</p>
-                    </div>
-                </div>
-                
-                <div class="summary-card">
-                    <div class="summary-icon">🏪</div>
-                    <div class="summary-content">
-                        <h4>Dive Shop</h4>
-                        <p id="summary-shop">Shop configured with agencies</p>
-                    </div>
-                </div>
-                
-                <div class="summary-card">
-                    <div class="summary-icon">🔄</div>
-                    <div class="summary-content">
-                        <h4>Migration</h4>
-                        <p id="summary-migration">Data imported successfully</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="next-steps">
-            <h3>Get Started with DiveForge</h3>
-            <div class="steps-grid">
-                <div class="step-card primary">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h4>Access Your Dashboard</h4>
-                        <p>Log in with your administrator account to start managing your dive shop</p>
-                        <a href="/admin/dashboard" class="btn btn-primary">
-                            🚀 Launch Dashboard
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="step-card">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h4>Configure Agency Integrations</h4>
-                        <p>Set up connections to your certification agencies for automated processing</p>
-                        <a href="/admin/integrations/agencies" class="btn btn-secondary">
-                            🌊 Setup Agencies
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="step-card">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h4>Import Equipment Catalog</h4>
-                        <p>Add your rental equipment and retail inventory to the system</p>
-                        <a href="/admin/inventory/import" class="btn btn-secondary">
-                            📦 Manage Inventory
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="step-card">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h4>Customer Portal Setup</h4>
-                        <p>Configure the customer self-service portal for certification access</p>
-                        <a href="/admin/portal/configure" class="btn btn-secondary">
-                            👥 Setup Portal
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="system-information">
-            <h3>System Information</h3>
-            <div class="info-grid">
-                <div class="info-item">
-                    <strong>Version:</strong>
-                    <span id="system-version">DiveForge v1.0.0</span>
-                </div>
-                <div class="info-item">
-                    <strong>License:</strong>
-                    <span>GPL v3</span>
-                </div>
-                <div class="info-item">
-                    <strong>Installation Date:</strong>
-                    <span id="installation-date"></span>
-                </div>
-                <div class="info-item">
-                    <strong>Database:</strong>
-                    <span id="database-info"></span>
-                </div>
-                <div class="info-item">
-                    <strong>Supported Agencies:</strong>
-                    <span id="agency-count">20+ certification bodies</span>
-                </div>
-                <div class="info-item">
-                    <strong>Features Enabled:</strong>
-                    <span id="feature-count"></span>
-                </div>
-            </div>
-        </div>
-        
-        <div class="security-notice">
-            <div class="notice-header">
-                <span class="notice-icon">🔒</span>
-                <h3>Important Security Information</h3>
-            </div>
-            <div class="notice-content">
-                <p><strong>Installation Security:</strong> For security purposes, the DiveForge installation wizard has been automatically disabled. The installer files have been secured to prevent unauthorized access.</p>
-                
-                <div class="security-actions">
-                    <button type="button" id="download-config" class="btn btn-secondary">
-                        📄 Download Configuration Backup
-                    </button>
-                    <button type="button" id="view-security-report" class="btn btn-secondary">
-                        🔍 View Security Report
-                    </button>
-                </div>
-                
-                <div class="security-recommendations">
-                    <h4>Security Recommendations:</h4>
-                    <ul>
-                        <li>✓ Installation wizard disabled and secured</li>
-                        <li>✓ Database credentials encrypted</li>
-                        <li>✓ SSL/TLS encryption enabled</li>
-                        <li>📋 Configure firewall rules for your environment</li>
-                        <li>📋 Set up regular automated backups</li>
-                        <li>📋 Enable monitoring and alerting</li>
-                        <li>📋 Regularly update DiveForge to the latest version for security patches</li>
-                        <li>📋 Review user permissions and audit logs periodically</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <div class="community-resources">
-            <h3>Community & Support</h3>
-            <div class="resources-grid">
-                <div class="resource-card">
-                    <div class="resource-icon">📚</div>
-                    <h4>Documentation</h4>
-                    <p>Comprehensive guides and tutorials</p>
-                    <a href="https://docs.diveforge.org" target="_blank" class="resource-link">
-                        docs.diveforge.org →
-                    </a>
-                </div>
-                
-                <div class="resource-card">
-                    <div class="resource-icon">💬</div>
-                    <h4>Community Forum</h4>
-                    <p>Get help from other dive shop owners</p>
-                    <a href="https://community.diveforge.org" target="_blank" class="resource-link">
-                        community.diveforge.org →
-                    </a>
-                </div>
-                
-                <div class="resource-card">
-                    <div class="resource-icon">🐛</div>
-                    <h4>Bug Reports</h4>
-                    <p>Report issues and request features</p>
-                    <a href="https://github.com/diveforge/diveforge/issues" target="_blank" class="resource-link">
-                        GitHub Issues →
-                    </a>
-                </div>
-                
-                <div class="resource-card">
-                    <div class="resource-icon">🔧</div>
-                    <h4>Plugin Development</h4>
-                    <p>Extend DiveForge with custom plugins</p>
-                    <a href="https://docs.diveforge.org/plugins" target="_blank" class="resource-link">
-                        Plugin Guide →
-                    </a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="installation-complete-actions">
-            <div class="primary-action">
-                <a href="/admin/dashboard" class="btn btn-large btn-primary">
-                    🌊 Start Managing Your Dive Shop
-                </a>
-            </div>
-            
-            <div class="secondary-actions">
-                <button type="button" id="setup-wizard" class="btn btn-secondary">
-                    🧙‍♂️ Launch Setup Wizard
-                </button>
-                <button type="button" id="demo-mode" class="btn btn-secondary">
-                    🎮 Explore Demo Mode
-                </button>
-            </div>
-        </div>
-    </div>`,
-    
-    async initialize() {
-        await this.populateInstallationSummary();
-        this.setupCompletionActions();
-        await this.createInstallationLock();
-        this.setupSecurityReport();
-    },
-    
-    async populateInstallationSummary() {
-        const config = window.DiveForgeInstaller.config;
-        
-        // Update summary information
-        document.getElementById('summary-database').textContent = 
-            `${config.database.type.toUpperCase()} on ${config.database.host}`;
-        document.getElementById('summary-admin').textContent = 
-            `${config.admin.firstName} ${config.admin.lastName}`;
-        document.getElementById('summary-shop').textContent = 
-            `${config.shop.name} - ${config.agencies.length} agencies`;
-        document.getElementById('summary-migration').textContent = 
-            config.migration.source === 'manual' ? 'Fresh installation' : 
-            `Migrated from ${config.migration.source}`;
-        
-        // Update system information
-        document.getElementById('installation-date').textContent = 
-            new Date().toLocaleDateString();
-        document.getElementById('database-info').textContent = 
-            `${config.database.type.toUpperCase()} ${config.database.version || ''}`;
-        document.getElementById('feature-count').textContent = 
-            `${config.shop.features?.length || 0} features enabled`;
-    },
-    
-    async createInstallationLock() {
-        try {
-            const lockData = {
-                timestamp: new Date().toISOString(),
-                version: '1.0.0',
-                installer: 'web-wizard',
-                checksum: await this.generateConfigChecksum()
-            };
-            
-            await fetch('/installer/create-lock', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(lockData)
-            });
-            
-            console.log('Installation lock created successfully');
-        } catch (error) {
-            console.error('Failed to create installation lock:', error);
-        }
-    },
-    
-    setupCompletionActions() {
-        // Download configuration backup
-        document.getElementById('download-config').addEventListener('click', () => {
-            this.downloadConfigurationBackup();
-        });
-        
-        // View security report
-        document.getElementById('view-security-report').addEventListener('click', () => {
-            this.showSecurityReport();
-        });
-        
-        // Setup wizard
-        document.getElementById('setup-wizard').addEventListener('click', () => {
-            window.location.href = '/admin/setup-wizard';
-        });
-        
-        // Demo mode
-        document.getElementById('demo-mode').addEventListener('click', () => {
-            window.location.href = '/demo';
-        });
-    }
-};
-```
-
----
-
-## Multi-Agency Certification System
-
-### **Universal Diving Agency Integration**
-
-DiveForge supports all major diving certification agencies through a unified API architecture that accommodates different certification standards, course structures, and digital integration capabilities.
-
-#### **Comprehensive Agency Support Framework**
-
-```javascript
-class UniversalAgencyManager {
-    constructor() {
-        this.supportedAgencies = new Map();
-        this.initializeSupportedAgencies();
-    }
-    
-    initializeSupportedAgencies() {
-        // Major International Agencies
-        this.supportedAgencies.set('PADI', {
-            name: 'Professional Association of Diving Instructors',
-            founded: 1966,
-            headquarters: 'Rancho Santa Margarita, CA, USA',
-            scope: 'Worldwide',
-            certifiedDivers: '6.6M+',
-            digitalIntegration: true,
-            apiEndpoint: 'https://api.padi.com',
-            features: ['recreational', 'professional', 'technical'],
-            certificationLevels: [
-                'BUBBLEMAKER', 'SEAL_TEAM', 'JUNIOR_OPEN_WATER',
-                'OPEN_WATER', 'ADVANCED_OPEN_WATER', 'RESCUE_DIVER',
-                'DIVEMASTER', 'ASSISTANT_INSTRUCTOR', 'INSTRUCTOR',
-                'SPECIALTY_INSTRUCTOR', 'MASTER_INSTRUCTOR', 'COURSE_DIRECTOR'
-            ]
-        });
-        
-        this.supportedAgencies.set('SSI', {
-            name: 'Scuba Schools International',
-            founded: 1970,
-            headquarters: 'Fort Collins, CO, USA',
-            scope: 'Worldwide',
-            certifiedDivers: '3M+',
-            digitalIntegration: true,
-            digitalFirst: true,
-            apiEndpoint: 'https://api.divessi.com',
-            features: ['recreational', 'technical', 'freediving'],
-            certificationLevels: [
-                'TRY_SCUBA', 'SCUBA_SKILLS_UPDATE', 'OPEN_WATER_DIVER',
-                'ADVANCED_ADVENTURER', 'STRESS_RESCUE', 'DIVE_GUIDE',
-                'DIVEMASTER', 'ASSISTANT_INSTRUCTOR', 'OPEN_WATER_INSTRUCTOR',
-                'SPECIALTY_INSTRUCTOR', 'INSTRUCTOR_TRAINER'
-            ]
-        });
-        
-        this.supportedAgencies.set('TDI', {
-            name: 'Technical Diving International',
-            founded: 1994,
-            headquarters: 'Topsham, ME, USA',
-            scope: 'Worldwide',
-            specialization: 'Technical Diving',
-            digitalIntegration: true,
-            apiEndpoint: 'https://api.tdisdi.com',
-            features: ['technical', 'cave', 'wreck', 'rebreather'],
-            certificationLevels: [
-                'NITROX_DIVER', 'ADVANCED_NITROX', 'DECOMPRESSION_PROCEDURES',
-                'TRIMIX', 'HELITROX', 'CAVE_DIVER', 'WRECK_DIVER',
-                'REBREATHER_DIVER', 'TECHNICAL_INSTRUCTOR', 'CAVE_INSTRUCTOR'
-            ]
-        });
-        
-        this.supportedAgencies.set('NAUI', {
-            name: 'National Association of Underwater Instructors',
-            founded: 1960,
-            headquarters: 'Tampa, FL, USA',
-            scope: 'Worldwide',
-            philosophy: 'Flexible Standards',
-            digitalIntegration: true,
-            apiEndpoint: 'https://api.naui.org',
-            features: ['recreational', 'technical', 'scientific'],
-            certificationLevels: [
-                'SCUBA_DIVER', 'ADVANCED_SCUBA_DIVER', 'RESCUE_SCUBA_DIVER',
-                'MASTER_SCUBA_DIVER', 'ASSISTANT_INSTRUCTOR', 'INSTRUCTOR',
-                'INSTRUCTOR_TRAINER', 'COURSE_DIRECTOR'
-            ]
-        });
-        
-        // Continue with all other agencies...
-        this.addRemainingAgencies();
-    }
-    
-    addRemainingAgencies() {
-        // British Sub-Aqua Club
-        this.supportedAgencies.set('BSAC', {
-            name: 'British Sub-Aqua Club',
-            founded: 1953,
-            headquarters: 'Ellesmere Port, UK',
-            scope: 'UK and Commonwealth',
-            philosophy: 'Club-based Diving',
-            certificationLevels: [
-                'OCEAN_DIVER', 'SPORTS_DIVER', 'DIVE_LEADER',
-                'ADVANCED_DIVER', 'FIRST_CLASS_DIVER', 'CLUB_INSTRUCTOR',
-                'OPEN_WATER_INSTRUCTOR', 'ADVANCED_INSTRUCTOR'
-            ]
-        });
-        
-        // Global Underwater Explorers
-        this.supportedAgencies.set('GUE', {
-            name: 'Global Underwater Explorers',
-            founded: 1998,
-            headquarters: 'High Springs, FL, USA',
-            philosophy: 'Team-based Technical Diving',
-            specialization: 'Technical and Cave Diving',
-            certificationLevels: [
-                'RECREATIONAL_DIVER_1', 'RECREATIONAL_DIVER_2',
-                'FUNDAMENTALS', 'TECH_1', 'TECH_2', 'CAVE_1', 'CAVE_2',
-                'INSTRUCTOR', 'INSTRUCTOR_TRAINER'
-            ]
-        });
-        
-        // Add remaining 15+ agencies with similar structure...
-    }
-}
-```
-
-#### **Universal Certification Data Model**
-
-```javascript
-class UniversalCertification {
-    constructor(certificationData) {
-        this.id = certificationData.id || this.generateId();
-        this.customerId = certificationData.customerId;
-        this.agency = certificationData.agency;
-        this.originalLevel = certificationData.level;
-        this.normalizedLevel = this.normalizeLevel(certificationData.level, certificationData.agency);
-        this.certificationNumber = certificationData.number;
-        this.issueDate = new Date(certificationData.issueDate);
-        this.expiryDate = certificationData.expiryDate ? new Date(certificationData.expiryDate) : null;
-        this.instructor = certificationData.instructor;
-        this.trainingLocation = certificationData.location;
-        this.digitalCard = certificationData.digitalCard || false;
-        this.equivalencies = this.calculateEquivalencies();
-        this.prerequisites = this.mapPrerequisites(certificationData);
-        this.metadata = this.extractMetadata(certificationData);
-    }
-    
-    normalizeLevel(agencyLevel, agency) {
-        const levelMappings = {
-            // Entry Level Mappings
-            'PADI_OPEN_WATER': 'ENTRY_LEVEL',
-            'SSI_OPEN_WATER_DIVER': 'ENTRY_LEVEL',
-            'NAUI_SCUBA_DIVER': 'ENTRY_LEVEL',
-            'TDI_OPEN_WATER': 'ENTRY_LEVEL',
-            'BSAC_OCEAN_DIVER': 'ENTRY_LEVEL',
-            'GUE_RECREATIONAL_DIVER_1': 'ENTRY_LEVEL',
-            
-            // Advanced Recreational
-            'PADI_ADVANCED_OPEN_WATER': 'ADVANCED_RECREATIONAL',
-            'SSI_ADVANCED_ADVENTURER': 'ADVANCED_RECREATIONAL',
-            'NAUI_ADVANCED_SCUBA_DIVER': 'ADVANCED_RECREATIONAL',
-            'BSAC_SPORTS_DIVER': 'ADVANCED_RECREATIONAL',
-            'GUE_RECREATIONAL_DIVER_2': 'ADVANCED_RECREATIONAL',
-            
-            // Rescue and Leadership
-            'PADI_RESCUE_DIVER': 'RESCUE_LEADERSHIP',
-            'SSI_STRESS_RESCUE': 'RESCUE_LEADERSHIP',
-            'NAUI_RESCUE_SCUBA_DIVER': 'RESCUE_LEADERSHIP',
-            'BSAC_DIVE_LEADER': 'RESCUE_LEADERSHIP',
-            'GUE_FUNDAMENTALS': 'RESCUE_LEADERSHIP',
-            
-            // Professional Entry
-            'PADI_DIVEMASTER': 'PROFESSIONAL_ENTRY',
-            'SSI_DIVEMASTER': 'PROFESSIONAL_ENTRY',
-            'NAUI_ASSISTANT_INSTRUCTOR': 'PROFESSIONAL_ENTRY',
-            'BSAC_CLUB_INSTRUCTOR': 'PROFESSIONAL_ENTRY',
-            
-            // Instructor Level
-            'PADI_OPEN_WATER_INSTRUCTOR': 'INSTRUCTOR',
-            'SSI_OPEN_WATER_INSTRUCTOR': 'INSTRUCTOR',
-            'NAUI_INSTRUCTOR': 'INSTRUCTOR',
-            'TDI_INSTRUCTOR': 'INSTRUCTOR',
-            'BSAC_OPEN_WATER_INSTRUCTOR': 'INSTRUCTOR',
-            'GUE_INSTRUCTOR': 'INSTRUCTOR',
-            
-            // Technical Entry
-            'TDI_ADVANCED_NITROX': 'TECHNICAL_ENTRY',
-            'IANTD_ADVANCED_NITROX': 'TECHNICAL_ENTRY',
-            'GUE_TECH_1': 'TECHNICAL_ENTRY',
-            'UTD_TECH_1': 'TECHNICAL_ENTRY',
-            'PSAI_ADVANCED_NITROX': 'TECHNICAL_ENTRY',
-            
-            // Technical Advanced
-            'TDI_TRIMIX': 'TECHNICAL_ADVANCED',
-            'IANTD_TRIMIX': 'TECHNICAL_ADVANCED',
-            'GUE_TECH_2': 'TECHNICAL_ADVANCED',
-            'UTD_TECH_2': 'TECHNICAL_ADVANCED',
-            'NAUI_TECHNICAL_DIVER': 'TECHNICAL_ADVANCED'
-        };
-        
-        const key = `${agency}_${agencyLevel}`;
-        return levelMappings[key] || 'SPECIALTY';
-    }
-    
-    calculateEquivalencies() {
-        const equivalencyMap = new Map();
-        
-        // Entry level equivalencies
-        if (this.normalizedLevel === 'ENTRY_LEVEL') {
-            equivalencyMap.set('PADI', 'OPEN_WATER');
-            equivalencyMap.set('SSI', 'OPEN_WATER_DIVER');
-            equivalencyMap.set('NAUI', 'SCUBA_DIVER');
-            equivalencyMap.set('TDI', 'OPEN_WATER');
-            equivalencyMap.set('BSAC', 'OCEAN_DIVER');
-        }
-        
-        // Advanced recreational equivalencies
-        if (this.normalizedLevel === 'ADVANCED_RECREATIONAL') {
-            equivalencyMap.set('PADI', 'ADVANCED_OPEN_WATER');
-            equivalencyMap.set('SSI', 'ADVANCED_ADVENTURER');
-            equivalencyMap.set('NAUI', 'ADVANCED_SCUBA_DIVER');
-            equivalencyMap.set('BSAC', 'SPORTS_DIVER');
-        }
-        
-        // Technical equivalencies
-        if (this.normalizedLevel === 'TECHNICAL_ENTRY') {
-            equivalencyMap.set('TDI', 'ADVANCED_NITROX');
-            equivalencyMap.set('IANTD', 'ADVANCED_NITROX');
-            equivalencyMap.set('GUE', 'TECH_1');
-            equivalencyMap.set('UTD', 'TECH_1');
-        }
-        
-        // Remove the current agency from equivalencies
-        equivalencyMap.delete(this.agency);
-        
-        return Array.from(equivalencyMap.entries()).map(([agency, level]) => ({
-            agency,
-            level,
-            normalized: this.normalizedLevel
-        }));
-    }
-    
-    async mapPrerequisites(certificationData) {
-        const agency = certificationData.agency;
-        const level = certificationData.level;
-        const mapped = [];
-        
-        // Example mapping logic
-        if (agency === 'PADI') {
-            if (level === 'OPEN_WATER') {
-                mapped.push('BUBBLEMAKER', 'SEAL_TEAM');
-            } else if (level === 'ADVANCED_OPEN_WATER') {
-                mapped.push('OPEN_WATER');
-            }
-        } else if (agency === 'SSI') {
-            if (level === 'OPEN_WATER_DIVER') {
-                mapped.push('TRY_SCUBA');
-            } else if (level === 'ADVANCED_ADVENTURER') {
-                mapped.push('OPEN_WATER_DIVER');
-            }
-        }
-        
-        return mapped;
-    }
-    
-    extractMetadata(certificationData) {
-        return {
-            sourceSystem: certificationData.sourceSystem || 'unknown',
-            migrationDate: certificationData.migrationDate || new Date().toISOString(),
-            originalId: certificationData.originalId || null,
-            integrityCheck: this.performDataIntegrityCheck(certificationData)
-        };
-    }
-    
-    performDataIntegrityCheck(data) {
-        // Simple integrity check example
-        return data.id && data.customerId && data.agency && data.level;
-    }
-}
-```
-
-#### **Agency-Specific Integration Adapters**
-
-```javascript
-class AgencyIntegrationManager {
-    constructor() {
-        this.agencies = new Map();
-        this.initializeAgencyAdapters();
-    }
-    
-    initializeAgencyAdapters() {
-        this.agencies.set('PADI', new PADIIntegration());
-        this.agencies.set('SSI', new SSIIntegration());
-        this.agencies.set('TDI', new TDIIntegration());
-        this.agencies.set('SDI', new SDIIntegration());
-        this.agencies.set('NAUI', new NAUIIntegration());
-        this.agencies.set('BSAC', new BSACIntegration());
-        this.agencies.set('GUE', new GUEIntegration());
-        this.agencies.set('UTD', new UTDIntegration());
-        this.agencies.set('IANTD', new IANTDIntegration());
-        this.agencies.set('RAID', new RAIDIntegration());
-        this.agencies.set('PSAI', new PSAIIntegration());
-        this.agencies.set('ACUC', new ACUCIntegration());
-    }
-    
-    async processCertification(agency, certificationData) {
-        const adapter = this.agencies.get(agency);
-        if (!adapter) {
-            throw new Error(`Unsupported agency: ${agency}`);
-        }
-        
-        return await adapter.processCertification(certificationData);
-    }
-    
-    async syncWithAgency(agency, shopCredentials) {
-        const adapter = this.agencies.get(agency);
-        if (!adapter) {
-            throw new Error(`Unsupported agency: ${agency}`);
-        }
-        
-        return await adapter.syncCertifications(shopCredentials);
-    }
-    
-    async validateInstructorCredentials(agency, instructorData) {
-        const adapter = this.agencies.get(agency);
-        return await adapter.validateInstructor(instructorData);
-    }
-}
-
-// PADI Integration Implementation
-class PADIIntegration {
-    constructor() {
-        this.apiEndpoint = 'https://api.padi.com';
-        this.version = 'v2';
-        this.supportedCourses = [
-            'BUBBLEMAKER', 'SEAL_TEAM', 'JUNIOR_OPEN_WATER',
-            'OPEN_WATER', 'ADVANCED_OPEN_WATER', 'RESCUE_DIVER',
-            'DIVEMASTER', 'ASSISTANT_INSTRUCTOR', 'INSTRUCTOR',
-            'DEEP_SPECIALTY', 'WRECK_SPECIALTY', 'NIGHT_SPECIALTY',
-            'NITROX_SPECIALTY', 'PEAK_PERFORMANCE_BUOYANCY'
-        ];
-        this.ratios = {
-            'OPEN_WATER': { pool: 8, openWater: 8 },
-            'ADVANCED_OPEN_WATER': { student: 8 },
-            'RESCUE_DIVER': { student: 8 }
-        };
-    }
-    
-    async processCertification(data) {
-        const certification = new UniversalCertification({
-            agency: 'PADI',
-            ...data,
-            digitalCard: true,
-            features: {
-                eCard: true,
-                replacementCard: true,
-                verification: true
-            }
-        });
-        
-        // PADI-specific validation
-        await this.validatePADIStandards(certification);
-        
-        return certification;
-    }
-    
-    async validatePADIStandards(certification) {
-        const standards = {
-            minAge: this.getMinimumAge(certification.originalLevel),
-            prerequisites: this.getPrerequisites(certification.originalLevel),
-            ratios: this.ratios[certification.originalLevel]
-        };
-        
-        // Implement PADI-specific validation logic
-        return standards;
-    }
-    
-    async syncCertifications(credentials) {
-        try {
-            const response = await fetch(`${this.apiEndpoint}/${this.version}/certifications`, {
-                headers: {
-                    'Authorization': `Bearer ${credentials.apiKey}`,
-                    'X-PADI-Center': credentials.centerNumber,
-                    'Content-Type': 'application/json'
-                }
-            });
-            
-            if (!response.ok) {
-                throw new Error(`PADI API error: ${response.status}`);
-            }
-            
-            const certifications = await response.json();
-            return certifications.map(cert => this.processCertification(cert));
-        } catch (error) {
-            console.error('PADI sync failed:', error);
-            throw error;
-        }
-    }
-}
-
-// SSI Integration Implementation
-class SSIIntegration {
-    constructor() {
-        this.apiEndpoint = 'https://api.divessi.com';
-        this.digitalFirst = true;
-        this.supportedCourses = [
-            'TRY_SCUBA', 'SCUBA_SKILLS_UPDATE', 'OPEN_WATER_DIVER',
-            'ADVANCED_ADVENTURER', 'STRESS_RESCUE', 'DIVE_GUIDE',
-            'DIVEMASTER', 'ASSISTANT_INSTRUCTOR', 'OPEN_WATER_INSTRUCTOR'
-        ];
-        this.digitalFeatures = {
-            onlineLearning: true,
-            digitalCertification: true,
-            appIntegration: true,
-            progressTracking: true
-        };
-    }
-    
-    async processCertification(data) {
-        return new UniversalCertification({
-            agency: 'SSI',
-            digitalCard: true,
-            digitalFirst: true,
-            onlineLearning: this.digitalFeatures.onlineLearning,
-            ...data
-        });
-    }
-    
-    async syncDigitalCertifications(credentials) {
-        const response = await fetch(`${this.apiEndpoint}/certifications/digital`, {
-            headers: {
-                'Authorization': `Bearer ${credentials.token}`,
-                'X-SSI-Center-ID': credentials.centerId,
-                'Accept': 'application/json'
-            }
-        });
-        
-        const digitalCerts = await response.json();
-        return digitalCerts.map(cert => ({
-            ...cert,
-            digitalCard: true,
-            qrCode: cert.verification_qr,
-            appAccess: true
-        }));
-    }
-}
-
-// TDI Technical Diving Integration
-class TDIIntegration {
-    constructor() {
-        this.apiEndpoint = 'https://api.tdisdi.com';
-        this.technicalFocus = true;
-        this.supportedCourses = [
-            'NITROX_DIVER', 'ADVANCED_NITROX', 'DECOMPRESSION_PROCEDURES',
-            'TRIMIX', 'HELITROX', 'CAVE_DIVER', 'WRECK_DIVER',
-            'REBREATHER_DIVER', 'TECHNICAL_INSTRUCTOR', 'CAVE_INSTRUCTOR'
-        ];
-        this.gasBlendingCourses = [
-            'ADVANCED_NITROX', 'TRIMIX', 'HELITROX'
-        ];
-        this.technicalRatios = {
-            'ADVANCED_NITROX': { student: 8, depth: '40m' },
-            'TRIMIX': { student: 4, depth: '60m' },
-            'CAVE_DIVER': { student: 3, environment: 'overhead' }
-        };
-    }
-    
-    async processCertification(data) {
-        const certification = new UniversalCertification({
-            agency: 'TDI',
-            technical: true,
-            gasBlending: this.requiresGasBlending(data.course),
-            maxDepth: this.getMaxDepth(data.course),
-            ...data
-        });
-        
-        // Add technical-specific metadata
-        certification.metadata.technical = {
-            gasBlending: this.gasBlendingCourses.includes(data.course),
-            decompression: ['DECOMPRESSION_PROCEDURES', 'TRIMIX'].includes(data.course),
-            overhead: ['CAVE_DIVER', 'WRECK_DIVER'].includes(data.course),
-            ratios: this.technicalRatios[data.course]
-        };
-        
-        return certification;
-    }
-    
-    requiresGasBlending(course) {
-        return this.gasBlendingCourses.includes(course);
-    }
-    
-    getMaxDepth(course) {
-        const depths = {
-            'ADVANCED_NITROX': '40m',
-            'TRIMIX': '60m',
-            'HELITROX': '45m',
-            'CAVE_DIVER': 'overhead',
-            'WRECK_DIVER': '50m'
-        };
-        return depths[course] || 'recreational';
-    }
-}
-```
-
----
-
-## DiveShop360.biz API Compatibility Layer
-
-### **Migration and Compatibility Framework**
-
-#### **Comprehensive API Compatibility Mapping**
-
-```javascript
-class DiveShop360CompatibilityLayer {
-    constructor() {
-        this.apiMappings = new Map();
-        this.dataTransformers = new Map();
-        this.migrationState = new Map();
-        this.setupAPIMapping();
-        this.setupDataTransformers();
-    }
-    
-    setupAPIMapping() {
-        // Legacy DiveShop360 endpoints mapped to DiveForge API
-        this.apiMappings.set('/ds360/api/customers', {
-            diveForgeEndpoint: '/api/v1/customers',
-            method: 'GET',
-            transformation: 'customer',
-            pagination: true,
-            filters: ['active', 'certification_level', 'last_activity']
-        });
-        
-        this.apiMappings.set('/ds360/api/inventory', {
-            diveForgeEndpoint: '/api/v1/inventory',
-            method: 'GET',
-            transformation: 'inventory',
-            pagination: true,
-            filters: ['category', 'availability', 'agency_compatibility']
-        });
-        
-        this.apiMappings.set('/ds360/api/bookings', {
-            diveForgeEndpoint: '/api/v1/bookings',
-            method: 'GET',
-            transformation: 'booking',
-            pagination: true,
-            filters: ['date_range', 'status', 'agency']
-        });
-        
-        this.apiMappings.set('/ds360/api/certifications', {
-            diveForgeEndpoint: '/api/v1/certifications',
-            method: 'GET',
-            transformation: 'certification',
-            multiAgency: true,
-            validation: 'universal_standards'
-        });
-        
-        this.apiMappings.set('/ds360/api/reports', {
-            diveForgeEndpoint: '/api/v1/reports',
-            method: 'GET',
-            transformation: 'report',
-            realTime: true,
-            multiAgency: true
-        });
-    }
-    
-    setupDataTransformers() {
-        // Customer data transformation with multi-agency support
-        this.dataTransformers.set('customer', (ds360Data) => ({
-            id: ds360Data.customer_id,
-            firstName: ds360Data.first_name,
-            lastName: ds360Data.last_name,
-            email: ds360Data.email_address,
-            phone: ds360Data.phone_number,
-            dateOfBirth: ds360Data.date_of_birth,
-            
-            // Enhanced emergency contact
-            emergencyContact: {
-                name: ds360Data.emergency_contact_name,
-                phone: ds360Data.emergency_contact_phone,
-                relationship: ds360Data.emergency_contact_relationship,
-                email: ds360Data.emergency_contact_email
-            },
-            
-            // Multi-agency certifications
-            certifications: this.transformCertifications(ds360Data.certifications),
-            
-            // Enhanced medical information
-            medicalInfo: {
-                conditions: ds360Data.medical_conditions,
-                restrictions: ds360Data.medical_restrictions,
-                medications: ds360Data.current_medications,
-                allergies: ds360Data.allergies,
-                lastPhysical: ds360Data.last_physical_date,
-                physicianApproval: ds360Data.physician_approval === 'Y'
-            },
-            
-            // Equipment preferences
-            equipmentSizes: {
-                wetsuit: ds360Data.wetsuit_size,
-                bcd: ds360Data.bcd_size,
-                fins: ds360Data.fin_size,
-                mask: ds360Data.mask_type_preference,
-                weight: ds360Data.weight_requirement
-            },
-            
-            // Customer preferences
-            preferences: {
-                agencies: this.parseAgencyPreferences(ds360Data.preferred_agencies),
-                communications: ds360Data.communication_preferences,
-                language: ds360Data.preferred_language || 'en',
-                newsletter: ds360Data.newsletter_subscription === 'Y'
-            },
-            
-            // Audit trail
-            createdAt: ds360Data.created_date,
-            updatedAt: ds360Data.last_modified,
-            source: 'diveshop360_migration'
-        }));
-        
-        // Enhanced inventory transformation with agency compatibility
-        this.dataTransformers.set('inventory', (ds360Data) => ({
-            id: ds360Data.item_id,
-            sku: ds360Data.sku_code,
-            name: ds360Data.item_name,
-            description: ds360Data.item_description,
-            category: ds360Data.category_name,
-            subcategory: ds360Data.subcategory_name,
-            manufacturer: ds360Data.manufacturer,
-            model: ds360Data.model_number,
-            
-            // Multi-agency compatibility determination
-            agencyCompatibility: this.determineAgencyCompatibility(ds360Data),
-            
-            // Enhanced pricing structure
-            pricing: {
-                retail: parseFloat(ds360Data.retail_price),
-                cost: parseFloat(ds360Data.cost_price),
-                wholesale: parseFloat(ds360Data.wholesale_price),
-                currency: ds360Data.currency || 'USD',
-                taxable: ds360Data.taxable === 'Y',
-                discountEligible: ds360Data.discount_eligible === 'Y'
-            },
-            
-            // Comprehensive inventory tracking
-            inventory: {
-                quantity: parseInt(ds360Data.quantity_on_hand),
-                reserved: parseInt(ds360Data.quantity_reserved),
-                available: parseInt(ds360Data.quantity_available),
-                committed: parseInt(ds360Data.quantity_committed),
-                reorderPoint: parseInt(ds360Data.reorder_point),
-                reorderQuantity: parseInt(ds360Data.reorder_quantity),
-                location: ds360Data.storage_location,
-                binLocation: ds360Data.bin_location
-            },
-            
-            // Enhanced rental management
-            rental: {
-                isRentable: ds360Data.is_rental_item === 'Y',
-                dailyRate: parseFloat(ds360Data.rental_rate_daily),
-                weeklyRate: parseFloat(ds360Data.rental_rate_weekly),
-                monthlyRate: parseFloat(ds360Data.rental_rate_monthly),
-                depositRequired: parseFloat(ds360Data.rental_deposit),
-                condition: ds360Data.rental_condition,
-                lastService: ds360Data.last_service_date,
-                nextService: ds360Data.next_service_date,
-                serviceInterval: ds360Data.service_interval_days
-            },
-            
-            // Equipment specifications
-            specifications: {
-                size: ds360Data.size,
-                color: ds360Data.color,
-                weight: ds360Data.weight,
-                dimensions: ds360Data.dimensions,
-                material: ds360Data.material,
-                certifications: ds360Data.equipment_certifications
-            },
-            
-            // Multi-agency course material compatibility
-            courseCompatibility: this.determineCourseCompatibility(ds360Data),
-            
-            // Enhanced metadata
-            metadata: {
-                serialNumbers: ds360Data.serial_numbers?.split(',') || [],
-                images: ds360Data.image_urls?.split(',') || [],
-                documents: ds360Data.document_urls?.split(',') || [],
-                tags: ds360Data.tags?.split(',') || [],
-                notes: ds360Data.internal_notes
-            }
-        }));
-        
-        // Multi-agency certification transformation
-        this.dataTransformers.set('certification', (ds360Data) => {
-            const agency = this.normalizeAgencyName(ds360Data.certifying_agency);
-            
-            return {
-                id: ds360Data.certification_id,
-                customerId: ds360Data.customer_id,
-                agency: agency,
-                level: ds360Data.certification_level,
-                normalizedLevel: this.normalizeCertificationLevel(ds360Data.certification_level, agency),
-                certificationNumber: ds360Data.cert_number,
-                issueDate: ds360Data.issue_date,
-                expiryDate: ds360Data.expiry_date,
-                
-                // Instructor information
-                instructor: {
-                    name: ds360Data.instructor_name,
-                    number: ds360Data.instructor_number,
-                    agency: agency,
-                    signature: ds360Data.instructor_signature
-                },
-                
-                // Training details
-                training: {
-                    location: ds360Data.training_location,
-                    startDate: ds360Data.training_start_date,
-                    completionDate: ds360Data.training_completion_date,
-                    hours: ds360Data.training_hours,
-                    dives: ds360Data.training_dives
-                },
-                
-                // Cross-agency equivalencies
-                equivalencies: this.calculateCrossAgencyEquivalencies(ds360Data.certification_level, agency),
-                
-                // Digital certification support
-                digital: {
-                    cardUrl: ds360Data.digital_card_url,
-                    qrCode: ds360Data.verification_qr_code,
-                    blockchain: ds360Data.blockchain_hash,
-                    verified: ds360Data.verification_status === 'verified'
-                },
-                
-                // Migration metadata
-                migrationData: {
-                    originalSystem: 'diveshop360',
-                    migrationDate: new Date().toISOString(),
-                    originalId: ds360Data.certification_id,
-                    dataIntegrity: 'verified'
-                }
-            };
-        });
-    }
-    
-    determineAgencyCompatibility(itemData) {
-        const compatibilityRules = {
-            'PADI': {
-                keywords: ['padi', 'recreational', 'open water', 'advanced', 'rescue', 'divemaster'],
-                categories: ['training_materials', 'recreational_equipment', 'certification_items']
-            },
-            'SSI': {
-                keywords: ['ssi', 'digital', 'online', 'scuba schools'],
-                categories: ['digital_materials', 'training_equipment', 'apps']
-            },
-            'TDI': {
-                keywords: ['technical', 'trimix', 'nitrox', 'cave', 'wreck', 'decompression'],
-                categories: ['technical_equipment', 'gas_analysis', 'technical_training']
-            },
-            'NAUI': {
-                keywords: ['naui', 'flexible', 'rescue', 'leadership'],
-                categories: ['leadership_materials', 'rescue_equipment', 'flexible_training']
-            },
-            'BSAC': {
-                keywords: ['bsac', 'british', 'club', 'sports diver'],
-                categories: ['club_equipment', 'uk_training', 'sports_diving']
-            },
-            'GUE': {
-                keywords: ['gue', 'team', 'standardized', 'fundamentals', 'exploration'],
-                categories: ['team_equipment', 'standardized_gear', 'exploration_tools']
-            },
-            'UNIVERSAL': {
-                keywords: ['universal', 'standard', 'basic', 'general'],
-                categories: ['basic_equipment', 'universal_tools', 'general_supplies']
-            }
-        };
-        
-        const itemName = itemData.item_name?.toLowerCase() || '';
-        const itemDesc = itemData.item_description?.toLowerCase() || '';
-        const category = itemData.category_name?.toLowerCase() || '';
-        const compatible = [];
-        
-        Object.entries(compatibilityRules).forEach(([agency, rules]) => {
-            const keywordMatch = rules.keywords.some(keyword => 
-                itemName.includes(keyword) || itemDesc.includes(keyword)
-            );
-            const categoryMatch = rules.categories.some(cat => 
-                category.includes(cat.replace('_', ' '))
-            );
-            
-            if (keywordMatch || categoryMatch) {
-                compatible.push(agency);
-            }
-        });
-        
-        // If no specific agency match, mark as universal
-        return compatible.length > 0 ? compatible : ['UNIVERSAL'];
-    }
-    
-    async migrateData(dataType, ds360Data, options = {}) {
-        const transformer = this.dataTransformers.get(dataType);
-        if (!transformer) {
-            throw new Error(`No transformer found for data type: ${dataType}`);
-        }
-        
-        try {
-            // Transform data using appropriate transformer
-            const transformedData = transformer(ds360Data);
-            
-            // Validate transformed data
-            await this.validateTransformedData(dataType, transformedData);
-            
-            // Apply agency-specific processing if needed
-            if (options.agencyProcessing && dataType === 'certification') {
-                transformedData.agencyValidation = await this.validateAgencyStandards(transformedData);
-            }
-            
-            // Track migration progress
-            this.updateMigrationProgress(dataType, 1);
-            
-            return transformedData;
-        } catch (error) {
-            console.error(`Migration error for ${dataType}:`, error);
-            throw new Error(`Failed to migrate ${dataType}: ${error.message}`);
-        }
-    }
-    
-    async performBulkMigration(migrationConfig) {
-        const results = {
-            customers: { success: 0, failed: 0, errors: [] },
-            certifications: { success: 0, failed: 0, errors: [] },
-            inventory: { success: 0, failed: 0, errors: [] },
-            bookings: { success: 0, failed: 0, errors: [] }
-        };
-        
-        try {
-            // Migrate in order: customers, certifications, inventory, bookings
-            if (migrationConfig.migrateCustomers) {
-                await this.migrateCustomers(migrationConfig, results);
-            }
-            
-            if (migrationConfig.migrateCertifications) {
-                await this.migrateCertifications(migrationConfig, results);
-            }
-            
-            if (migrationConfig.migrateInventory) {
-                await this.migrateInventory(migrationConfig, results);
-            }
-            
-            if (migrationConfig.migrateBookings) {
-                await this.migrateBookings(migrationConfig, results);
-            }
-            
-            // Generate migration report
-            const report = this.generateMigrationReport(results);
-            
-            return {
-                success: true,
-                results,
-                report,
-                timestamp: new Date().toISOString()
-            };
-            
-        } catch (error) {
-            console.error('Bulk migration failed:', error);
-            return {
-                success: false,
-                error: error.message,
-                results,
-                timestamp: new Date().toISOString()
-            };
-        }
-    }
-}
-```
-
----
-
-## Enterprise Application Architecture
-
-### **Microservices vs Modular Monolith Decision Framework**
-
-#### **Architecture Decision Matrix**
-
-```typescript
-interface ArchitectureDecision {
-    teamSize: number;
-    expectedLoad: 'low' | 'medium' | 'high' | 'variable';
-    deploymentComplexity: 'simple' | 'moderate' | 'complex';
-    dataConsistency: 'eventual' | 'strong';
-    operationalExpertise: 'basic' | 'intermediate' | 'advanced';
-    recommendation: 'modular-monolith' | 'microservices' | 'hybrid';
-}
-
-class ArchitectureDecisionEngine {
-    evaluateArchitecture(requirements: ArchitectureDecision): string {
-        const score = this.calculateArchitectureScore(requirements);
-        
-        if (score < 3) {
-            return 'modular-monolith';
-        } else if (score > 7) {
-            return 'microservices';
-        } else {
-            return 'hybrid';
-        }
-    }
-    
-    private calculateArchitectureScore(req: ArchitectureDecision): number {
-        let score = 0;
-        
-        // Team size factor
-        if (req.teamSize > 15) score += 3;
-        else if (req.teamSize > 8) score += 2;
-        else score += 0;
-        
-        // Load complexity
-        if (req.expectedLoad === 'high' || req.expectedLoad === 'variable') score += 2;
-        
-        // Deployment complexity tolerance
-        if (req.deploymentComplexity === 'complex') score += 2;
-        
-        // Data consistency requirements
-        if (req.dataConsistency === 'eventual') score += 1;
-        
-        // Operational expertise
-        if (req.operationalExpertise === 'advanced') score += 2;
-        else if (req.operationalExpertise === 'intermediate') score += 1;
-        
-        return score;
-    }
-}
-```
-
-#### **Modular Monolith Benefits for Most Dive Shops**
-
-```typescript
-// Modular Monolith Architecture for DiveForge
-class DiveForgeModularMonolith {
-    private modules: Map<string, Module> = new Map();
-    
-    constructor() {
-        this.initializeModules();
-    }
-    
-    private initializeModules() {
-        // Core Business Modules
-        this.modules.set('customer-management', new CustomerManagementModule());
-        this.modules.set('certification-processing', new CertificationProcessingModule());
-        this.modules.set('inventory-management', new InventoryManagementModule());
-        this.modules.set('booking-system', new BookingSystemModule());
-        this.modules.set('equipment-rental', new EquipmentRentalModule());
-        
-        // Multi-Agency Modules
-        this.modules.set('agency-integration', new AgencyIntegrationModule());
-        this.modules.set('standards-validation', new StandardsValidationModule());
-        this.modules.set('certification-equivalency', new CertificationEquivalencyModule());
-        
-        // Enterprise Modules
-        this.modules.set('security-framework', new SecurityFrameworkModule());
-        this.modules.set('audit-logging', new AuditLoggingModule());
-        this.modules.set('reporting-analytics', new ReportingAnalyticsModule());
-        this.modules.set('plugin-management', new PluginManagementModule());
-    }
-    
-    // Benefits of Modular Monolith:
-    // 1. Simplified deployment and operational complexity
-    // 2. Easier data consistency across business operations
-    // 3. Lower operational overhead suitable for smaller teams
-    // 4. Better performance with reduced network latency
-    // 5. Easier debugging and troubleshooting
-    // 6. Simpler transaction management across modules
-}
-```
-
-### **Domain-Driven Design Implementation**
-
-#### **Core Domain Models**
-
-```typescript
-// Dive Shop Aggregate Root
-class DiveShop extends AggregateRoot {
-    private constructor(
-        public readonly id: DiveShopId,
-        public readonly name: string,
-        public readonly agencies: AgencyPartnership[],
-        private equipment: Equipment[],
-        private instructors: Instructor[]
-    ) {
-        super();
-    }
-    
-    static create(name: string, agencies: AgencyPartnership[]): DiveShop {
-        const id = DiveShopId.generate();
-        const shop = new DiveShop(id, name, agencies, [], []);
-        
-        // Fire domain event
-        shop.addDomainEvent(new DiveShopCreatedEvent(shop));
-        
-        return shop;
-    }
-    
-    addEquipment(equipment: Equipment) {
-        this.equipment.push(equipment);
-        this.addDomainEvent(new EquipmentAddedEvent(this.id, equipment));
-    }
-    
-    addInstructor(instructor: Instructor) {
-        this.instructors.push(instructor);
-        this.addDomainEvent(new InstructorAddedEvent(this.id, instructor));
-    }
-    
-    // Business logic methods
-    assignInstructorToCourse(instructorId: string, courseId: string) {
-        const instructor = this.instructors.find(i => i.id === instructorId);
-        if (!instructor) {
-            throw new Error('Instructor not found');
-        }
-        
-        instructor.assignToCourse(courseId);
-    }
-    
-    // Query methods
-    getAvailableEquipment() {
-        return this.equipment.filter(e => e.isAvailable());
-    }
-    
-    getInstructorSchedule(instructorId: string) {
-        const instructor = this.instructors.find(i => i.id === instructorId);
-        return instructor ? instructor.getSchedule() : null;
-    }
-}
-```
