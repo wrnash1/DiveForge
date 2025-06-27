@@ -1,5 +1,19 @@
 # DiveForge: Enterprise Dive Shop Management Platform
 
+## Developer Onboarding Checklist
+
+-   [ ] Read this Developer Guide and the README.md
+-   [ ] Set up your local environment (see README.md "Development Setup")
+-   [ ] Review the [API Reference](docs/api/README.md)
+-   [ ] Review the [Database Schema](docs/database/README.md)
+-   [ ] Review the [Plugin Development Guide](docs/plugins/README.md)
+-   [ ] Join the [Community Forum](https://github.com/diveforge/diveforge/discussions)
+-   [ ] Pick an open issue or feature from the [Feature Coverage Checklist](README.md)
+-   [ ] Follow [Contribution Guidelines](CONTRIBUTING.md) for pull requests
+-   [ ] Run tests before submitting code
+
+---
+
 ## Complete Developer Guide - Architecture Overview
 
 **Version 30** | **GPL v3 Licensed** | **Multi-Agency Universal Platform**
@@ -1565,6 +1579,35 @@ Break down artificial barriers between diving certification agencies while provi
 -   International expansion and partnerships
 -   Continuous improvement and feature updates
 -   Long-term sustainability planning
+
+---
+
+## Testing & Quality Assurance
+
+### **Automated Testing**
+
+-   **Unit Testing**: Comprehensive unit tests for all modules
+-   **Integration Testing**: Automated integration tests for API endpoints
+-   **End-to-End Testing**: Full workflow testing using tools like Cypress or Playwright
+-   **Continuous Integration**: Automated test runs on every commit (GitHub Actions, GitLab CI)
+-   **Code Coverage**: Enforce minimum code coverage thresholds
+-   **Mocking & Stubbing**: Use mocks for external services and APIs
+
+### **Manual Testing**
+
+-   **User Acceptance Testing**: Real-world scenario validation by staff and customers
+-   **Cross-Browser Testing**: Ensure compatibility across all major browsers
+-   **Mobile Testing**: Test mobile app features on iOS and Android devices
+-   **Accessibility Testing**: WCAG compliance and screen reader support
+-   **Performance Testing**: Load and stress testing for critical endpoints
+
+### **Quality Assurance Process**
+
+-   **Code Review**: Mandatory peer review for all pull requests
+-   **Release Checklist**: Standardized checklist for every release
+-   **Bug Tracking**: Centralized bug tracking and triage process
+-   **Regression Testing**: Automated and manual regression tests before releases
+-   **User Feedback**: Collect and act on feedback from real users
 
 ---
 

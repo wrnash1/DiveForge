@@ -360,6 +360,26 @@
                                         </div>
                                     @endforeach
                                 </div>
+                                <div class="mt-4 text-xs text-gray-500">
+                                    <strong>Advanced Modules:</strong>
+                                    <ul class="list-disc ml-5">
+                                        <li>Equipment Repair & Service Management</li>
+                                        <li>Air & Gift Card Management</li>
+                                        <li>Advanced Trip & Charter Management</li>
+                                        <li>Flexible Course Scheduling & Materials</li>
+                                        <li>Commission & Incentive Management</li>
+                                        <li>Vendor Catalog & Advanced Inventory</li>
+                                        <li>Customer Loyalty & Communication</li>
+                                        <li>Financial Integrations & Reporting</li>
+                                        <li>Automated Product Image Management</li>
+                                        <li>Visual Inventory & AR/360° Support</li>
+                                        <li>Local Dive Site Database & Maps</li>
+                                        <li>Boat, Compressor, Nitrox, and Safety Ops</li>
+                                        <li>Security Camera & Incident Analytics</li>
+                                        <li>Plugin/Theme System & API-first Design</li>
+                                    </ul>
+                                    <span class="block mt-2">See <a href="/Developer_Guide.md" class="underline text-blue-600">Developer Guide</a> for full feature list.</span>
+                                </div>
                             </div>
 
                             <!-- Final Checks -->
