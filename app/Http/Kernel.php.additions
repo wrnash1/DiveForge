@@ -1,0 +1,9 @@
+// Add these to your Kernel.php middleware array:
+
+'instructor' => \App\Http\Middleware\EnsureUserIsInstructor::class,
+'student' => \App\Http\Middleware\EnsureUserIsStudent::class,
+'shop.owner' => \App\Http\Middleware\EnsureShopOwner::class,
+'equipment.available' => \App\Http\Middleware\CheckEquipmentAvailability::class,
+'certification.level' => \App\Http\Middleware\ValidateCertificationLevel::class,
+'medical.clearance' => \App\Http\Middleware\CheckMedicalClearance::class,
+'booking.limit' => \App\Http\Middleware\RateLimitBookings::class,

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers\Installer;
 
 use Illuminate\Support\Arr;
@@ -46,6 +47,12 @@ class InstallationController extends Controller
         }
     }
 
+    // Check if the application is already installed
+    private function isInstalled(): bool
+    {
+        return File::exists(storage_path('installed'));
+    }
+
     public function showStep1()
     {
         $systemCheck = $this->checkSystemRequirements();
@@ -72,7 +79,7 @@ class InstallationController extends Controller
             return redirect()->back()->with('error', 'System requirements not met. Please resolve all issues before continuing.');
         }
 
-        session(['installer.step1_complete' => true]);
+        session(['installer.step1_complete' => true, 'installer.start_time' => now()]);
         return redirect()->route('installer.step2.show');
     }
 
@@ -106,7 +113,7 @@ class InstallationController extends Controller
 
         $request->validate($rules);
 
-        // Test database connection with comprehensive error reporting
+        // Test database connection
         $connectionResult = $this->testDatabaseConnection($request->all());
         
         if (!$connectionResult['success']) {
@@ -149,31 +156,13 @@ class InstallationController extends Controller
         $request->validate([
             'first_name' => 'required|string|max:255|regex:/^[a-zA-Z\s\-\'\.]+$/u',
             'last_name' => 'required|string|max:255|regex:/^[a-zA-Z\s\-\'\.]+$/u',
-            'email' => 'required|string|email:rfc,dns|max:255',
-            'password' => [
-                'required',
-                'string',
-                'confirmed',
-                Password::min(12)
-                    ->letters()
-                    ->mixedCase()
-                    ->numbers()
-                    ->symbols()
-                    ->uncompromised()
-            ],
+            'email' => 'required|email|max:255',
+            'password' => ['required', 'confirmed', Password::min(8)->letters()->mixedCase()->numbers()->symbols()],
         ], [
             'first_name.regex' => 'First name may only contain letters, spaces, hyphens, apostrophes, and periods.',
             'last_name.regex' => 'Last name may only contain letters, spaces, hyphens, apostrophes, and periods.',
-            'email.email' => 'Please provide a valid email address.',
-            'password.uncompromised' => 'The password has appeared in a data breach. Please choose a different password.'
+            'password.confirmed' => 'Password confirmation does not match.',
         ]);
-
-        // Additional email validation
-        if (!$this->isValidEmailDomain($request->email)) {
-            return redirect()->back()
-                ->withInput()
-                ->with('error', 'Please use a valid email domain.');
-        }
 
         session([
             'installer.step3_complete' => true,
@@ -188,7 +177,7 @@ class InstallationController extends Controller
         if (!session('installer.step3_complete')) {
             return redirect()->route('installer.step3.show');
         }
-        
+
         return view('installer.steps.shop-setup', [
             'current_step' => 4,
             'timezones' => $this->supportedTimezones,
@@ -199,16 +188,13 @@ class InstallationController extends Controller
     public function processStep4(Request $request)
     {
         $request->validate([
-            'shop_name' => 'required|string|max:255|min:2',
-            'shop_email' => 'required|email:rfc,dns|max:255',
-            'shop_phone' => 'nullable|string|max:20|regex:/^[\+]?[0-9\s\-\(\)]+$/',
-            'shop_address' => 'nullable|string|max:1000',
+            'shop_name' => 'required|string|max:255',
+            'shop_email' => 'required|email|max:255',
+            'shop_phone' => 'nullable|string|max:20',
+            'shop_address' => 'nullable|string|max:500',
             'shop_website' => 'nullable|url|max:255',
             'shop_timezone' => 'required|string|in:' . implode(',', $this->supportedTimezones),
             'shop_currency' => 'required|string|in:' . implode(',', $this->supportedCurrencies),
-        ], [
-            'shop_phone.regex' => 'Please enter a valid phone number format.',
-            'shop_website.url' => 'Please enter a valid website URL (including http:// or https://).'
         ]);
 
         session([
@@ -216,10 +202,10 @@ class InstallationController extends Controller
             'installer.shop_config' => $request->except('_token')
         ]);
 
-        return redirect()->route('installer.step5.show');
+        return redirect()->route('installer.finish.show');
     }
 
-    public function showFinalStep()
+    public function showFinish()
     {
         if (!session('installer.step4_complete')) {
             return redirect()->route('installer.step4.show');
@@ -229,28 +215,25 @@ class InstallationController extends Controller
         
         return view('installer.steps.finish', [
             'current_step' => 5,
-            'summary' => $summary,
-            'estimated_time' => '2-5 minutes'
+            'summary' => $summary
         ]);
     }
 
-    public function finishInstallation()
+    public function processFinish(Request $request)
     {
-        if (!session('installer.step4_complete')) {
-            return redirect()->route('installer.step4.show');
-        }
-
-        $installationId = Str::uuid();
+        $installationId = Str::uuid()->toString();
         
         try {
+            // Step 1: Backup current .env file
             $this->logInstallationStep($installationId, 'Starting DiveForge installation');
+            $this->backupEnvFile();
 
-            // Step 1: Backup existing .env if it exists
-            $this->backupEnvironmentFile();
-            
-            // Step 2: Update environment file
+            // Step 2: Update .env file with new configuration
             $this->logInstallationStep($installationId, 'Updating environment configuration');
-            $this->updateEnvFile(session('installer.db_config'), session('installer.shop_config'));
+            $this->updateEnvFile([
+                'db_config' => session('installer.db_config'),
+                'shop_config' => session('installer.shop_config')
+            ]);
 
             // Step 3: Clear all caches
             $this->logInstallationStep($installationId, 'Clearing application caches');
@@ -314,350 +297,214 @@ class InstallationController extends Controller
             $this->cleanupFailedInstallation();
             
             $this->logInstallationStep($installationId ?? 'unknown', 'Installation failed: ' . $e->getMessage());
-            Log::error('DiveForge installation failed', [
-                'installation_id' => $installationId,
-                'error' => $e->getMessage(),
-                'trace' => $e->getTraceAsString()
-            ]);
-
-            return redirect()->route('installer.step2.show')
-                ->withInput(session('installer.db_config'))
+            
+            return redirect()->back()
                 ->with('error', 'Installation failed: ' . $e->getMessage())
-                ->with('error_details', config('app.debug') ? $e->getTraceAsString() : null);
+                ->with('installation_error', true);
         }
     }
 
-    public function showCompletionPage()
+    public function showComplete()
     {
-        if (!$this->isInstalled()) {
-            return redirect()->route('installer.step1.show');
-        }
-
-        $installationData = $this->getInstallationData();
+        $installationId = session('installation_id');
+        $summary = $this->generateInstallationSummary();
         
         return view('installer.steps.complete', [
-            'current_step' => 6,
-            'installation_data' => $installationData,
-            'login_url' => route('login')
+            'installation_id' => $installationId,
+            'summary' => $summary
         ]);
     }
 
-    // AJAX endpoints
-    public function testDatabase(Request $request)
+    // AJAX endpoint for testing database connection
+    public function testConnection(Request $request)
     {
         $result = $this->testDatabaseConnection($request->all());
         return response()->json($result);
     }
 
-    public function checkRequirements()
-    {
-        return response()->json($this->checkSystemRequirements());
-    }
-
-    public function getInstallationProgress()
-    {
-        // This could be enhanced to show real-time progress
-        return response()->json([
-            'status' => 'processing',
-            'progress' => 50,
-            'message' => 'Installing DiveForge...'
-        ]);
-    }
-
     // Private helper methods
-
-    private function isInstalled(): bool
-    {
-        return File::exists(storage_path('installed'));
-    }
-
-    private function getInstallationData(): array
-    {
-        if (!$this->isInstalled()) {
-            return [];
-        }
-        
-        return json_decode(File::get(storage_path('installed')), true) ?? [];
-    }
-
     private function checkSystemRequirements(): array
     {
         $requirements = [
             'php_version' => [
-                'name' => 'PHP Version (>= 8.2)',
-                'passed' => version_compare(PHP_VERSION, '8.2.0', '>='),
+                'required' => '8.1.0',
                 'current' => PHP_VERSION,
-                'required' => '8.2.0'
+                'passed' => version_compare(PHP_VERSION, '8.1.0', '>=')
             ],
             'extensions' => [],
-            'permissions' => [],
-            'disk_space' => $this->checkDiskSpace()
+            'directories' => [],
+            'permissions' => []
         ];
 
         // Check PHP extensions
         foreach ($this->requiredPHPExtensions as $extension) {
             $requirements['extensions'][$extension] = [
-                'name' => strtoupper($extension) . ' Extension',
-                'passed' => extension_loaded($extension),
-                'required' => true
+                'required' => true,
+                'current' => extension_loaded($extension),
+                'passed' => extension_loaded($extension)
             ];
         }
 
-        // Check directory permissions
+        // Check directories and permissions
         foreach ($this->requiredDirectories as $directory) {
             $path = base_path($directory);
             $exists = File::exists($path);
-            $writable = $exists && is_writable($path);
+            $writable = $exists ? File::isWritable($path) : false;
             
-            $requirements['permissions'][$directory] = [
-                'name' => $directory,
-                'passed' => $exists && $writable,
+            $requirements['directories'][$directory] = [
                 'exists' => $exists,
                 'writable' => $writable,
-                'path' => $path
+                'passed' => $exists && $writable
             ];
         }
 
-        // Calculate overall status
+        // Check .env file
+        $envPath = base_path('.env');
+        $requirements['permissions']['env_file'] = [
+            'exists' => File::exists($envPath),
+            'writable' => File::exists($envPath) ? File::isWritable($envPath) : File::isWritable(base_path()),
+            'passed' => File::exists($envPath) ? File::isWritable($envPath) : File::isWritable(base_path())
+        ];
+
+        // Determine if all requirements are met
         $requirements['all_passed'] = $requirements['php_version']['passed'] &&
-            $requirements['disk_space']['passed'] &&
             collect($requirements['extensions'])->every('passed') &&
+            collect($requirements['directories'])->every('passed') &&
             collect($requirements['permissions'])->every('passed');
 
         return $requirements;
     }
 
-    private function checkDiskSpace(): array
-    {
-        $required = 100 * 1024 * 1024; // 100MB
-        $available = disk_free_space(base_path());
-        
-        return [
-            'name' => 'Available Disk Space',
-            'passed' => $available >= $required,
-            'available' => $available,
-            'required' => $required,
-            'available_mb' => round($available / 1024 / 1024, 2),
-            'required_mb' => round($required / 1024 / 1024, 2)
-        ];
-    }
-
     private function testDatabaseConnection(array $config): array
     {
         try {
-            $connection = $config['db_connection'];
+            $driver = $config['db_connection'];
             
-            if ($connection === 'sqlite') {
-                return $this->testSqliteConnection($config);
+            if ($driver === 'sqlite') {
+                $database = $config['db_database'];
+                if (!str_starts_with($database, '/')) {
+                    $database = database_path($database);
+                }
+                
+                $dsn = "sqlite:{$database}";
+                $username = null;
+                $password = null;
+            } else {
+                $host = $config['db_host'];
+                $port = $config['db_port'];
+                $database = $config['db_database'];
+                $username = $config['db_username'];
+                $password = $config['db_password'] ?? '';
+                
+                $dsn = "{$driver}:host={$host};port={$port};dbname={$database}";
             }
 
-            return $this->testSqlConnection($config);
+            $pdo = new PDO($dsn, $username, $password, [
+                PDO::ATTR_TIMEOUT => 5,
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+            ]);
+
+            $pdo->exec('SELECT 1');
+            
+            return [
+                'success' => true,
+                'message' => 'Database connection successful',
+                'details' => [
+                    'driver' => $driver,
+                    'version' => $pdo->getAttribute(PDO::ATTR_SERVER_VERSION)
+                ]
+            ];
 
         } catch (PDOException $e) {
             return [
                 'success' => false,
-                'message' => 'Database connection failed: ' . $this->getFriendlyDatabaseError($e),
+                'message' => 'Database connection failed: ' . $e->getMessage(),
                 'details' => [
                     'error_code' => $e->getCode(),
-                    'config' => Arr::except($config, ['db_password'])
+                    'driver' => $driver ?? 'unknown'
                 ]
             ];
-        } catch (Exception $e) {
-            return [
-                'success' => false,
-                'message' => 'Connection error: ' . $e->getMessage(),
-                'details' => ['config' => Arr::except($config, ['db_password'])]
-            ];
         }
-    }
-
-    private function testSqliteConnection(array $config): array
-    {
-        $database = $config['db_database'];
-        if (!str_starts_with($database, '/')) {
-            $database = database_path($database);
-        }
-        
-        // Ensure directory exists
-        $directory = dirname($database);
-        if (!File::exists($directory)) {
-            File::makeDirectory($directory, 0755, true);
-        }
-        
-        $pdo = new PDO("sqlite:$database");
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $pdo->exec('SELECT 1');
-        
-        return [
-            'success' => true,
-            'message' => 'SQLite database connection successful',
-            'details' => ['database' => $database]
-        ];
-    }
-
-    private function testSqlConnection(array $config): array
-    {
-        $dsn = $this->buildDSN($config);
-        $pdo = new PDO($dsn, $config['db_username'], $config['db_password'] ?? '');
-        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        
-        // Test basic query
-        $testQuery = $config['db_connection'] === 'mysql' ? 'SELECT VERSION()' : 'SELECT version()';
-        $stmt = $pdo->query($testQuery);
-        $version = $stmt->fetchColumn();
-        
-        return [
-            'success' => true,
-            'message' => 'Database connection successful',
-            'details' => [
-                'host' => $config['db_host'],
-                'port' => $config['db_port'],
-                'database' => $config['db_database'],
-                'version' => $version
-            ]
-        ];
     }
 
     private function testDatabasePermissions(array $config): array
     {
         try {
-            $connection = $config['db_connection'];
+            $driver = $config['db_connection'];
             
-            if ($connection === 'sqlite') {
-                // For SQLite, check if we can create the database file
+            if ($driver === 'sqlite') {
                 $database = $config['db_database'];
                 if (!str_starts_with($database, '/')) {
                     $database = database_path($database);
                 }
                 
                 $directory = dirname($database);
-                if (!is_writable($directory)) {
+                if (!File::isWritable($directory)) {
                     return [
                         'success' => false,
                         'message' => 'SQLite database directory is not writable: ' . $directory
                     ];
                 }
+            } else {
+                // Test if we can create and drop a test table
+                $dsn = "{$driver}:host={$config['db_host']};port={$config['db_port']};dbname={$config['db_database']}";
+                $pdo = new PDO($dsn, $config['db_username'], $config['db_password'] ?? '');
                 
-                return ['success' => true, 'message' => 'SQLite permissions OK'];
+                $testTable = 'diveforge_install_test_' . time();
+                $pdo->exec("CREATE TABLE {$testTable} (id INT PRIMARY KEY)");
+                $pdo->exec("DROP TABLE {$testTable}");
             }
 
-            // For MySQL/PostgreSQL, test table creation permissions
-            $dsn = $this->buildDSN($config);
-            $pdo = new PDO($dsn, $config['db_username'], $config['db_password'] ?? '');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            
-            $testTable = 'diveforge_install_test_' . Str::random(8);
-            
-            // Try to create a test table
-            $createSql = "CREATE TABLE {$testTable} (id INTEGER PRIMARY KEY, test_column VARCHAR(255))";
-            $pdo->exec($createSql);
-            
-            // Try to insert data
-            $insertSql = "INSERT INTO {$testTable} (test_column) VALUES ('test')";
-            $pdo->exec($insertSql);
-            
-            // Clean up
-            $pdo->exec("DROP TABLE {$testTable}");
-            
-            return [
-                'success' => true,
-                'message' => 'Database permissions verified'
-            ];
+            return ['success' => true, 'message' => 'Database permissions are adequate'];
 
         } catch (Exception $e) {
             return [
                 'success' => false,
-                'message' => 'Database permission test failed: ' . $e->getMessage()
+                'message' => 'Insufficient database permissions: ' . $e->getMessage()
             ];
         }
-    }
-
-    private function buildDSN(array $config): string
-    {
-        $connection = $config['db_connection'];
-        $host = $config['db_host'];
-        $port = $config['db_port'];
-        $database = $config['db_database'];
-
-        return match($connection) {
-            'mysql' => "mysql:host=$host;port=$port;dbname=$database;charset=utf8mb4",
-            'pgsql' => "pgsql:host=$host;port=$port;dbname=$database",
-            default => throw new Exception("Unsupported database connection: $connection")
-        };
-    }
-
-    private function getFriendlyDatabaseError(PDOException $e): string
-    {
-        $message = $e->getMessage();
-        
-        if (str_contains($message, 'Access denied')) {
-            return 'Access denied. Please check your username and password.';
-        }
-        
-        if (str_contains($message, 'Unknown database')) {
-            return 'Database does not exist. Please create the database first.';
-        }
-        
-        if (str_contains($message, 'Connection refused')) {
-            return 'Connection refused. Please check if the database server is running.';
-        }
-        
-        if (str_contains($message, 'Name or service not known')) {
-            return 'Cannot resolve hostname. Please check the database host.';
-        }
-        
-        return $message;
     }
 
     private function getPasswordRequirements(): array
     {
         return [
-            'Minimum 12 characters',
-            'At least one uppercase letter',
-            'At least one lowercase letter',
-            'At least one number',
-            'At least one special character',
-            'Not found in known data breaches'
+            'min_length' => 8,
+            'require_uppercase' => true,
+            'require_lowercase' => true,
+            'require_numbers' => true,
+            'require_symbols' => true
         ];
     }
 
-    private function isValidEmailDomain(string $email): bool
-    {
-        $domain = substr(strrchr($email, '@'), 1);
-        return checkdnsrr($domain, 'MX') || checkdnsrr($domain, 'A');
-    }
-
-    private function backupEnvironmentFile(): void
+    private function backupEnvFile(): void
     {
         $envPath = base_path('.env');
         if (File::exists($envPath)) {
-            $backupPath = $envPath . '.backup.' . date('Y-m-d-H-i-s');
+            $backupPath = $envPath . '.backup.' . time();
             File::copy($envPath, $backupPath);
         }
     }
 
-    private function updateEnvFile(array $dbConfig, array $shopConfig): void
+    private function updateEnvFile(array $configs): void
     {
         $envPath = base_path('.env');
+        $envExamplePath = base_path('.env.example');
         
-        if (!File::exists($envPath)) {
-            if (File::exists($envPath . '.example')) {
-                File::copy($envPath . '.example', $envPath);
-            } else {
-                throw new Exception('.env file not found and .env.example is missing.');
-            }
+        // Use .env.example as template if .env doesn't exist
+        if (!File::exists($envPath) && File::exists($envExamplePath)) {
+            File::copy($envExamplePath, $envPath);
         }
-
-        $content = File::get($envPath);
+        
+        $content = File::exists($envPath) ? File::get($envPath) : '';
+        
+        $dbConfig = $configs['db_config'];
+        $shopConfig = $configs['shop_config'];
         
         $replacements = [
             'APP_NAME' => '"' . addslashes($shopConfig['shop_name']) . '"',
             'APP_ENV' => 'production',
             'APP_DEBUG' => 'false',
-            'APP_TIMEZONE' => '"' . ($shopConfig['shop_timezone'] ?? 'UTC') . '"',
-            'SESSION_DRIVER' => 'database',
-            'CACHE_DRIVER' => 'database',
-            'QUEUE_CONNECTION' => 'database',
+            'APP_TIMEZONE' => '"' . $shopConfig['shop_timezone'] . '"',
             'DB_CONNECTION' => $dbConfig['db_connection'],
             'DB_HOST' => $dbConfig['db_host'] ?? '',
             'DB_PORT' => $dbConfig['db_port'] ?? '',
@@ -677,7 +524,7 @@ class InstallationController extends Controller
         }
 
         File::put($envPath, $content);
-        chmod($envPath, 0600); // Secure the .env file
+        chmod($envPath, 0600);
     }
 
     private function clearAllCaches(): void
@@ -694,7 +541,6 @@ class InstallationController extends Controller
             try {
                 Artisan::call($command);
             } catch (Exception $e) {
-                // Log but don't fail installation
                 Log::warning("Failed to run {$command}: " . $e->getMessage());
             }
         }
@@ -768,7 +614,6 @@ class InstallationController extends Controller
         try {
             Artisan::call('db:seed', ['--force' => true]);
         } catch (Exception $e) {
-            // Log but don't fail installation if seeding fails
             Log::warning('Database seeding failed: ' . $e->getMessage());
         }
     }
@@ -840,12 +685,10 @@ class InstallationController extends Controller
     private function cleanupFailedInstallation(): void
     {
         try {
-            // Remove installation marker if it exists
             if (File::exists(storage_path('installed'))) {
                 File::delete(storage_path('installed'));
             }
 
-            // Restore .env backup if it exists
             $envPath = base_path('.env');
             $backupFiles = glob($envPath . '.backup.*');
             if (!empty($backupFiles)) {
@@ -853,7 +696,6 @@ class InstallationController extends Controller
                 File::copy($latestBackup, $envPath);
             }
 
-            // Clear caches
             $this->clearAllCaches();
 
         } catch (Exception $e) {
@@ -902,7 +744,6 @@ class InstallationController extends Controller
     {
         $logPath = storage_path('logs/installation.log');
         
-        // Ensure logs directory exists
         $logDir = dirname($logPath);
         if (!File::exists($logDir)) {
             File::makeDirectory($logDir, 0755, true);
@@ -912,244 +753,5 @@ class InstallationController extends Controller
         $logEntry = "[$timestamp] [$installationId] $message" . PHP_EOL;
         
         File::append($logPath, $logEntry);
-        
-        // Also log to Laravel's default log
-        Log::info("DiveForge Installation: $message", [
-            'installation_id' => $installationId,
-            'step' => $message
-        ]);
-    }
-
-    // Additional helper methods for enhanced functionality
-
-    private function validateSystemSecurity(): array
-    {
-        $checks = [];
-        
-        // Check if running in production
-        $checks['app_env'] = [
-            'name' => 'Application Environment',
-            'passed' => app()->environment('production'),
-            'message' => app()->environment('production') ? 'Production' : 'Development (should be production)'
-        ];
-        
-        // Check if debug is disabled
-        $checks['app_debug'] = [
-            'name' => 'Debug Mode',
-            'passed' => !config('app.debug'),
-            'message' => config('app.debug') ? 'Enabled (should be disabled)' : 'Disabled'
-        ];
-        
-        // Check if .env is protected
-        $envPath = base_path('.env');
-        $checks['env_protection'] = [
-            'name' => 'Environment File Security',
-            'passed' => !is_readable($envPath) || (fileperms($envPath) & 0777) <= 0600,
-            'message' => 'Environment file permissions checked'
-        ];
-        
-        return $checks;
-    }
-
-    private function createInitialSettings(): void
-    {
-        try {
-            // Create default application settings
-            $settings = [
-                'app_name' => session('installer.shop_config.shop_name'),
-                'app_version' => config('app.version', '1.0.0'),
-                'installation_date' => now()->toDateString(),
-                'maintenance_mode' => false,
-                'registration_enabled' => true,
-                'email_verification_required' => true,
-                'default_user_role' => 'customer',
-                'session_lifetime' => 120,
-                'password_reset_timeout' => 60,
-            ];
-
-            foreach ($settings as $key => $value) {
-                DB::table('settings')->insert([
-                    'key' => $key,
-                    'value' => is_bool($value) ? ($value ? '1' : '0') : (string)$value,
-                    'created_at' => now(),
-                    'updated_at' => now()
-                ]);
-            }
-        } catch (Exception $e) {
-            Log::warning('Failed to create initial settings: ' . $e->getMessage());
-        }
-    }
-
-    private function sendInstallationNotification(User $admin): void
-    {
-        try {
-            // You could send an email notification here
-            // Mail::to($admin)->send(new InstallationCompleteNotification());
-            
-            Log::info('DiveForge installation completed', [
-                'admin_email' => $admin->email,
-                'shop_name' => session('installer.shop_config.shop_name'),
-                'installation_time' => now()
-            ]);
-        } catch (Exception $e) {
-            Log::warning('Failed to send installation notification: ' . $e->getMessage());
-        }
-    }
-
-    // API endpoints for frontend integration
-
-    public function getInstallationStatus()
-    {
-        return response()->json([
-            'installed' => $this->isInstalled(),
-            'current_step' => $this->getCurrentStep(),
-            'system_requirements' => $this->checkSystemRequirements()
-        ]);
-    }
-
-    private function getCurrentStep(): int
-    {
-        if (!session('installer.step1_complete')) return 1;
-        if (!session('installer.step2_complete')) return 2;
-        if (!session('installer.step3_complete')) return 3;
-        if (!session('installer.step4_complete')) return 4;
-        return 5;
-    }
-
-    public function validateStep(Request $request)
-    {
-        $step = $request->input('step');
-        
-        switch ($step) {
-            case 1:
-                return response()->json($this->checkSystemRequirements());
-            case 2:
-                return response()->json($this->testDatabaseConnection($request->all()));
-            case 3:
-                return response()->json(['valid' => $this->validateAdminData($request->all())]);
-            case 4:
-                return response()->json(['valid' => $this->validateShopData($request->all())]);
-            default:
-                return response()->json(['error' => 'Invalid step'], 400);
-        }
-    }
-
-    private function validateAdminData(array $data): bool
-    {
-        $validator = validator($data, [
-            'first_name' => 'required|string|max:255|regex:/^[a-zA-Z\s\-\'\.]+$/u',
-            'last_name' => 'required|string|max:255|regex:/^[a-zA-Z\s\-\'\.]+$/u',
-            'email' => 'required|string|email:rfc,dns|max:255',
-            'password' => [
-                'required',
-                'string',
-                'min:12',
-                'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]/'
-            ],
-        ]);
-
-        return !$validator->fails();
-    }
-
-    private function validateShopData(array $data): bool
-    {
-        $validator = validator($data, [
-            'shop_name' => 'required|string|max:255|min:2',
-            'shop_email' => 'required|email:rfc,dns|max:255',
-            'shop_phone' => 'nullable|string|max:20|regex:/^[\+]?[0-9\s\-\(\)]+$/',
-            'shop_timezone' => 'required|string|in:' . implode(',', $this->supportedTimezones),
-            'shop_currency' => 'required|string|in:' . implode(',', $this->supportedCurrencies),
-        ]);
-
-        return !$validator->fails();
-    }
-
-    // Maintenance and cleanup methods
-
-    public function cleanupInstallationFiles()
-    {
-        if (!$this->isInstalled()) {
-            return response()->json(['error' => 'Application not installed'], 400);
-        }
-
-        try {
-            // Clean up installation logs older than 30 days
-            $logPath = storage_path('logs/installation.log');
-            if (File::exists($logPath) && File::lastModified($logPath) < now()->subDays(30)->timestamp) {
-                File::delete($logPath);
-            }
-
-            // Clean up .env backups older than 7 days
-            $envBackups = glob(base_path('.env.backup.*'));
-            foreach ($envBackups as $backup) {
-                if (File::lastModified($backup) < now()->subDays(7)->timestamp) {
-                    File::delete($backup);
-                }
-            }
-
-            return response()->json(['message' => 'Installation files cleaned up successfully']);
-            
-        } catch (Exception $e) {
-            return response()->json(['error' => 'Cleanup failed: ' . $e->getMessage()], 500);
-        }
-    }
-
-    // Security check method
-    private function performSecurityChecks(): array
-    {
-        $checks = [];
-        
-        // Check for secure headers
-        $checks['secure_headers'] = [
-            'name' => 'Security Headers',
-            'passed' => $this->hasSecureHeaders(),
-            'message' => 'Checking for security headers configuration'
-        ];
-        
-        // Check file permissions
-        $checks['file_permissions'] = [
-            'name' => 'File Permissions',
-            'passed' => $this->checkFilePermissions(),
-            'message' => 'Verifying secure file permissions'
-        ];
-        
-        // Check for production readiness
-        $checks['production_ready'] = [
-            'name' => 'Production Configuration',
-            'passed' => $this->isProductionReady(),
-            'message' => 'Validating production environment settings'
-        ];
-        
-        return $checks;
-    }
-
-    private function hasSecureHeaders(): bool
-    {
-        // This would check if security middleware is properly configured
-        return true; // Simplified for example
-    }
-
-    private function checkFilePermissions(): bool
-    {
-        $criticalFiles = ['.env', 'config', 'storage'];
-        
-        foreach ($criticalFiles as $file) {
-            $path = base_path($file);
-            if (File::exists($path)) {
-                $perms = fileperms($path) & 0777;
-                if ($perms > 0755) {
-                    return false;
-                }
-            }
-        }
-        
-        return true;
-    }
-
-    private function isProductionReady(): bool
-    {
-        return app()->environment('production') && 
-               !config('app.debug') && 
-               !empty(config('app.key'));
     }
 }

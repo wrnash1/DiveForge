@@ -70,6 +70,8 @@ DiveForge is the first truly universal, open source, enterprise-grade dive shop 
 -   **Customer Management:** Profiles, medical/certification history, loyalty, portal, communication preferences
 -   **Course & Certification:** Multi-agency catalog, scheduling, prerequisites, online learning, skill tracking
 -   **Equipment & Inventory:** Multi-location, predictive analytics, automated image management, rental/service, compressor/nitrox, IoT integration
+    -   **Automated Product Image Management:** Web scraping, AI-powered image selection, legal compliance, bulk processing, and fallback system for product images
+    -   **Visual Inventory Features:** Rich product galleries, 360-degree views, color/size variants, AR try-on, customer photo uploads, and automated image search
 -   **Booking & Scheduling:** Course/trip scheduling, resource allocation, weather integration, calendar sync
 -   **Financial Management:** Chart of accounts, revenue/expense tracking, payroll, compliance, multi-currency
 -   **HR Management:** Staff profiles, certification tracking, performance, training, compliance
@@ -86,6 +88,31 @@ DiveForge is the first truly universal, open source, enterprise-grade dive shop 
 -   **Authentication:** OAuth 2.0/OpenID Connect, MFA
 -   **Containerization:** Docker, Kubernetes
 -   **Security:** TLS 1.3, AES-256-GCM, PCI DSS, GDPR
+
+---
+
+## 🚦 Phase-based Implementation Roadmap
+
+DiveForge development follows a phased approach as outlined in the [Developer Guide](Developer_Guide.md):
+
+### **Phase 1: Foundation (Months 1-6)**
+
+-   Core platform, multi-tenant support, authentication, basic security
+-   Customers, courses, equipment, basic reporting, initial agency integrations
+
+### **Phase 2: Enhancement (Months 7-12)**
+
+-   Advanced features, more agencies, mobile app, advanced BI, plugin/theme system, e-commerce, security
+
+### **Phase 3: Enterprise (Months 13-18)**
+
+-   Enterprise/multi-company, advanced integrations, global/localization, compliance, analytics, pro services
+
+### **Phase 4: Scale (Months 19-24)**
+
+-   Performance/scaling, automation/AI, marketplace/community, international expansion, continuous improvement
+
+See [Developer_Guide.md](Developer_Guide.md) for full details.
 
 ---
 
@@ -185,6 +212,26 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ---
 
+## 🧪 Testing & Quality Assurance
+
+DiveForge enforces a robust QA process for all contributions:
+
+-   **Unit Testing:** All modules must include unit tests.
+-   **Integration Testing:** Automated integration tests for APIs and workflows.
+-   **End-to-End Testing:** Use Cypress or Playwright for full workflow validation.
+-   **Continuous Integration:** All PRs are tested via GitHub Actions or similar CI.
+-   **Code Coverage:** Minimum coverage thresholds required for merges.
+-   **Manual Testing:** User acceptance, cross-browser, mobile, accessibility, and performance testing.
+-   **Code Review:** All pull requests require peer review.
+-   **Release Checklist:** Standardized checklist for every release.
+-   **Bug Tracking:** Centralized issue tracking and triage.
+-   **Regression Testing:** Automated/manual regression tests before releases.
+-   **User Feedback:** Community feedback is incorporated into QA cycles.
+
+See [Developer_Guide.md](Developer_Guide.md#testing--quality-assurance) for full details.
+
+---
+
 ## 📖 Documentation
 
 -   [User Guide](docs/users/README.md)
@@ -196,12 +243,58 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
 ---
 
+## 🧑‍💻 Developer Quick Links
+
+-   [Developer Guide (Full Architecture)](Developer_Guide.md)
+-   [API Reference](docs/api/README.md)
+-   [Plugin Development](docs/plugins/README.md)
+-   [Database Schema](docs/database/README.md)
+-   [Security & Compliance](docs/security/README.md)
+-   [Contribution Guidelines](CONTRIBUTING.md)
+-   [Issue Tracker](https://github.com/diveforge/diveforge/issues)
+-   [Community Forum](https://github.com/diveforge/diveforge/discussions)
+
+---
+
 ## 📊 Roadmap
 
 -   **Current:** Universal multi-agency support, web-based install, migration tools, customer portal, equipment management
 -   **Next:** Mobile app, advanced analytics, equipment maintenance, multi-language, dive computer integration, AI insights, blockchain verification
 
 See [Developer_Guide.md](Developer_Guide.md) for full roadmap and architecture.
+
+---
+
+## ✅ Feature Coverage Checklist
+
+This checklist summarizes the critical features from the [Developer Guide](Developer_Guide.md) and their implementation status.
+
+| Feature Area                        | Status     | Notes/Links            |
+| ----------------------------------- | ---------- | ---------------------- |
+| Equipment Repair & Service Mgmt     | ⬜ Planned | See Developer_Guide.md |
+| Air Card & Gift Card Management     | ⬜ Planned | See Developer_Guide.md |
+| Advanced Trip & Charter Management  | ⬜ Planned | See Developer_Guide.md |
+| Advanced Course Management          | ⬜ Planned | See Developer_Guide.md |
+| Commission & Incentive Management   | ⬜ Planned | See Developer_Guide.md |
+| Advanced Inventory Features         | ⬜ Planned | See Developer_Guide.md |
+| Customer Loyalty & Retention        | ⬜ Planned | See Developer_Guide.md |
+| Financial Management Enhancements   | ⬜ Planned | See Developer_Guide.md |
+| Advanced Reporting & Analytics      | ⬜ Planned | See Developer_Guide.md |
+| Automated Product Image Management  | ⬜ Planned | See Developer_Guide.md |
+| Visual Inventory Features           | ⬜ Planned | See Developer_Guide.md |
+| Local Dive Site Integration         | ⬜ Planned | See Developer_Guide.md |
+| Commercial Account & B2B Management | ⬜ Planned | See Developer_Guide.md |
+| Boat Operations & Maintenance       | ⬜ Planned | See Developer_Guide.md |
+| Security Camera Integration         | ⬜ Planned | See Developer_Guide.md |
+| Student Validation & Requirements   | ⬜ Planned | See Developer_Guide.md |
+| Digital Forms & Documentation       | ⬜ Planned | See Developer_Guide.md |
+| Photography & Social Media          | ⬜ Planned | See Developer_Guide.md |
+| Advanced Student Management         | ⬜ Planned | See Developer_Guide.md |
+| Compressor & Nitrox Operations      | ⬜ Planned | See Developer_Guide.md |
+| Plugin & Theme System               | ⬜ Planned | See Developer_Guide.md |
+
+> **Legend:**  
+> ✅ Complete 🟡 In Progress ⬜ Planned
 
 ---
 
@@ -280,39 +373,6 @@ _Made with ❤️ by the diving community, for the diving community_
 [⭐ Star this repository](https://github.com/diveforge/diveforge) | [🤝 Contribute](CONTRIBUTING.md) | [📖 Documentation](docs/) | [💬 Community](https://discord.gg/diveforge)
 
 </div>
-### **Current Version: 1.0.0**
-
--   ✅ Universal multi-agency support
--   ✅ Web-based installation wizard
--   ✅ DiveShop360.biz migration tools
--   ✅ Customer portal with certification display
--   ✅ Equipment management and tracking
-
-### **Version 1.1.0 (Q2 2025)**
-
--   🔄 Enhanced mobile application
--   🔄 Advanced reporting and analytics
--   🔄 Equipment maintenance scheduling
--   🔄 Multi-language support (Spanish, French, German)
-
-### **Version 1.2.0 (Q3 2025)**
-
--   📋 Integration with dive computer manufacturers
--   📋 Advanced certification pathway recommendations
--   📋 Equipment marketplace integration
--   📋 Instructor scheduling optimization
-
-### **Version 2.0.0 (Q4 2025)**
-
--   📋 AI-powered customer insights
--   📋 Advanced safety prediction algorithms
--   📋 Blockchain certification verification
--   📋 Global dive site integration
-
----
-
-## 🏆 **Success Stories**
-
 _"DiveForge transformed our multi-agency dive shop operations. We now seamlessly handle PADI, SSI, and TDI certifications in one system, saving us hours of administrative work daily."_  
 **— Marina Santos, Blue Ocean Diving Center**
 
